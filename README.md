@@ -1,60 +1,147 @@
-!-- MAIN CONTAINER -->
-<div style="display: flex; font-family: Arial, sans-serif;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FodiSys System</title>
+  <style>
+    /* Reset some defaults */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
 
-  <!-- LEFT SIDEBAR -->
-  <div style="width: 260px; background-color: #0d0d0d; color: white; padding: 30px; min-height: 100vh;">
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #121212;
+      color: #eee;
+    }
 
-    <h2 style="font-size: 28px; color: #ffffff; margin-bottom: 20px;">FodiSys</h2>
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #1f1f1f;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-    <!-- MENU LIST -->
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 18px; line-height: 2.2em;">
-      <li><a href="#home" style="color: #ffffff; text-decoration: none;">Home</a></li>
-      <li><a href="#about" style="color: #ffffff; text-decoration: none;">About</a></li>
-      <li><a href="#services" style="color: #ffffff; text-decoration: none;">Services</a></li>
-      <li><a href="#portfolio" style="color: #ffffff; text-decoration: none;">Portfolio</a></li>
-      <li><a href="#contact" style="color: #ffffff; text-decoration: none;">Contact</a></li>
-    </ul>
+    .sidebar h2 {
+      color: #f39c12;
+      font-size: 28px;
+    }
 
+    .sidebar a {
+      color: #eee;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 6px 0;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      color: #f39c12;
+    }
+
+    /* Main content */
+    .main {
+      flex-grow: 1;
+      padding: 40px;
+      background-color: #181818;
+      overflow-x: hidden;
+    }
+
+    .main img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .main h1 {
+      font-size: 38px;
+      margin-bottom: 20px;
+      color: #f1c40f;
+    }
+
+    .main h2 {
+      font-size: 28px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
+
+    .main p, .main ul {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .main ul li {
+      margin-left: 20px;
+      list-style-type: square;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 15px;
+      }
+      .sidebar h2 {
+        font-size: 20px;
+      }
+      .sidebar a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>FodiSys</h2>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <div style="flex-grow: 1; padding: 40px; background-color: #fbfbfb; color: #222;">
+  <div class="main">
+    <img src="https://i.postimg.cc/MTy3wRVR/Whats-App-Image-2026-03-27-at-18-16-44.jpg" alt="Hero Image">
 
-    <!-- HEADER IMAGE -->
-    <img src="https://i.postimg.cc/MTy3wRVR/Whats-App-Image-2026-03-27-at-18-16-44.jpg" 
-         alt="Hero Image" 
-         style="width: 100%; max-width: 900px; border-radius: 8px; margin-bottom: 40px;">
+    <h1 id="home">Welcome to FodiSys System</h1>
+    <p>We build professional systems and software solutions exactly like the design you see above.</p>
 
-    <!-- SECTIONS -->
-    <h1 id="home" style="font-size: 38px; color: #111;">Welcome to FodiSys System</h1>
-    <p style="font-size: 18px; margin-bottom: 25px;">
-      We build professional systems and software solutions exactly like the design you see above.
-    </p>
+    <h2 id="about">About Us</h2>
+    <p>FodiSys Systems specializes in professional web systems, development, automation, and IT solutions. Our designs are modern, creative, and fully responsive.</p>
 
-    <h2 id="about" style="font-size: 30px; margin-top: 40px; color: #111;">About Us</h2>
-    <p style="font-size: 17px;">
-      FodiSys Systems specializes in professional web systems, development, automation and IT solutions. Our designs are modern, creative, and fully responsive.
-    </p>
-
-    <h2 id="services" style="font-size: 30px; margin-top: 40px; color: #111;">Services</h2>
-    <ul style="font-size: 17px; margin-left: 20px;">
+    <h2 id="services">Services</h2>
+    <ul>
       <li>Web Development</li>
       <li>Graphic Design</li>
       <li>Branding</li>
       <li>Systems Architecture</li>
     </ul>
 
-    <h2 id="portfolio" style="font-size: 30px; margin-top: 40px; color: #111;">Portfolio</h2>
-    <p style="font-size: 17px;">
-      Check out our latest works – professional system designs, UI/UX, and real world IT solutions.
-    </p>
+    <h2 id="portfolio">Portfolio</h2>
+    <p>Check out our latest works – professional system designs, UI/UX, and real world IT solutions.</p>
 
-    <h2 id="contact" style="font-size: 30px; margin-top: 40px; color: #111;">Contact</h2>
-    <p style="font-size: 17px;">
-      Email: <strong>contact@fodisysystems.com</strong><br>
-      WhatsApp: <strong>+254 7XX XXX XXX</strong>
+    <h2 id="contact">Contact</h2>
+    <p>Email: <strong>contact@fodisysystems.com</strong><br>
+       WhatsApp: <strong>+254 7XX XXX XXX</strong>
     </p>
-
   </div>
 
-</div>
+</body>
+</html>
