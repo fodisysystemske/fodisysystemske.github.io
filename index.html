@@ -9,13 +9,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0a0020;
     color: #d6ffd6;
     overflow-x: hidden;
     position: relative;
 }
 
-/* CANVAS */
+/* CANVAS FULLSCREEN */
 #bgCanvas {
     position: fixed;
     top: 0;
@@ -64,7 +63,7 @@ body {
 
 /* CONTENT */
 .content {
-    margin-left: 260px; /* sidebar space */
+    margin-left: 260px;
     padding: 20px 25px;
     max-width: calc(100% - 260px);
     position: relative;
@@ -137,48 +136,29 @@ body {
         width: 160px;
         padding: 20px 10px;
     }
-    .sidebar h2 {
-        font-size: 18px;
-    }
+    .sidebar h2 { font-size: 18px; }
     .menu a {
-        font-size: 10px; /* reduced menu font */
+        font-size: 10px;
         padding: 8px 10px;
         margin: 6px 0;
     }
     .content {
-        margin-left: 160px; /* sidebar space */
+        margin-left: 160px;
         padding: 10px;
         max-width: calc(100% - 160px);
-        width: 130%; /* make content 1.3x wider than default mobile */
+        width: 130%;
     }
-    .hero {
-        padding: 25px 15px;
-    }
-    .hero h1 {
-        font-size: 24px;
-    }
-    .hero p {
-        font-size: 10px; /* reduced font for mobile */
-        line-height: 1.5;
-    }
-    .box {
-        padding: 20px 15px;
-    }
-    .box h3 {
-        font-size: 20px;
-    }
-    .box p {
-        font-size: 10px; /* reduced font for mobile */
-        line-height: 1.4;
-    }
-    .read-more-btn {
-        padding: 10px 16px;
-        font-size: 12px;
-    }
+    .hero { padding: 25px 15px; }
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 10px; line-height: 1.5; }
+    .box { padding: 20px 15px; }
+    .box h3 { font-size: 20px; }
+    .box p { font-size: 10px; line-height: 1.4; }
+    .read-more-btn { padding: 10px 16px; font-size: 12px; }
 }
 </style>
 
-<!-- CANVAS FOR PARTICLES -->
+<!-- CANVAS FOR ANIMATION -->
 <canvas id="bgCanvas"></canvas>
 
 <!-- SIDEBAR -->
@@ -201,6 +181,7 @@ body {
 
 <!-- CONTENT -->
 <div class="content">
+
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
         <p>
@@ -220,6 +201,7 @@ body {
         <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
 
+    <!-- FEATURE BOXES -->
     <div class="box">
         <h3>💠 Core Services</h3>
         <p>
@@ -252,10 +234,11 @@ body {
             Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand speed, reliability, and global scalability.
         </p>
     </div>
+
 </div>
 
 <script>
-// READ MORE BUTTON
+/* READ MORE BUTTON */
 function toggleReadMore() {
     const more = document.getElementById("moreContent");
     const btn = document.querySelector(".read-more-btn");
@@ -267,89 +250,61 @@ function toggleReadMore() {
     }
 }
 
-// PARTICLE BACKGROUND
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
+/* PARTICLE ANIMATION */
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-let width = canvas.width = window.innerWidth;
-let height = canvas.height = window.innerHeight;
-let particlesArray = [];
-const maxDistance = 120;
-const particleCount = Math.floor((width + height) / 20);
+const particles = [];
+const numParticles = 80;
 
-// Track mouse / touch
-const mouse = { x: null, y: null, radius: 100 };
-window.addEventListener("mousemove", function(e){ mouse.x = e.x; mouse.y = e.y; });
-window.addEventListener("touchmove", function(e){ 
-    mouse.x = e.touches[0].clientX; 
-    mouse.y = e.touches[0].clientY; 
-});
-
-// Particle class
-class Particle {
-    constructor(){
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = (Math.random() - 0.5) * 1.5;
-        this.speedY = (Math.random() - 0.5) * 1.5;
-    }
-    update(){
-        if(this.x > width || this.x < 0) this.speedX *= -1;
-        if(this.y > height || this.y < 0) this.speedY *= -1;
-        this.x += this.speedX;
-        this.y += this.speedY;
-    }
-    draw(){
-        ctx.fillStyle = "#7dff7d";
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-        ctx.closePath();
-        ctx.fill();
-    }
+for(let i=0;i<numParticles;i++){
+    particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*1.2,
+        vy: (Math.random()-0.5)*1.2,
+        size: Math.random()*3+1
+    });
 }
 
-function init(){
-    particlesArray = [];
-    for(let i=0; i<particleCount; i++){
-        particlesArray.push(new Particle());
-    }
-}
-
-function connect(){
-    for(let a=0; a<particlesArray.length; a++){
-        for(let b=a; b<particlesArray.length; b++){
-            let dx = particlesArray[a].x - particlesArray[b].x;
-            let dy = particlesArray[a].y - particlesArray[b].y;
-            let distance = Math.sqrt(dx*dx + dy*dy);
-            if(distance < maxDistance){
-                ctx.strokeStyle = rgba(125,255,125,${1 - distance/maxDistance});
-                ctx.lineWidth = 1;
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    // draw lines
+    for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx*dx+dy*dy);
+            if(dist<120){
                 ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.strokeStyle = 'rgba(125,255,125,'+(1-dist/120)+')';
+                ctx.moveTo(particles[i].x,particles[i].y);
+                ctx.lineTo(particles[j].x,particles[j].y);
                 ctx.stroke();
+                ctx.closePath();
             }
         }
     }
-}
-
-function animate(){
-    ctx.clearRect(0,0,width,height);
-    for(let i=0;i<particlesArray.length;i++){
-        particlesArray[i].update();
-        particlesArray[i].draw();
+    // draw particles
+    for(let i=0;i<particles.length;i++){
+        let p = particles[i];
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(125,255,125,0.8)';
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+        ctx.fill();
+        p.x+=p.vx;
+        p.y+=p.vy;
+        if(p.x<0||p.x>canvas.width)p.vx*=-1;
+        if(p.y<0||p.y>canvas.height)p.vy*=-1;
     }
-    connect();
-    requestAnimationFrame(animate);
+    requestAnimationFrame(draw);
 }
+draw();
 
-window.addEventListener("resize", function(){
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    init();
+window.addEventListener('resize',()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
-
-init();
-animate();
 </script>
