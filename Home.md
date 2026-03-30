@@ -53,7 +53,7 @@ body {
 
 /* CONTENT */
 .content {
-    margin-left: 260px; /* space for sidebar */
+    margin-left: 260px; /* sidebar space */
     padding: 20px 25px;
     max-width: calc(100% - 260px);
 }
@@ -121,21 +121,22 @@ body {
 /* RESPONSIVE MOBILE */
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 160px; /* narrower sidebar */
+        width: 160px;
         padding: 20px 10px;
     }
     .sidebar h2 {
         font-size: 18px;
     }
     .menu a {
-        font-size: 10px; /* menu font smaller */
+        font-size: 10px; /* reduced menu font */
         padding: 8px 10px;
         margin: 6px 0;
     }
     .content {
         margin-left: 160px; /* sidebar space */
-        padding: 15px 10px;
-        max-width: calc(100% - 160px); /* wider content area */
+        padding: 10px;
+        max-width: calc(100% - 160px);
+        width: 130%; /* make content 1.3x wider than default mobile */
     }
     .hero {
         padding: 25px 15px;
@@ -144,7 +145,7 @@ body {
         font-size: 24px;
     }
     .hero p {
-        font-size: 14px;
+        font-size: 10px; /* reduced font for mobile */
         line-height: 1.5;
     }
     .box {
@@ -154,12 +155,12 @@ body {
         font-size: 20px;
     }
     .box p {
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: 10px; /* reduced font for mobile */
+        line-height: 1.4;
     }
     .read-more-btn {
         padding: 10px 16px;
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 </style>
