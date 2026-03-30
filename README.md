@@ -45,8 +45,8 @@
     }
 
     .content {
-        margin-left: 280px; 
-        padding: 40px;
+        margin-left: 240px; 
+        padding: 10px;
         max-width: 1050px; /* WIDER CONTENT */
     }
 
@@ -108,9 +108,7 @@
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
         <p>
-            Fodisy Systems is a modern digital solutions ecosystem engineered for automation, intelligence, and seamless
-            integration. Built with precision, Fodisy powers small businesses, enterprises, and developers with tools
-            that streamline workflows, enhance data visibility, and support large-scale digital operations.
+            FODISY SYSTEMS stands as the sanctuary for founders, businesses, governments, and everyday innovators who are tired of unreliable systems, unpredictable deployments, and software that collapses when it matters most; it is the home of a rare, multi-stack programmer whose mastery turns modern digital chaos into clarity, order, and dependable excellence. In a world where apps fail silently, APIs break without warning, databases choke under pressure, authentication loops crash in peak hours, mobile responsiveness ruins user trust, and deployment pipelines fall apart just when a company is about to scale, FODISY steps in with precision, discipline, and an unmatched ability to diagnose and solve problems that frustrate even senior engineering teams. This is not a company built on hype—it is built on outcomes: systems that withstand real-world pressure, architectures designed to scale from ten users to global traffic, deployments that remain stable regardless of updates, and debugging that goes deeper than simply “fixing errors,” instead eliminating root causes and fortifying the entire ecosystem. Anyone who wants a system built correctly the first time—or a broken one rebuilt with intention—comes to FODISY because it blends modern engineering, DevOps discipline, database intelligence, and UX foresight into a single craft, all driven by one talented pro-programmer who writes code like an architect shapes cities: intentionally, sustainably, and with deep respect for the end user. FODISY is where businesses find reliability, where dreamers find structure, and where ambitious ideas finally become software that can survive the world—and win.
         </p>
     </div>
 
