@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems." />
-<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management" />
+<!-- SEO Meta Tags -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems.">
+<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management">
 <title>FODISY SYSTEMS • Home Dashboard</title>
+
+<!-- STYLES -->
 <style>
 body {
     margin: 0;
@@ -14,8 +14,6 @@ body {
     background-size: cover;
     color: #d6ffd6;
 }
-
-/* Sidebar styles */
 .sidebar {
     width: 220px;
     min-height: 100vh;
@@ -51,15 +49,11 @@ body {
     background: rgba(120, 0, 200, 0.8);
     transform: translateX(5px);
 }
-
-/* Main content styles */
 .content {
-    margin-left: 270px; /* width of sidebar + some space */
+    margin-left: 270px;
     padding: 20px 25px;
     max-width: 1050px;
 }
-
-/* HERO SECTION */
 .hero {
     background: rgba(15, 0, 30, 0.9);
     padding: 40px;
@@ -78,8 +72,6 @@ body {
     line-height: 1.7;
     text-align: justify;
 }
-
-/* Read More Button & Content */
 #moreContent {
     display: none;
     overflow: hidden;
@@ -100,8 +92,6 @@ body {
 .read-more-btn:hover {
     background: #aaffaa;
 }
-
-/* FEATURE BOXES */
 .box {
     background: rgba(25, 0, 45, 0.88);
     padding: 28px;
@@ -119,65 +109,9 @@ body {
     line-height: 1.7;
     text-align: justify;
 }
-
-/* Responsive styles for small screens */
-@media screen and (max-width: 768px) {
-    /* Sidebar collapses on top */
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 15px 10px;
-        box-shadow: none;
-    }
-    /* Sidebar header font size */
-    .sidebar h2 {
-        font-size: 11px;
-    }
-    /* Menu links stack */
-    .menu a {
-        font-size: 16px;
-        padding: 10px;
-        margin: 8px 0;
-    }
-    /* Content full width, no left margin */
-    .content {
-        margin-left: 0;
-        padding: 15px 10px;
-        max-width: 100%;
-    }
-    /* HERO section adjustments */
-    .hero {
-        width: 100%;
-        padding: 20px;
-    }
-    .hero h1 {
-        font-size: 28px;
-    }
-    .hero p {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-    /* Feature boxes adjustments */
-    .box {
-        width: 100%;
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-    }
-    .box h3 {
-        font-size: 20px;
-    }
-    .box p {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-}
 </style>
-</head>
-<body>
 
-<!-- SIDEBAR -->
+<!-- CONTENT -->
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
@@ -195,65 +129,45 @@ body {
     </div>
 </div>
 
-<!-- CONTENT -->
 <div class="content">
-
-<!-- HERO SECTION -->
-<div class="hero">
-    <h1>Welcome to FODISY SYSTEMS</h1>
-    <p>
-        FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From *high-scale deployments, **secure API integrations, to **cloud architecture* and *enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments. Whether your system struggles under **peak traffic, fails silently under **integration stress, or suffers **security vulnerabilities, we transform chaos into **predictable, reliable, and scalable outcomes*.
-    </p>
-    <p>
-        Our approach combines *multi-stack programming expertise, **modern DevOps practices, and **real-world troubleshooting experience* to deliver systems that not only perform but excel. Every pipeline, every integration, and every cloud deployment is crafted for *resilience, speed, and user satisfaction*. Businesses from the United States, Europe, and other high-value markets trust FODISY to solve problems that often take senior engineering teams weeks to resolve.
-    </p>
-    <div id="moreContent">
+    <div class="hero">
+        <h1>Welcome to FODISY SYSTEMS</h1>
         <p>
-            Beyond core development, FODISY specializes in *large-scale user management, **advanced security compliance, **enterprise shipping and logistics systems, and **performance optimization under high load. We focus on diagnosing subtle issues, fixing root causes, and architecting systems ready to scale globally. Every solution is **practical, documented, and designed to maximize uptime*, ensuring your business maintains credibility and efficiency.
+            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments.
         </p>
         <p>
-            For readers seeking full detailed walkthroughs, *support this work to access complete guides*. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments — available for purchase on Payhip and other platforms.
+            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience to deliver systems that not only perform but excel. Every pipeline, integration, and cloud deployment is crafted for resilience, speed, and user satisfaction.
         </p>
+        <div id="moreContent">
+            <p>
+                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load. Every solution is practical, documented, and designed to maximize uptime.
+            </p>
+            <p>
+                For readers seeking full detailed walkthroughs, support this work to access complete guides. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments.
+            </p>
+        </div>
+        <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
-</div>
 
-<!-- BUTTON FOR READ MORE -->
-<button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+    <div class="box">
+        <h3>💠 Core Services</h3>
+        <p>Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems.</p>
+    </div>
 
-<!-- FEATURE BOXES -->
-<div class="box">
-    <h3>💠 Core Services</h3>
-    <p>
-        Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems. Each service is designed to solve *high-complexity problems* that require deep experience and modern engineering practices.
-    </p>
-</div>
+    <div class="box">
+        <h3>⚙ Key Modules & Tools</h3>
+        <p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes Orchestration<br>✔ API Gateway & Integration Layer<br>✔ Secure Authentication & RBAC<br>✔ Real-time Data Streaming<br>✔ Audit & Compliance Tracking</p>
+    </div>
 
-<div class="box">
-    <h3>⚙ Key Modules & Tools</h3>
-    <p>
-        ✔ CI/CD Pipelines<br>
-        ✔ Docker & Kubernetes Orchestration<br>
-        ✔ API Gateway & Integration Layer<br>
-        ✔ Secure Authentication & RBAC<br>
-        ✔ Real-time Data Streaming<br>
-        ✔ Audit & Compliance Tracking
-    </p>
-</div>
+    <div class="box">
+        <h3>🔒 Security & Reliability</h3>
+        <p>Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards.</p>
+    </div>
 
-<div class="box">
-    <h3>🔒 Security & Reliability</h3>
-    <p>
-        Systems are protected with *encrypted endpoints, audit-first logging, strict role-based access, and **modern hashing standards. Infrastructure is optimized for **minimal latency, **high concurrency, and **GitHub-based deployment workflows*.
-    </p>
-</div>
-
-<div class="box">
-    <h3>📞 Consultation & Support</h3>
-    <p>
-        Engage FODISY for *direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand **speed, reliability, and global scalability*.
-    </p>
-</div>
-
+    <div class="box">
+        <h3>📞 Consultation & Support</h3>
+        <p>Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients.</p>
+    </div>
 </div>
 
 <script>
@@ -264,10 +178,7 @@ function toggleReadMore() {
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
-        window.location.href = "https://payhip.com/YOUR-LINK-HERE"; // replace with your link
+        window.location.href = "https://payhip.com/YOUR-LINK-HERE";
     }
 }
 </script>
-
-</body>
-</html>
