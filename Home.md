@@ -17,7 +17,7 @@
 
         .sidebar {
             width: 220px;
-            height: 200vh;
+            height: 400vh;
             background: rgba(40, 0, 70, 0.92);
             position: fixed;
             left: 0;
@@ -30,7 +30,7 @@
             color: #9b59ff;
             text-align: center;
             margin-bottom: 40px;
-            font-size: 24px;
+            font-size: 16px;
             letter-spacing: 1px;
         }
 
@@ -40,7 +40,7 @@
             padding: 12px;
             color: #d6ffd6;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 12px;
             background: rgba(70, 0, 120, 0.6);
             border-left: 4px solid #7dff7d;
             transition: 0.3s;
@@ -74,7 +74,7 @@
         }
 
         .hero p {
-            font-size: 19px;
+            font-size: 12px;
             line-height: 1.7;
             text-align: justify;
         }
@@ -118,7 +118,7 @@
         }
 
         .box p {
-            font-size: 17px;
+            font-size: 12px;
             line-height: 1.7;
             text-align: justify;
         }
