@@ -1,0 +1,184 @@
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('https://wallpapers.com/images/hd/blue-connections-linkedin-cover-717dweuzdc11zpwu.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #d6ffd6;
+    }
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        background: rgba(40, 0, 70, 0.92);
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 25px 20px;
+        box-shadow: 3px 0 12px rgba(0,0,0,0.6);
+    }
+    .sidebar h2 {
+        color: #9b59ff;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    .menu a {
+        display: block;
+        margin: 12px 0;
+        padding: 12px;
+        color: #d6ffd6;
+        text-decoration: none;
+        font-size: 17px;
+        background: rgba(70, 0, 120, 0.6);
+        border-left: 4px solid #7dff7d;
+        transition: 0.3s;
+        border-radius: 4px;
+    }
+    .menu a:hover {
+        background: rgba(120, 0, 200, 0.8);
+        transform: translateX(5px);
+    }
+    .content {
+        margin-left: 240px; 
+        padding: 20px 25px;
+        max-width: 1050px;
+    }
+    .hero {
+        background: rgba(15, 0, 30, 0.9);
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 0 30px rgba(120, 0, 255, 0.6);
+    }
+    .hero h1 {
+        color: #7dff7d;
+        font-size: 42px;
+        margin: 0 0 20px;
+        text-shadow: 0 0 10px #00ff88;
+    }
+    .hero p {
+        font-size: 19px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+    #moreContent {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        margin-top: 15px;
+    }
+    .read-more-btn {
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: #7dff7d;
+        color: #0a0020;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .read-more-btn:hover {
+        background: #aaffaa;
+    }
+    .box {
+        background: rgba(25, 0, 45, 0.88);
+        padding: 28px;
+        border-radius: 14px;
+        margin-bottom: 25px;
+        box-shadow: 0 0 18px rgba(100, 0, 200, 0.5);
+    }
+    .box h3 {
+        color: #9b59ff;
+        margin-top: 0;
+        font-size: 24px;
+    }
+    .box p {
+        font-size: 17px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+</style>
+
+<div class="sidebar">
+    <h2>FODISY SYSTEMS</h2>
+    <div class="menu">
+        <a href="index.html">Dashboard</a>
+        <a href="deployment.html">Enterprise Deployment</a>
+        <a href="api.html">API Integration</a>
+        <a href="security.html">Security & Compliance</a>
+        <a href="performance.html">Performance & Scalability</a>
+        <a href="cloud.html">Cloud & Infrastructure</a>
+        <a href="shipping.html">Shipping & Delivery Systems</a>
+        <a href="users.html">Large Scale User Management</a>
+        <a href="troubleshooting.html">Troubleshooting & Debugging</a>
+    </div>
+</div>
+
+<div class="content">
+    <div class="hero">
+        <h1>Troubleshooting & Debugging</h1>
+        <p>
+            At FODISY SYSTEMS, troubleshooting and debugging are elevated to a *systematic craft, designed to restore reliability to modern systems under any stress. Our methodology is **practical, repeatable, and safe*, built for teams managing enterprise applications, distributed infrastructures, and complex deployments.
+        </p>
+        <div id="moreContent">
+            <p>
+                Every investigation begins with *system identification: understanding the platform, stack, and components involved—back-end languages, front-end frameworks, databases, caches, message queues, and third-party services. Once mapped, we prioritize issues by **impact, frequency, and criticality*, isolating root causes rather than just symptoms.
+            </p>
+            <p>
+                Our workflow involves *live monitoring, log aggregation, event correlation, and anomaly detection. We apply **dependency mapping* to trace cascading failures, systematically reproducing errors in isolated environments before any changes touch production. By combining *sandboxed testing, version-controlled fixes, and safe rollback strategies*, we ensure minimal risk to active users while resolving deeply hidden problems.
+            </p>
+            <p>
+                For recurring or large-scale failures, FODISY designs *custom diagnostic tools* that measure system latency, resource consumption, and throughput under stress. We adopt *progressive rollouts, feature flags, and staged deployments* to confirm that fixes are effective without destabilizing the broader system. Every step is documented and reusable, creating a *knowledge base for faster resolution* on future issues.
+            </p>
+            <p>
+                Whether it’s a *multi-region downtime, API race condition, database deadlock, CI/CD pipeline failure, or authentication bottleneck, FODISY applies the same systematic approach. This ensures that our clients not only regain operational stability quickly, but also gain **long-term resilience and maintainable architecture*.
+            </p>
+        </div>
+        <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+    </div>
+
+    <div class="box">
+        <h3>💠 Systematic Root Cause Analysis</h3>
+        <p>
+            Identify and classify every issue according to stack, service dependencies, and potential impact, ensuring fixes address the *true root problem*, not just the surface.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>⚙ Safe Maintenance & Recovery</h3>
+        <p>
+            Use sandboxed reproductions, version-controlled patches, and controlled rollouts to *avoid unintended downtime*, even in multi-region, high-traffic systems.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>🔒 Monitoring & Alert Systems</h3>
+        <p>
+            Implement comprehensive logging, centralized dashboards, anomaly detection, and health metrics to proactively identify *emerging threats* and prevent failures before they impact users.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>📞 Consulting & Custom Tools</h3>
+        <p>
+            For high-value clients, FODISY provides custom troubleshooting workflows, diagnostic scripts, and preventive maintenance strategies to *safeguard enterprise operations at scale*.
+        </p>
+    </div>
+</div>
+
+<script>
+    function toggleReadMore() {
+        const more = document.getElementById("moreContent");
+        const btn = document.querySelector(".read-more-btn");
+
+        if (more.style.display === "block") {
+            more.style.display = "none";
+            btn.textContent = "Read More";
+        } else {
+            more.style.display = "block";
+            btn.textContent = "Support This Work";
+        }
+    }
+</script>
