@@ -30,7 +30,7 @@
             color: #9b59ff;
             text-align: center;
             margin-bottom: 40px;
-            font-size: 16px;
+            font-size: 11px;
             letter-spacing: 1px;
         }
 
@@ -40,7 +40,7 @@
             padding: 12px;
             color: #d6ffd6;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 10px;
             background: rgba(70, 0, 120, 0.6);
             border-left: 4px solid #7dff7d;
             transition: 0.3s;
@@ -53,7 +53,7 @@
         }
 
         .content {
-            margin-left: 240px; 
+            margin-left: 270px; 
             padding: 20px 25px;
             max-width: 1050px;
         }
@@ -68,13 +68,13 @@
 
         .hero h1 {
             color: #7dff7d;
-            font-size: 42px;
+            font-size: 25px;
             margin: 0 0 20px;
             text-shadow: 0 0 10px #00ff88;
         }
 
         .hero p {
-            font-size: 12px;
+            font-size: 10px;
             line-height: 1.7;
             text-align: justify;
         }
@@ -118,7 +118,7 @@
         }
 
         .box p {
-            font-size: 12px;
+            font-size: 10px;
             line-height: 1.7;
             text-align: justify;
         }
