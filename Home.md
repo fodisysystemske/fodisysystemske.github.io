@@ -9,19 +9,20 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0a0020; /* fallback dark background */
+    background: #0a0020;
     color: #d6ffd6;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* CANVAS BACKGROUND */
+/* CANVAS */
 #bgCanvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
 }
 
 /* SIDEBAR */
@@ -63,9 +64,11 @@ body {
 
 /* CONTENT */
 .content {
-    margin-left: 260px;
+    margin-left: 260px; /* sidebar space */
     padding: 20px 25px;
     max-width: calc(100% - 260px);
+    position: relative;
+    z-index: 5;
 }
 
 /* HERO */
@@ -134,29 +137,48 @@ body {
         width: 160px;
         padding: 20px 10px;
     }
-    .sidebar h2 { font-size: 18px; }
+    .sidebar h2 {
+        font-size: 18px;
+    }
     .menu a {
-        font-size: 10px;
+        font-size: 10px; /* reduced menu font */
         padding: 8px 10px;
         margin: 6px 0;
     }
     .content {
-        margin-left: 160px;
+        margin-left: 160px; /* sidebar space */
         padding: 10px;
         max-width: calc(100% - 160px);
-        width: 130%;
+        width: 130%; /* make content 1.3x wider than default mobile */
     }
-    .hero { padding: 25px 15px; }
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 10px; line-height: 1.5; }
-    .box { padding: 20px 15px; }
-    .box h3 { font-size: 20px; }
-    .box p { font-size: 10px; line-height: 1.4; }
-    .read-more-btn { padding: 10px 16px; font-size: 12px; }
+    .hero {
+        padding: 25px 15px;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 10px; /* reduced font for mobile */
+        line-height: 1.5;
+    }
+    .box {
+        padding: 20px 15px;
+    }
+    .box h3 {
+        font-size: 20px;
+    }
+    .box p {
+        font-size: 10px; /* reduced font for mobile */
+        line-height: 1.4;
+    }
+    .read-more-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
 }
 </style>
 
-<!-- CANVAS FOR ANIMATED BACKGROUND -->
+<!-- CANVAS FOR PARTICLES -->
 <canvas id="bgCanvas"></canvas>
 
 <!-- SIDEBAR -->
@@ -179,7 +201,155 @@ body {
 
 <!-- CONTENT -->
 <div class="content">
-
-    <!-- HERO -->
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
+        <p>
+            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments. Whether your system struggles under peak traffic, fails silently under integration stress, or suffers security vulnerabilities, we transform chaos into predictable, reliable, and scalable outcomes.
+        </p>
+        <p>
+            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience to deliver systems that not only perform but excel. Every pipeline, integration, and cloud deployment is crafted for resilience, speed, and user satisfaction. Businesses from the United States, Europe, and other high-value markets trust FODISY to solve problems that often take senior engineering teams weeks to resolve.
+        </p>
+        <div id="moreContent">
+            <p>
+                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load. We focus on diagnosing subtle issues, fixing root causes, and architecting systems ready to scale globally. Every solution is practical, documented, and designed to maximize uptime, ensuring your business maintains credibility and efficiency.
+            </p>
+            <p>
+                For readers seeking full detailed walkthroughs, support this work to access complete guides. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments — available for purchase on Payhip and other platforms.
+            </p>
+        </div>
+        <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+    </div>
+
+    <div class="box">
+        <h3>💠 Core Services</h3>
+        <p>
+            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems. Each service is designed to solve high-complexity problems that require deep experience and modern engineering practices.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>⚙ Key Modules & Tools</h3>
+        <p>
+            ✔ CI/CD Pipelines<br>
+            ✔ Docker & Kubernetes Orchestration<br>
+            ✔ API Gateway & Integration Layer<br>
+            ✔ Secure Authentication & RBAC<br>
+            ✔ Real-time Data Streaming<br>
+            ✔ Audit & Compliance Tracking
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>🔒 Security & Reliability</h3>
+        <p>
+            Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards. Infrastructure is optimized for minimal latency, high concurrency, and GitHub-based deployment workflows.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>📞 Consultation & Support</h3>
+        <p>
+            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand speed, reliability, and global scalability.
+        </p>
+    </div>
+</div>
+
+<script>
+// READ MORE BUTTON
+function toggleReadMore() {
+    const more = document.getElementById("moreContent");
+    const btn = document.querySelector(".read-more-btn");
+    if (more.style.display === "none" || !more.style.display) {
+        more.style.display = "block";
+        btn.textContent = "Support This Work";
+    } else {
+        window.location.href = "https://payhip.com/YOUR-LINK-HERE";
+    }
+}
+
+// PARTICLE BACKGROUND
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+let particlesArray = [];
+const maxDistance = 120;
+const particleCount = Math.floor((width + height) / 20);
+
+// Track mouse / touch
+const mouse = { x: null, y: null, radius: 100 };
+window.addEventListener("mousemove", function(e){ mouse.x = e.x; mouse.y = e.y; });
+window.addEventListener("touchmove", function(e){ 
+    mouse.x = e.touches[0].clientX; 
+    mouse.y = e.touches[0].clientY; 
+});
+
+// Particle class
+class Particle {
+    constructor(){
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 1.5;
+        this.speedY = (Math.random() - 0.5) * 1.5;
+    }
+    update(){
+        if(this.x > width || this.x < 0) this.speedX *= -1;
+        if(this.y > height || this.y < 0) this.speedY *= -1;
+        this.x += this.speedX;
+        this.y += this.speedY;
+    }
+    draw(){
+        ctx.fillStyle = "#7dff7d";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+        ctx.closePath();
+        ctx.fill();
+    }
+}
+
+function init(){
+    particlesArray = [];
+    for(let i=0; i<particleCount; i++){
+        particlesArray.push(new Particle());
+    }
+}
+
+function connect(){
+    for(let a=0; a<particlesArray.length; a++){
+        for(let b=a; b<particlesArray.length; b++){
+            let dx = particlesArray[a].x - particlesArray[b].x;
+            let dy = particlesArray[a].y - particlesArray[b].y;
+            let distance = Math.sqrt(dx*dx + dy*dy);
+            if(distance < maxDistance){
+                ctx.strokeStyle = rgba(125,255,125,${1 - distance/maxDistance});
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,width,height);
+    for(let i=0;i<particlesArray.length;i++){
+        particlesArray[i].update();
+        particlesArray[i].draw();
+    }
+    connect();
+    requestAnimationFrame(animate);
+}
+
+window.addEventListener("resize", function(){
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+    init();
+});
+
+init();
+animate();
+</script>
