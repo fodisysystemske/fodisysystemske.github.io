@@ -16,8 +16,8 @@
         }
 
         .sidebar {
-            width: 260px;
-            height: 100vh;
+            width: 220px;
+            height: 200vh;
             background: rgba(40, 0, 70, 0.92);
             position: fixed;
             left: 0;
@@ -141,7 +141,7 @@
             <a href="shipping-delivery.html">Shipping & Delivery Systems</a>
             <a href="user-management.html">Large-Scale User Management</a>
             <a href="documentation.html">Documentation & Walkthroughs</a>
-            <a href="consultation.html">Consultation / Hire Me</a>
+            <a href="connect-with-me.html">Connect with Me</a>
         </div>
     </div>
 
