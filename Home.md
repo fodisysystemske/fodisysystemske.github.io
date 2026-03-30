@@ -5,8 +5,8 @@
 <meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management">
 <title>FODISY SYSTEMS • Home Dashboard</title>
 
-<!-- STYLES -->
 <style>
+/* GENERAL */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,14 +14,16 @@ body {
     background-size: cover;
     color: #d6ffd6;
 }
+
+/* SIDEBAR */
 .sidebar {
-    width: 220px;
+    width: 240px;
     min-height: 100vh;
     background: rgba(40, 0, 70, 0.92);
     position: fixed;
     left: 0;
     top: 0;
-    padding: 25px 20px;
+    padding: 20px;
     box-shadow: 3px 0 12px rgba(0,0,0,0.6);
     overflow-y: auto;
     z-index: 10;
@@ -29,17 +31,17 @@ body {
 .sidebar h2 {
     color: #9b59ff;
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 11px;
+    margin-bottom: 30px;
+    font-size: 20px;
     letter-spacing: 1px;
 }
 .menu a {
     display: block;
-    margin: 12px 0;
-    padding: 12px;
+    margin: 10px 0;
+    padding: 10px;
     color: #d6ffd6;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 16px;
     background: rgba(70, 0, 120, 0.6);
     border-left: 4px solid #7dff7d;
     transition: 0.3s;
@@ -49,69 +51,117 @@ body {
     background: rgba(120, 0, 200, 0.8);
     transform: translateX(5px);
 }
+
+/* CONTENT */
 .content {
-    margin-left: 270px;
-    padding: 20px 25px;
-    max-width: 1050px;
+    margin-left: 260px;
+    padding: 20px;
+    max-width: 1000px;
 }
+
+/* HERO */
 .hero {
     background: rgba(15, 0, 30, 0.9);
-    padding: 40px;
+    padding: 30px;
     border-radius: 16px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 30px rgba(120, 0, 255, 0.6);
+    margin-bottom: 25px;
+    box-shadow: 0 0 25px rgba(120, 0, 255, 0.6);
 }
 .hero h1 {
     color: #7dff7d;
-    font-size: 25px;
-    margin: 0 0 20px;
-    text-shadow: 0 0 10px #00ff88;
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px #00ff88;
 }
 .hero p {
-    font-size: 10px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.6;
     text-align: justify;
 }
 #moreContent {
     display: none;
-    overflow: hidden;
-    transition: max-height 3.5s ease;
     margin-top: 15px;
 }
 .read-more-btn {
-    margin-top: 20px;
-    padding: 12px 20px;
+    margin-top: 15px;
+    padding: 12px 18px;
     background: #7dff7d;
     color: #0a0020;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition: 2.3s;
+    transition: 0.3s;
 }
 .read-more-btn:hover {
     background: #aaffaa;
 }
+
+/* BOXES */
 .box {
     background: rgba(25, 0, 45, 0.88);
-    padding: 28px;
+    padding: 20px;
     border-radius: 14px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     box-shadow: 0 0 18px rgba(100, 0, 200, 0.5);
 }
 .box h3 {
     color: #9b59ff;
     margin-top: 0;
-    font-size: 24px;
+    font-size: 22px;
 }
 .box p {
-    font-size: 10px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.5;
     text-align: justify;
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        padding: 10px;
+        min-height: auto;
+        box-shadow: none;
+    }
+    .sidebar h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .menu a {
+        font-size: 16px;
+        margin: 6px 0;
+        padding: 10px;
+    }
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    .hero {
+        padding: 20px;
+    }
+    .hero h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+    .hero p {
+        font-size: 15px;
+    }
+    .box {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .box h3 {
+        font-size: 20px;
+    }
+    .box p {
+        font-size: 14px;
+    }
 }
 </style>
 
-<!-- CONTENT -->
+<!-- SIDEBAR CONTENT -->
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
@@ -129,6 +179,7 @@ body {
     </div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="content">
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
@@ -174,7 +225,7 @@ body {
 function toggleReadMore() {
     const more = document.getElementById("moreContent");
     const btn = document.querySelector(".read-more-btn");
-    if (more.style.display === "none" || !more.style.display) {
+    if (!more.style.display || more.style.display === "none") {
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
