@@ -1,60 +1,39 @@
-[14:38, 3/30/2026] mwangiabel: <style>
+<style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: url('https://wallpapers.com/images/hd/blue-connections-linkedin-cover-717dweuzdc11zpwu.jpg') no-repeat center center fixed;
-        background-size: cover;
-        color: #d6ffd6;
-    }
-    .sidebar {
-        width: 260px;
-        height: 100vh;
-        background: rgba(40, 0, 70, 0.92);
-        position: fixed;
-        left: 0;
-        top: 0;
-        padding: 25px 20px;
-        box-shadow: 3px 0 12px rgba(0,0,0,0.6);
-    }
-    .sidebar h2 {
-        color: #9b59ff;
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 24px;
-        letter-spacing: 1px;
-    }
-    .menu a {
-        display: block;
-        margin: 12px 0;
-        padding: 12p…
-[14:49, 3/30/2026] mwangiabel: <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(120deg, #0a0020, #10003f);
+        background: #0d0f18;
         color: #d6ffd6;
         overflow-x: hidden;
     }
 
-    /* Subtle animated background bubbles */
-    .background-animation {
+    /* Animated bubbles in background */
+    .bubble-bg {
         position: fixed;
-        width: 100%;
-        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         z-index: -1;
-        overflow: hidden;
     }
     .bubble {
         position: absolute;
         border-radius: 50%;
-        opacity: 0.2;
-        background: radial-gradient(circle, #7dff7d 0%, #238636 70%);
-        animation: floatUp 20s linear infinite;
+        background: rgba(125, 255, 125, 0.15);
+        animation: rise 25s infinite;
     }
-    @keyframes floatUp {
-        0% { transform: translateY(100vh) scale(0.5); opacity: 0.2; }
-        50% { opacity: 0.4; }
-        100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    @keyframes rise {
+        0% {
+            transform: translateY(100vh) scale(0.4);
+            opacity: 0.2;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        100% {
+            transform: translateY(-20vh) scale(1.2);
+            opacity: 0;
+        }
     }
 
     .sidebar {
@@ -67,7 +46,6 @@
         padding: 25px 20px;
         box-shadow: 3px 0 12px rgba(0,0,0,0.6);
     }
-
     .sidebar h2 {
         color: #9b59ff;
         text-align: center;
@@ -75,7 +53,6 @@
         font-size: 24px;
         letter-spacing: 1px;
     }
-
     .menu a {
         display: block;
         margin: 12px 0;
@@ -88,7 +65,6 @@
         transition: 0.3s;
         border-radius: 4px;
     }
-
     .menu a:hover {
         background: rgba(120, 0, 200, 0.8);
         transform: translateX(5px);
@@ -96,7 +72,7 @@
 
     .content {
         margin-left: 240px;
-        padding: 40px 30px;
+        padding: 40px 25px;
         max-width: 1050px;
         text-align: center;
     }
@@ -108,11 +84,10 @@
         margin-bottom: 30px;
         box-shadow: 0 0 25px rgba(120, 0, 255, 0.5);
     }
-
     .hero h1 {
         color: #7dff7d;
         font-size: 42px;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         text-shadow: 0 0 10px #00ff88;
     }
 
@@ -120,171 +95,128 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 25px;
-        margin-top: 30px;
+        gap: 22px;
+        margin-top: 28px;
     }
-
     .icon-link {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-decoration: none;
         color: #d6ffd6;
+        text-decoration: none;
         font-size: 14px;
-        transition: transform 0.3s, color 0.3s;
+        transition: 0.3s;
     }
-
     .icon-link:hover {
-        transform: scale(1.2);
+        transform: scale(1.15);
         color: #7dff7d;
     }
-
     .icon-link img {
         width: 60px;
         height: 60px;
-        border-radius: 50%;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(125, 255, 125, 0.5);
         margin-bottom: 8px;
-        box-shadow: 0 0 10px rgba(125,255,125,0.5);
     }
-
-    .live-label {
+    .live-badge {
         background: #238636;
-        color: white;
+        color: #fff;
         font-size: 11px;
         padding: 2px 6px;
-        border-radius: 3px;
-        margin-top: 3px;
+        border-radius: 4px;
+        margin-top: 4px;
     }
 </style>
 
-<div class="background-animation">
-    <!-- Generate 30 bubbles with JS for floating effect -->
-</div>
+<div class="bubble-bg"></div>
 
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
         <a href="index.html">Dashboard</a>
-        <a href="deployment.html">Enterprise Deployment</a>
-        <a href="api.html">API Integration</a>
-        <a href="security.html">Security & Compliance</a>
-        <a href="performance.html">Performance & Scalability</a>
-        <a href="cloud.html">Cloud & Infrastructure</a>
-        <a href="shipping.html">Shipping & Delivery Systems</a>
-        <a href="users.html">Large Scale User Management</a>
+        <a href="enterprise-deployment.html">Enterprise Deployment</a>
+        <a href="api-integration.html">API Integration & Automation</a>
+        <a href="security-compliance.html">Security & Compliance</a>
+        <a href="performance-scalability.html">Performance & Scalability</a>
+        <a href="cloud-infrastructure.html">Cloud & Infrastructure</a>
+        <a href="shipping-delivery.html">Shipping & Delivery Systems</a>
+        <a href="user-management.html">Large-Scale User Management</a>
         <a href="troubleshooting.html">Troubleshooting & Debugging</a>
-        <a href="reachme.html">Reach Me</a>
+        <a href="connect-with-me.html">Connect With Me</a>
     </div>
 </div>
 
 <div class="content">
     <div class="hero">
-        <h1>Reach Me</h1>
-        <p>Connect instantly or follow FODISY SYSTEMS across platforms. Five channels allow real-time contact for urgent queries.</p>
+        <h1>Connect With Me</h1>
+        <p>Choose a channel to reach out for help, collaboration, or real-time support.</p>
     </div>
 
     <div class="icons">
-        <!-- Instant contact -->
+
+        <!-- Live Contact -->
         <a href="https://wa.me/your-number" class="icon-link" target="_blank">
             <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
             WhatsApp
-            <div class="live-label">Live</div>
+            <div class="live-badge">Live</div>
         </a>
 
         <a href="https://discord.gg/your-link" class="icon-link" target="_blank">
             <img src="https://img.icons8.com/color/96/000000/discord-logo.png" alt="Discord">
             Discord
-            <div class="live-label">Live</div>
+            <div class="live-badge">Live</div>
         </a>
 
         <a href="https://m.me/your-link" class="icon-link" target="_blank">
             <img src="https://img.icons8.com/color/96/000000/facebook-messenger.png" alt="Messenger">
             Messenger
-            <div class="live-label">Live</div>
+            <div class="live-badge">Live</div>
         </a>
 
         <a href="https://t.me/your-link" class="icon-link" target="_blank">
             <img src="https://img.icons8.com/color/96/000000/telegram-app.png" alt="Telegram">
             Telegram
-            <div class="live-label">Live</div>
+            <div class="live-badge">Live</div>
         </a>
 
-        <a href="mailto:your-email@example.com" class="icon-link" target="_blank">
+        <a href="mailto:your-email@example.com" class="icon-link">
             <img src="https://img.icons8.com/color/96/000000/email.png" alt="Email">
             Email
-            <div class="live-label">Live</div>
+            <div class="live-badge">Live</div>
         </a>
 
-        <!-- Other social / platforms -->
+        <!-- Other Social -->
         <a href="https://linkedin.com/in/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/linkedin.png" alt="LinkedIn">
-            LinkedIn
+            <img src="https://img.icons8.com/color/96/000000/linkedin.png" alt="LinkedIn">LinkedIn
         </a>
-
-        <a href="https://www.youtube.com/c/your-channel" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/youtube-play.png" alt="YouTube">
-            YouTube
-        </a>
-
-        <a href="https://www.patreon.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/patreon.png" alt="Patreon">
-            Patreon
-        </a>
-
-        <a href="https://twitter.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/twitter.png" alt="Twitter">
-            Twitter
-        </a>
-
-        <a href="https://instagram.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram">
-            Instagram
-        </a>
-
         <a href="https://github.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/github.png" alt="GitHub">
-            GitHub
+            <img src="https://img.icons8.com/color/96/000000/github.png" alt="GitHub">GitHub
+        </a>
+        <a href="https://twitter.com/your-link" class="icon-link" target="_blank">
+            <img src="https://img.icons8.com/color/96/000000/twitter.png" alt="Twitter">Twitter
+        </a>
+        <a href="https://www.youtube.com/c/your-channel" class="icon-link" target="_blank">
+            <img src="https://img.icons8.com/color/96/000000/youtube-play.png" alt="YouTube">YouTube
+        </a>
+        <a href="https://www.patreon.com/your-link" class="icon-link" target="_blank">
+            <img src="https://img.icons8.com/color/96/000000/patreon.png" alt="Patreon">Patreon
         </a>
 
-        <a href="https://medium.com/@your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/medium-monogram.png" alt="Medium">
-            Medium
-        </a>
-
-        <a href="https://stackoverflow.com/users/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/stackoverflow.png" alt="StackOverflow">
-            StackOverflow
-        </a>
-
-        <a href="https://twitch.tv/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/twitch.png" alt="Twitch">
-            Twitch
-        </a>
-
-        <a href="https://reddit.com/user/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/reddit.png" alt="Reddit">
-            Reddit
-        </a>
-
-        <a href="https://dev.to/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/dev.png" alt="Dev.to">
-            Dev.to
-        </a>
-
+        <!-- Add more as needed -->
     </div>
 </div>
 
 <script>
-    // Generate animated bubbles
-    const bg = document.querySelector('.background-animation');
-    for(let i=0;i<30;i++){
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-        bubble.style.width = ${Math.random()*40+20}px;
-        bubble.style.height = bubble.style.width;
-        bubble.style.left = ${Math.random()*100}vw;
-        bubble.style.animationDuration = ${10+Math.random()*15}s;
-        bubble.style.animationDelay = ${Math.random()*10}s;
-        bg.appendChild(bubble);
+    // Create floating bubbles
+    const bg = document.querySelector('.bubble-bg');
+    for (let i = 0; i < 20; i++) {
+        const b = document.createElement('div');
+        b.className = 'bubble';
+        b.style.width = ${20 + Math.random()*60}px;
+        b.style.height = b.style.width;
+        b.style.left = ${Math.random()*100}vw;
+        b.style.animationDuration = ${15 + Math.random()*20}s;
+        b.style.animationDelay = ${-Math.random()*10}s;
+        bg.appendChild(b);
     }
 </script>
