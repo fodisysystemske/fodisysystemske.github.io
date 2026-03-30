@@ -280,29 +280,18 @@
     </div>
 
    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+        function toggleReadMore() {
+            const more = document.getElementById("moreContent");
+            const btn = document.querySelector(".read-more-btn");
 
-    readMoreButtons.forEach(btn => {
-        btn.addEventListener("click", function () {
-            const wrapper = btn.closest(".section"); // parent section
-            const content = wrapper.querySelector(".read-more-content");
-
-            // First click → expand
-            if (!btn.dataset.expanded) {
-                content.style.maxHeight = content.scrollHeight + "px";
-                btn.textContent = "Get this as a Manual PDF";
-                btn.dataset.expanded = "true";
-                return;
+            if (more.style.display === "block") {
+                more.style.display = "none";
+                btn.textContent = "Read More";
+            } else {
+                more.style.display = "block";
+                btn.textContent = "Support This Work";
             }
-
-            // Second click → redirect
-            if (btn.dataset.expanded === "true") {
-                window.open("https://payhip.com/YOUR-LINK", "_blank");
-            }
-        });
-    });
-});
-</script>
+        }
+    </script>
 </body>
 </html>
