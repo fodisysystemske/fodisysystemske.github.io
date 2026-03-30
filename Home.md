@@ -83,7 +83,7 @@
         #moreContent {
             display: none;
             overflow: hidden;
-            transition: max-height 0.5s ease;
+            transition: max-height 3.5s ease;
             margin-top: 15px;
         }
 
@@ -96,7 +96,7 @@
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
-            transition: 0.3s;
+            transition: 2.3s;
         }
 
         .read-more-btn:hover {
@@ -235,7 +235,7 @@
                 </p>
             </div>
 
-            <button class="readmore-btn" onclick="toggleReadMore()">Read More</button>
+            <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
         </div>
 
         <!-- FEATURE BOXES -->
