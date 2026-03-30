@@ -1,13 +1,17 @@
-// readmore.js
-const readMoreBtn = document.getElementById('readMoreBtn');
-const fullText = document.getElementById('fullText');
+// Extend all existing Read More buttons
+document.querySelectorAll('.readmore-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const content = btn.previousElementSibling; // assumes content <p> or <div> is just before button
 
-readMoreBtn.addEventListener('click', () => {
-    if (fullText.style.display === 'none') {
-        fullText.style.display = 'block';
-        readMoreBtn.textContent = 'Get this as a Manual PDF';
-        readMoreBtn.dataset.pdf = 'true';
-    } else if (readMoreBtn.dataset.pdf === 'true') {
-        window.open('https://payhip.com/yourmanuallink', '_blank');
-    }
+        // First click: expand content
+        if (content.style.maxHeight === '' || content.style.maxHeight === '0px') {
+            content.style.maxHeight = content.scrollHeight + 'px'; // expand
+            btn.textContent = 'Get this as a Manual PDF';
+            btn.dataset.pdf = 'true';
+        } 
+        // Second click: redirect to Payhip
+        else if (btn.dataset.pdf === 'true') {
+            window.open('https://payhip.com/yourmanuallink', '_blank');
+        }
+    });
 });
