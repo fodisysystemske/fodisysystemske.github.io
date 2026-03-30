@@ -122,6 +122,73 @@
             line-height: 1.7;
             text-align: justify;
         }
+        @media screen and (max-width: 768px) {
+    /* Sidebar collapses on top */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 10px;
+        box-shadow: none;
+    }
+
+    /* Sidebar menu links stack nicely */
+    .menu a {
+        font-size: 16px;
+        padding: 10px;
+        margin: 8px 0;
+    }
+
+    /* Content adjusts to screen width */
+    .content {
+        margin-left: 0; /* remove desktop left margin */
+        padding: 15px 10px;
+        max-width: 100%;
+    }
+
+    /* Hero section adjusts */
+    .hero {
+        width: 100%;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(120, 0, 255, 0.5);
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .hero p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Boxes adjust */
+    .box {
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+    .box h3 {
+        font-size: 20px;
+    }
+    .box p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* Banner image responsive */
+    .banner-image {
+        width: 100%;
+        height: auto;
+        margin-top: 15px;
+    }
+
+    /* Ensure icons or other images scale */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
     </style>
 </head>
 
