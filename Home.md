@@ -1,10 +1,11 @@
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems." />
-<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems.">
+<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management">
 <title>FODISY SYSTEMS • Home Dashboard</title>
 
 <style>
+/* BASE */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,20 +14,19 @@ body {
     color: #d6ffd6;
 }
 
-/* Sidebar */
+/* SIDEBAR */
 .sidebar {
     width: 240px;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(40, 0, 70, 0.92);
     position: fixed;
-    top: 0;
     left: 0;
+    top: 0;
     padding: 25px 20px;
     box-shadow: 3px 0 12px rgba(0,0,0,0.6);
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 10;
 }
-
 .sidebar h2 {
     color: #9b59ff;
     text-align: center;
@@ -34,7 +34,6 @@ body {
     font-size: 24px;
     letter-spacing: 1px;
 }
-
 .menu a {
     display: block;
     margin: 12px 0;
@@ -47,20 +46,19 @@ body {
     transition: 0.3s;
     border-radius: 4px;
 }
-
 .menu a:hover {
     background: rgba(120, 0, 200, 0.8);
     transform: translateX(5px);
 }
 
-/* Content */
+/* CONTENT */
 .content {
-    margin-left: 260px;
+    margin-left: 260px; /* space for sidebar */
     padding: 20px 25px;
-    max-width: 1050px;
+    max-width: calc(100% - 260px);
 }
 
-/* HERO Section */
+/* HERO */
 .hero {
     background: rgba(15, 0, 30, 0.9);
     padding: 40px;
@@ -68,27 +66,24 @@ body {
     margin-bottom: 30px;
     box-shadow: 0 0 30px rgba(120, 0, 255, 0.6);
 }
-
 .hero h1 {
     color: #7dff7d;
-    font-size: 36px;
+    font-size: 32px;
     margin: 0 0 20px;
     text-shadow: 0 0 10px #00ff88;
 }
-
 .hero p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
     text-align: justify;
 }
 
-/* Read More */
+/* READ MORE */
 #moreContent {
     display: none;
     overflow: hidden;
     margin-top: 15px;
 }
-
 .read-more-btn {
     margin-top: 20px;
     padding: 12px 20px;
@@ -100,12 +95,11 @@ body {
     font-weight: bold;
     transition: 0.3s;
 }
-
 .read-more-btn:hover {
     background: #aaffaa;
 }
 
-/* Boxes */
+/* FEATURE BOXES */
 .box {
     background: rgba(25, 0, 45, 0.88);
     padding: 28px;
@@ -113,40 +107,56 @@ body {
     margin-bottom: 25px;
     box-shadow: 0 0 18px rgba(100, 0, 200, 0.5);
 }
-
 .box h3 {
     color: #9b59ff;
     margin-top: 0;
     font-size: 24px;
 }
-
 .box p {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.7;
     text-align: justify;
 }
 
-/* Mobile adjustments */
+/* RESPONSIVE MOBILE */
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 200px;
+        width: 180px;
+        padding: 20px 15px;
     }
     .content {
-        margin-left: 210px;
+        margin-left: 180px;
         padding: 15px 10px;
+        max-width: calc(100% - 180px);
+    }
+    .hero {
+        padding: 25px 15px;
     }
     .hero h1 {
-        font-size: 28px;
+        font-size: 24px;
     }
-    .hero p, .box p {
-        font-size: 16px;
+    .hero p {
+        font-size: 14px;
+        line-height: 1.5;
     }
     .box {
-        padding: 18px;
+        padding: 20px 15px;
+    }
+    .box h3 {
+        font-size: 20px;
+    }
+    .box p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .read-more-btn {
+        padding: 10px 16px;
+        font-size: 14px;
     }
 }
 </style>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
@@ -164,30 +174,34 @@ body {
     </div>
 </div>
 
+<!-- CONTENT -->
 <div class="content">
+
+    <!-- HERO -->
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
         <p>
-            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments.
+            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments. Whether your system struggles under peak traffic, fails silently under integration stress, or suffers security vulnerabilities, we transform chaos into predictable, reliable, and scalable outcomes.
         </p>
         <p>
-            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience to deliver systems that not only perform but excel. Businesses from the United States, Europe, and other high-value markets trust FODISY to solve problems that often take senior engineering teams weeks to resolve.
+            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience to deliver systems that not only perform but excel. Every pipeline, integration, and cloud deployment is crafted for resilience, speed, and user satisfaction. Businesses from the United States, Europe, and other high-value markets trust FODISY to solve problems that often take senior engineering teams weeks to resolve.
         </p>
         <div id="moreContent">
             <p>
-                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load. Every solution is practical, documented, and designed to maximize uptime.
+                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load. We focus on diagnosing subtle issues, fixing root causes, and architecting systems ready to scale globally. Every solution is practical, documented, and designed to maximize uptime, ensuring your business maintains credibility and efficiency.
             </p>
             <p>
-                For readers seeking full walkthroughs, support this work to access complete guides. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments.
+                For readers seeking full detailed walkthroughs, support this work to access complete guides. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments — available for purchase on Payhip and other platforms.
             </p>
         </div>
         <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
 
+    <!-- FEATURE BOXES -->
     <div class="box">
         <h3>💠 Core Services</h3>
         <p>
-            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems.
+            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems. Each service is designed to solve high-complexity problems that require deep experience and modern engineering practices.
         </p>
     </div>
 
@@ -213,9 +227,10 @@ body {
     <div class="box">
         <h3>📞 Consultation & Support</h3>
         <p>
-            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to clients who demand speed, reliability, and global scalability.
+            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand speed, reliability, and global scalability.
         </p>
     </div>
+
 </div>
 
 <script>
@@ -226,8 +241,7 @@ function toggleReadMore() {
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
-        more.style.display = "none";
-        btn.textContent = "Read More";
+        window.location.href = "https://payhip.com/YOUR-LINK-HERE"; // replace with your link
     }
 }
 </script>
