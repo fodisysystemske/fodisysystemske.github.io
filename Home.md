@@ -279,19 +279,24 @@
 
     </div>
 
-   <script>
-        function toggleReadMore() {
-            const more = document.getElementById("moreContent");
-            const btn = document.querySelector(".read-more-btn");
+  <script>
+    function toggleReadMore() {
+        const more = document.getElementById("moreContent");
+        const btn = document.querySelector(".read-more-btn");
 
-            if (more.style.display === "block") {
-                more.style.display = "none";
-                btn.textContent = "Read More";
-            } else {
-                more.style.display = "block";
-                btn.textContent = "Support This Work";
-            }
+        // FIRST CLICK — Expand content
+        if (!btn.dataset.expanded) {
+            more.style.display = "block";
+            btn.textContent = "Support This Work";
+            btn.dataset.expanded = "true"; // save state for second click
+            return;
         }
-    </script>
+
+        // SECOND CLICK — Redirect to Payhip
+        if (btn.dataset.expanded === "true") {
+            window.location.href = "https://payhip.com/YOUR-LINK-HERE";
+        }
+    }
+</script>
 </body>
 </html>
