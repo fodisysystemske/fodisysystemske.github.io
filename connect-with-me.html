@@ -1,227 +1,284 @@
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0d0f18;
-        color: #d6ffd6;
-        overflow-x: hidden;
-    }
+  /* Reset and base styles */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0f18;
+    color: #d6ffd6;
+    overflow-x: hidden;
+  }
 
-    /* Animated bubbles in background */
-    .bubble-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
+  /* Animated bubbles in background */
+  .bubble-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+  }
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(125, 255, 125, 0.15);
+    animation: rise 25s linear infinite;
+  }
+  @keyframes rise {
+    0% {
+      transform: translateY(100vh) scale(0.4);
+      opacity: 0.2;
     }
-    .bubble {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(125, 255, 125, 0.15);
-        animation: rise 25s infinite;
+    50% {
+      opacity: 0.4;
     }
-    @keyframes rise {
-        0% {
-            transform: translateY(100vh) scale(0.4);
-            opacity: 0.2;
-        }
-        50% {
-            opacity: 0.4;
-        }
-        100% {
-            transform: translateY(-20vh) scale(1.2);
-            opacity: 0;
-        }
+    100% {
+      transform: translateY(-20vh) scale(1.2);
+      opacity: 0;
     }
+  }
 
+  /* Sidebar styles */
+  .sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background: rgba(40, 0, 70, 0.92);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    box-shadow: 3px 0 12px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar h2 {
+    color: #9b59ff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    color: #d6ffd6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: rgba(70, 0, 120, 0.6);
+    border-left: 4px solid #7dff7d;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+  }
+  .menu a:hover {
+    background: rgba(120, 0, 200, 0.8);
+    transform: translateX(4px);
+  }
+
+  /* Main content styles */
+  .content {
+    margin-left: 220px;
+    padding: 2rem;
+    max-width: 1050px;
+    margin-right: auto;
+    margin-left: calc(220px + 1rem);
+  }
+
+  /* Hero section */
+  .hero {
+    background: rgba(15, 0, 30, 0.92);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 1.5rem rgba(120, 0, 255, 0.5);
+  }
+  .hero h1 {
+    color: #7dff7d;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #00ff88;
+    text-align: center;
+  }
+  /* Icons grid */
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #d6ffd6;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 80px;
+  }
+  .icon-link:hover {
+    transform: scale(1.15);
+    color: #7dff7d;
+  }
+  .icon-link img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(125, 255, 125, 0.5);
+    margin-bottom: 8px;
+  }
+  /* Live badge */
+  .live-badge {
+    background: #238636;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    margin-top: 0.3rem;
+  }
+
+  /* Banner Image */
+  .banner-image {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 1.5rem rgba(125, 255, 125, 0.4);
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    /* Sidebar */
     .sidebar {
-        width: 220px;
-        height: 400vh;
-        background: rgba(40, 0, 70, 0.92);
-        position: fixed;
-        left: 0;
-        top: 0;
-        padding: 25px 20px;
-        box-shadow: 3px 0 12px rgba(0,0,0,0.6);
+      width: 100%;
+      min-height: auto;
+      position: relative;
+      box-shadow: none;
+      padding: 1rem;
     }
+    /* Sidebar header */
     .sidebar h2 {
-        color: #9b59ff;
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 24px;
-        letter-spacing: 1px;
+      font-size: 1.25rem;
     }
-    .menu a {
-        display: block;
-        margin: 12px 0;
-        padding: 12px;
-        color: #d6ffd6;
-        text-decoration: none;
-        font-size: 12px;
-        background: rgba(70, 0, 120, 0.6);
-        border-left: 4px solid #7dff7d;
-        transition: 0.3s;
-        border-radius: 4px;
-    }
-    .menu a:hover {
-        background: rgba(120, 0, 200, 0.8);
-        transform: translateX(9px);
-    }
-
+    /* Content */
     .content {
-        margin-left: 240px;
-        padding: 40px 25px;
-        max-width: 1050px;
-        text-align: center;
+      margin-left: 0;
+      padding: 1rem;
     }
-
+    /* Hero */
     .hero {
-        background: rgba(15, 0, 30, 0.92);
-        padding: 40px;
-        border-radius: 16px;
-        margin-bottom: 30px;
-        box-shadow: 0 0 25px rgba(120, 0, 255, 0.5);
+      padding: 1.5rem;
     }
     .hero h1 {
-        color: #7dff7d;
-        font-size: 42px;
-        margin-bottom: 15px;
-        text-shadow: 0 0 10px #00ff88;
+      font-size: 2rem;
     }
-
+    /* Icons */
     .icons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 22px;
-        margin-top: 28px;
-        margin-bottom: 40px;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
     .icon-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #d6ffd6;
-        text-decoration: none;
-        font-size: 14px;
-        transition: 0.3s;
+      width: 70px;
     }
-    .icon-link:hover {
-        transform: scale(1.15);
-        color: #7dff7d;
-    }
-    .icon-link img {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(125, 255, 125, 0.5);
-        margin-bottom: 8px;
-    }
-    .live-badge {
-        background: #238636;
-        color: #fff;
-        font-size: 11px;
-        padding: 2px 6px;
-        border-radius: 4px;
-        margin-top: 4px;
-    }
-
-    /* Banner / Hero image below icons */
+    /* Banner Image */
     .banner-image {
-        width: 100%;
-        border-radius: 16px;
-        box-shadow: 0 0 20px rgba(125, 255, 125, 0.4);
-        margin-top: 20px;
+      margin-top: 1.5rem;
     }
+  }
 </style>
 
 <div class="bubble-bg"></div>
 
 <div class="sidebar">
-    <h2>FODISY SYSTEMS</h2>
-    <div class="menu">
-        <a href="index.html">Dashboard</a>
-        <a href="enterprise-deployment.html">Enterprise Deployment</a>
-        <a href="api-integration.html">API Integration & Automation</a>
-        <a href="security-compliance.html">Security & Compliance</a>
-        <a href="performance-scalability.html">Performance & Scalability</a>
-        <a href="cloud-infrastructure.html">Cloud & Infrastructure</a>
-        <a href="shipping-delivery.html">Shipping & Delivery Systems</a>
-        <a href="user-management.html">Large-Scale User Management</a>
-        <a href="troubleshooting.html">Troubleshooting & Debugging</a>
-        <a href="connect-with-me.html">Connect With Me</a>
-    </div>
+  <h2>FODISY SYSTEMS</h2>
+  <div class="menu">
+    <a href="index.html">Dashboard</a>
+    <a href="enterprise-deployment.html">Enterprise Deployment</a>
+    <a href="api-integration.html">API Integration & Automation</a>
+    <a href="security-compliance.html">Security & Compliance</a>
+    <a href="performance-scalability.html">Performance & Scalability</a>
+    <a href="cloud-infrastructure.html">Cloud & Infrastructure</a>
+    <a href="shipping-delivery.html">Shipping & Delivery Systems</a>
+    <a href="user-management.html">Large-Scale User Management</a>
+    <a href="troubleshooting.html">Troubleshooting & Debugging</a>
+    <a href="connect-with-me.html">Connect With Me</a>
+  </div>
 </div>
 
 <div class="content">
-    <div class="hero">
-        <h1>Connect With Me</h1>
-        <p>Choose a channel to reach out for help, collaboration, or real-time support.</p>
-    </div>
+  <div class="hero">
+    <h1>Connect With Me</h1>
+    <p>Choose a channel to reach out for help, collaboration, or real-time support.</p>
+  </div>
 
-    <div class="icons">
-        <!-- Live Contact -->
-        <a href="https://wa.me/your-number" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp">
-            WhatsApp
-            <div class="live-badge">Live</div>
-        </a>
-        <a href="https://discord.gg/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/discord-logo.png" alt="Discord">
-            Discord
-            <div class="live-badge">Live</div>
-        </a>
-        <a href="https://m.me/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/facebook-messenger.png" alt="Messenger">
-            Messenger
-            <div class="live-badge">Live</div>
-        </a>
-        <a href="https://t.me/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/telegram-app.png" alt="Telegram">
-            Telegram
-            <div class="live-badge">Live</div>
-        </a>
-        <a href="mailto:your-email@example.com" class="icon-link">
-            <img src="https://img.icons8.com/color/96/000000/email.png" alt="Email">
-            Email
-            <div class="live-badge">Live</div>
-        </a>
+  <div class="icons">
+    <!-- Live Contact -->
+    <a href="https://wa.me/your-number" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="WhatsApp" />
+      WhatsApp
+      <div class="live-badge">Live</div>
+    </a>
+    <a href="https://discord.gg/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/discord-logo.png" alt="Discord" />
+      Discord
+      <div class="live-badge">Live</div>
+    </a>
+    <a href="https://m.me/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/facebook-messenger.png" alt="Messenger" />
+      Messenger
+      <div class="live-badge">Live</div>
+    </a>
+    <a href="https://t.me/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/telegram-app.png" alt="Telegram" />
+      Telegram
+      <div class="live-badge">Live</div>
+    </a>
+    <a href="mailto:your-email@example.com" class="icon-link">
+      <img src="https://img.icons8.com/color/96/000000/email.png" alt="Email" />
+      Email
+      <div class="live-badge">Live</div>
+    </a>
 
-        <!-- Other Social -->
-        <a href="https://linkedin.com/in/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/linkedin.png" alt="LinkedIn">LinkedIn
-        </a>
-        <a href="https://github.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/github.png" alt="GitHub">GitHub
-        </a>
-        <a href="https://twitter.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/twitter.png" alt="Twitter">Twitter
-        </a>
-        <a href="https://www.youtube.com/c/your-channel" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/youtube-play.png" alt="YouTube">YouTube
-        </a>
-        <a href="https://www.patreon.com/your-link" class="icon-link" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/patreon.png" alt="Patreon">Patreon
-        </a>
-    </div>
+    <!-- Other Social -->
+    <a href="https://linkedin.com/in/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/linkedin.png" alt="LinkedIn" />LinkedIn
+    </a>
+    <a href="https://github.com/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/github.png" alt="GitHub" />GitHub
+    </a>
+    <a href="https://twitter.com/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/twitter.png" alt="Twitter" />Twitter
+    </a>
+    <a href="https://www.youtube.com/c/your-channel" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/youtube-play.png" alt="YouTube" />YouTube
+    </a>
+    <a href="https://www.patreon.com/your-link" class="icon-link" target="_blank">
+      <img src="https://img.icons8.com/color/96/000000/patreon.png" alt="Patreon" />Patreon
+    </a>
+  </div>
 
-    <!-- Banner Hero Image -->
-    <img src="https://wallpapers.com/images/hd/banner-background-b5a2ptzqzslvvuvv.jpg" alt="FODISY Banner" class="banner-image">
+  <!-- Banner Hero Image -->
+  <img src="https://wallpapers.com/images/hd/banner-background-b5a2ptzqzslvvuvv.jpg" alt="FODISY Banner" class="banner-image" />
 </div>
 
 <script>
-    // Create floating bubbles
-    const bg = document.querySelector('.bubble-bg');
-    for (let i = 0; i < 20; i++) {
-        const b = document.createElement('div');
-        b.className = 'bubble';
-        b.style.width = ${20 + Math.random()*60}px;
-        b.style.height = b.style.width;
-        b.style.left = ${Math.random()*100}vw;
-        b.style.animationDuration = ${15 + Math.random()*20}s;
-        b.style.animationDelay = ${-Math.random()*10}s;
-        bg.appendChild(b);
-    }
+  // Create floating bubbles
+  const bg = document.querySelector('.bubble-bg');
+  for (let i = 0; i < 20; i++) {
+    const b = document.createElement('div');
+    b.className = 'bubble';
+    b.style.width = `${20 + Math.random() * 60}px`;
+    b.style.height = b.style.width;
+    b.style.left = `${Math.random() * 100}vw`;
+    b.style.animationDuration = `${15 + Math.random() * 20}s`;
+    b.style.animationDelay = `${-Math.random() * 10}s`;
+    bg.appendChild(b);
+  }
 </script>
