@@ -233,10 +233,15 @@
                 <p>
                     For readers seeking full detailed walkthroughs, *support this work to access complete guides*. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments — available for purchase on Payhip and other platforms.
                 </p>
+                
             </div>
 
-            <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+            
         </div>
+<div class="read-more-content" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease;">
+    <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+    <!-- your hidden text -->
+</div>
 
         <!-- FEATURE BOXES -->
         <div class="box">
