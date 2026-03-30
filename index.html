@@ -121,13 +121,21 @@ body {
 /* RESPONSIVE MOBILE */
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 180px;
-        padding: 20px 15px;
+        width: 160px; /* narrower sidebar */
+        padding: 20px 10px;
+    }
+    .sidebar h2 {
+        font-size: 18px;
+    }
+    .menu a {
+        font-size: 10px; /* menu font smaller */
+        padding: 8px 10px;
+        margin: 6px 0;
     }
     .content {
-        margin-left: 180px;
+        margin-left: 160px; /* sidebar space */
         padding: 15px 10px;
-        max-width: calc(100% - 180px);
+        max-width: calc(100% - 160px); /* wider content area */
     }
     .hero {
         padding: 25px 15px;
