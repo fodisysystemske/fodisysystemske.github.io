@@ -238,10 +238,11 @@
 
             
         </div>
-<div class="read-more-content" style="max-height:0; overflow:hidden; transition:max-height 0.4s ease;">
-    <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
-    <!-- your hidden text -->
+<div id="moreContent" style="display:none;">
+    <!-- hidden text -->
 </div>
+
+<button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
 
         <!-- FEATURE BOXES -->
         <div class="box">
