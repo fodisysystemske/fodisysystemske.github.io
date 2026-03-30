@@ -1,216 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FODISY SYSTEMS Cloud & Infrastructure: Enterprise cloud architecture, container orchestration, CI/CD pipelines, hybrid cloud strategies, Kubernetes, Docker, and high-performance infrastructure.">
-    <meta name="keywords" content="Enterprise cloud, cloud infrastructure, hybrid cloud, Kubernetes, Docker, container orchestration, CI/CD pipelines, DevOps cloud, high-performance infrastructure, cloud architecture">
-    <title>FODISY SYSTEMS • Cloud & Infrastructure</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://wallpapers.com/images/hd/blue-connections-linkedin-cover-717dweuzdc11zpwu.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #d6ffd6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .sidebar {
-            width: 200px;
-            height: 180vh;
-            background: rgba(40, 0, 70, 0.92);
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding: 25px 20px;
-            box-shadow: 3px 0 12px rgba(0,0,0,0.6);
-        }
+<meta name="description" content="FODISY SYSTEMS Cloud & Infrastructure: Enterprise cloud architecture, container orchestration, CI/CD pipelines, hybrid cloud strategies, Kubernetes, Docker, and high-performance infrastructure.">
+<meta name="keywords" content="Enterprise cloud, cloud infrastructure, hybrid cloud, Kubernetes, Docker, container orchestration, CI/CD pipelines, DevOps cloud, high-performance infrastructure, cloud architecture">
 
-        .sidebar h2 {
-            color: #9b59ff;
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 24px;
-            letter-spacing: 1px;
-        }
+<title>FODISY SYSTEMS • Cloud & Infrastructure</title>
 
-        .menu a {
-            display: block;
-            margin: 12px 0;
-            padding: 12px;
-            color: #d6ffd6;
-            text-decoration: none;
-            font-size: 17px;
-            background: rgba(70, 0, 120, 0.6);
-            border-left: 4px solid #7dff7d;
-            transition: 0.3s;
-            border-radius: 4px;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('https://wallpapers.com/images/hd/blue-connections-linkedin-cover-717dweuzdc11zpwu.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #d6ffd6;
+    }
 
-        .menu a:hover {
-            background: rgba(120, 0, 200, 0.8);
-            transform: translateX(5px);
-        }
+    .sidebar {
+        width: 200px;
+        height: 180vh;
+        background: rgba(40, 0, 70, 0.92);
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 25px 20px;
+        box-shadow: 3px 0 12px rgba(0,0,0,0.6);
+    }
 
-        .content {
-            margin-left: 240px; 
-            padding: 20px 25px;
-            max-width: 1050px;
-        }
+    .sidebar h2 {
+        color: #9b59ff;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
 
-        .hero {
-            background: rgba(15, 0, 30, 0.9);
-            padding: 40px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(120, 0, 255, 0.6);
-        }
+    .menu a {
+        display: block;
+        margin: 12px 0;
+        padding: 12px;
+        color: #d6ffd6;
+        text-decoration: none;
+        font-size: 17px;
+        background: rgba(70, 0, 120, 0.6);
+        border-left: 4px solid #7dff7d;
+        transition: 0.3s;
+        border-radius: 4px;
+    }
 
-        .hero h1 {
-            color: #7dff7d;
-            font-size: 42px;
-            margin: 0 0 20px;
-            text-shadow: 0 0 10px #00ff88;
-        }
+    .menu a:hover {
+        background: rgba(120, 0, 200, 0.8);
+        transform: translateX(5px);
+    }
 
-        .hero p {
-            font-size: 19px;
-            line-height: 1.7;
-            text-align: justify;
-        }
+    .content {
+        margin-left: 240px;
+        padding: 20px 25px;
+        max-width: 1050px;
+    }
 
-        #moreContent {
-            display: none;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-            margin-top: 15px;
-        }
+    .hero {
+        background: rgba(15, 0, 30, 0.9);
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 0 30px rgba(120, 0, 255, 0.6);
+    }
 
-        .read-more-btn {
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: #7dff7d;
-            color: #0a0020;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    .hero h1 {
+        color: #7dff7d;
+        font-size: 42px;
+        margin: 0 0 20px;
+        text-shadow: 0 0 10px #00ff88;
+    }
 
-        .read-more-btn:hover {
-            background: #aaffaa;
-        }
+    .hero p {
+        font-size: 19px;
+        line-height: 1.7;
+        text-align: justify;
+    }
 
-        .box {
-            background: rgba(25, 0, 45, 0.88);
-            padding: 28px;
-            border-radius: 14px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 18px rgba(100, 0, 200, 0.5);
-        }
+    #moreContent {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        margin-top: 15px;
+    }
 
-        .box h3 {
-            color: #9b59ff;
-            margin-top: 0;
-            font-size: 24px;
-        }
+    .read-more-btn {
+        margin-top: 20px;
+        padding: 12px 20px;
+        background: #7dff7d;
+        color: #0a0020;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
 
-        .box p {
-            font-size: 17px;
-            line-height: 1.7;
-            text-align: justify;
-        }
-    </style>
-</head>
-<body>
+    .read-more-btn:hover {
+        background: #aaffaa;
+    }
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <h2>FODISY SYSTEMS</h2>
-        <div class="menu">
-            <a href="index.html">Home / Dashboard</a>
-            <a href="enterprise-deployment.html">Enterprise Deployment</a>
-            <a href="api-integration.html">API Integration & Automation</a>
-            <a href="security-compliance.html">Security & Compliance</a>
-            <a href="performance-scalability.html">Performance & Scalability</a>
-            <a href="cloud-infrastructure.html">Cloud & Infrastructure</a>
-            <a href="troubleshooting.html">Troubleshooting & Debugging</a>
-            <a href="shipping-delivery.html">Shipping & Delivery Systems</a>
-            <a href="user-management.html">Large-Scale User Management</a>
-            <a href="documentation.html">Documentation & Walkthroughs</a>
-            <a href="consultation.html">Consultation / Hire Me</a>
+    .box {
+        background: rgba(25, 0, 45, 0.88);
+        padding: 28px;
+        border-radius: 14px;
+        margin-bottom: 25px;
+        box-shadow: 0 0 18px rgba(100, 0, 200, 0.5);
+    }
+
+    .box h3 {
+        color: #9b59ff;
+        margin-top: 0;
+        font-size: 24px;
+    }
+
+    .box p {
+        font-size: 17px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+</style>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>FODISY SYSTEMS</h2>
+
+    <div class="menu">
+        <a href="index.html">Home / Dashboard</a>
+        <a href="enterprise-deployment.html">Enterprise Deployment</a>
+        <a href="api-integration.html">API Integration & Automation</a>
+        <a href="security-compliance.html">Security & Compliance</a>
+        <a href="performance-scalability.html">Performance & Scalability</a>
+        <a href="cloud-infrastructure.html">Cloud & Infrastructure</a>
+        <a href="troubleshooting.html">Troubleshooting & Debugging</a>
+        <a href="shipping-delivery.html">Shipping & Delivery Systems</a>
+        <a href="user-management.html">Large-Scale User Management</a>
+        <a href="documentation.html">Documentation & Walkthroughs</a>
+        <a href="consultation.html">Consultation / Hire Me</a>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Cloud & Infrastructure</h1>
+
+        <p>
+            FODISY SYSTEMS designs <b>cloud-native and hybrid infrastructure</b> for enterprises seeking 
+            resilience, speed, and global reach. We optimize architectures for multi-cloud, containers, 
+            serverless systems, and enterprise-grade CI/CD pipelines.
+        </p>
+
+        <p>
+            From Kubernetes and Docker orchestration to hybrid cloud strategies and infrastructure-as-code, 
+            our solutions ensure secure, scalable, and maintainable deployments aligned with modern enterprise needs.
+        </p>
+
+        <div id="moreContent">
+            <p>
+                We implement automated deployments, disaster recovery plans, cloud cost optimization, and global 
+                load-testing. Real-time monitoring and predictive scaling ensure peak performance across regions.
+            </p>
+
+            <p>
+                Enterprises can access paid detailed blueprints: container scripts, CI/CD templates, hybrid cloud models, 
+                and governance architectures built for reliability and minimal downtime.
+            </p>
         </div>
+
+        <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
 
-    <!-- CONTENT -->
-    <div class="content">
-
-        <!-- HERO SECTION -->
-        <div class="hero">
-            <h1>Cloud & Infrastructure</h1>
-            <p>
-                FODISY SYSTEMS designs *cloud-native and hybrid infrastructure* for enterprises seeking *resilience, speed, and global reach. We optimize architectures for **multi-cloud deployments, container orchestration, serverless services, and enterprise-grade CI/CD pipelines*.
-            </p>
-            <p>
-                From *Kubernetes and Docker orchestration* to *hybrid cloud strategies, virtual networking, and infrastructure-as-code, our approach ensures **scalable, maintainable, and secure systems* that align with modern enterprise demands.
-            </p>
-            <div id="moreContent">
-                <p>
-                    Our expertise includes *automated deployments, load-tested environments, disaster recovery planning, and cloud cost optimization. Monitoring and alerting pipelines provide **real-time visibility and predictive scaling*, ensuring applications maintain peak performance globally.
-                </p>
-                <p>
-                    For teams and enterprises seeking *deep-dive strategies, FODISY provides **paid documentation with architecture blueprints, container deployment scripts, CI/CD templates, and best practices for hybrid cloud governance*. These guides empower organizations to deploy and manage infrastructure efficiently, securely, and with minimal downtime.
-                </p>
-            </div>
-            <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
-        </div>
-
-        <!-- FEATURE BOXES -->
-        <div class="box">
-            <h3>💠 Container Orchestration</h3>
-            <p>
-                Implement *Kubernetes and Docker* for consistent deployment, scaling, and management of containerized applications across cloud and on-premises environments.
-            </p>
-        </div>
-
-        <div class="box">
-            <h3>⚙ CI/CD Pipelines</h3>
-            <p>
-                Build *automated pipelines for testing, deployment, and rollback*, integrating security and performance monitoring for continuous delivery of reliable software.
-            </p>
-        </div>
-
-        <div class="box">
-            <h3>🔒 Hybrid & Multi-Cloud</h3>
-            <p>
-                Strategically combine *public and private clouds* to optimize performance, cost, and compliance, with redundancy and disaster recovery baked into the architecture.
-            </p>
-        </div>
-
-        <div class="box">
-            <h3>📞 Infrastructure Consulting</h3>
-            <p>
-                Guidance for *cloud architecture design, container orchestration, infrastructure automation, and enterprise scaling*, ensuring robust, secure, and highly available infrastructure.
-            </p>
-        </div>
-
+    <!-- FEATURE BOXES -->
+    <div class="box">
+        <h3>💠 Container Orchestration</h3>
+        <p>
+            Implement Kubernetes and Docker for consistent deployments, automated scaling, and unified container 
+            management across cloud and on-premise environments.
+        </p>
     </div>
 
-    <script>
-        function toggleReadMore() {
-            const more = document.getElementById("moreContent");
-            const btn = document.querySelector(".read-more-btn");
+    <div class="box">
+        <h3>⚙ CI/CD Pipelines</h3>
+        <p>
+            Full pipelines for testing, deployment, rollback, and monitoring — delivering continuous, reliable, 
+            secure application updates with zero-downtime flow.
+        </p>
+    </div>
 
-            if (more.style.display === "block") {
-                more.style.display = "none";
-                btn.textContent = "Read More";
-            } else {
-                more.style.display = "block";
-                btn.textContent = "Support This Work";
-            }
+    <div class="box">
+        <h3>🔒 Hybrid & Multi-Cloud</h3>
+        <p>
+            Combine public and private cloud strategically to maximize performance, cost efficiency, and compliance 
+            while ensuring redundancy and disaster-recovery readiness.
+        </p>
+    </div>
+
+    <div class="box">
+        <h3>📞 Infrastructure Consulting</h3>
+        <p>
+            Expert guidance for cloud design, orchestration, automation, and enterprise scaling — ensuring your 
+            infrastructure is secure, robust, and globally available.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    function toggleReadMore() {
+        const more = document.getElementById("moreContent");
+        const btn = document.querySelector(".read-more-btn");
+
+        if (more.style.display === "block") {
+            more.style.display = "none";
+            btn.textContent = "Read More";
+        } else {
+            more.style.display = "block";
+            btn.textContent = "Support This Work";
         }
-    </script>
-
-</body>
-</html>
+    }
+</script>
