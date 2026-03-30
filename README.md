@@ -1,147 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FodiSys System</title>
-  <style>
-    /* Reset some defaults */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FodiSys Portfolio</title>
 
-    body {
-      display: flex;
-      min-height: 100vh;
-      background-color: #121212;
-      color: #eee;
-    }
+<style>
+/* GENERAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-    /* Sidebar */
-    .sidebar {
-      width: 250px;
-      background-color: #1f1f1f;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+body {
+  display: flex;
+  background: #0d0d0d;
+  color: #e8e6e3;
+}
 
-    .sidebar h2 {
-      color: #f39c12;
-      font-size: 28px;
-    }
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #121212;
+  height: 100vh;
+  padding: 40px 25px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
 
-    .sidebar a {
-      color: #eee;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 6px 0;
-      transition: 0.2s;
-    }
+.sidebar h2 {
+  font-size: 32px;
+  color: #f1c40f;
+  margin-bottom: 40px;
+}
 
-    .sidebar a:hover {
-      color: #f39c12;
-    }
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 19px;
+  margin: 15px 0;
+  transition: 0.2s;
+}
 
-    /* Main content */
-    .main {
-      flex-grow: 1;
-      padding: 40px;
-      background-color: #181818;
-      overflow-x: hidden;
-    }
+.sidebar a:hover {
+  color: #f1c40f;
+}
 
-    .main img {
-      width: 100%;
-      max-width: 800px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
+/* MAIN CONTENT */
+.main {
+  margin-left: 250px;
+  padding: 40px;
+  width: calc(100% - 250px);
+}
 
-    .main h1 {
-      font-size: 38px;
-      margin-bottom: 20px;
-      color: #f1c40f;
-    }
+/* HERO SECTION */
+.hero {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  background: url('https://images.unsplash.com/photo-1550239031-1c0a7c1a46c5?q=80&w=1600') center/cover;
+  margin-bottom: 40px;
+}
 
-    .main h2 {
-      font-size: 28px;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: #f39c12;
-    }
+/* SECTION TITLES */
+section h1, section h2 {
+  margin-bottom: 12px;
+  color: #f1c40f;
+}
 
-    .main p, .main ul {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+/* PARAGRAPHS */
+section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
 
-    .main ul li {
-      margin-left: 20px;
-      list-style-type: square;
-    }
+/* ABOUT BOXES (3 across) */
+.about-boxes {
+  display: flex;
+  gap: 20px;
+  margin-top: 25px;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 15px;
-      }
-      .sidebar h2 {
-        font-size: 20px;
-      }
-      .sidebar a {
-        font-size: 16px;
-      }
-    }
-  </style>
+.about-box {
+  flex: 1;
+  background: #1b1b1b;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 5px solid #f39c12;
+}
+
+.about-box h3 {
+  font-size: 22px;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.about-box p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* SERVICES */
+ul {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 17px;
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="sidebar">
-    <h2>FodiSys</h2>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>FodiSys</h2>
+  <a href="#home">Home</a>
+  <a href="#about">About Me</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
 
-  <div class="main">
-    <img src="https://i.postimg.cc/MTy3wRVR/Whats-App-Image-2026-03-27-at-18-16-44.jpg" alt="Hero Image">
+<!-- MAIN PAGE -->
+<div class="main">
 
-    <h1 id="home">Welcome to FodiSys System</h1>
-    <p>We build professional systems and software solutions exactly like the design you see above.</p>
+  <!-- HERO -->
+  <div class="hero" id="home"></div>
 
-    <h2 id="about">About Us</h2>
-    <p>FodiSys Systems specializes in professional web systems, development, automation, and IT solutions. Our designs are modern, creative, and fully responsive.</p>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h1>About Me</h1>
+    <p>Welcome to my portfolio. I design, build, and perfect professional systems, websites, and digital products.</p>
 
-    <h2 id="services">Services</h2>
+    <div class="about-boxes">
+
+      <div class="about-box">
+        <h3>Experience</h3>
+        <p>
+          Over 8 years working on high-end systems, UI/UX design, business dashboards, 
+          automation tools, and modern enterprise solutions.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Philosophy</h3>
+        <p>
+          I believe in simplicity, clarity, and beautiful digital interfaces that 
+          work smoothly and feel premium.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Mission</h3>
+        <p>
+          My mission is to elevate brands and businesses through elite system design 
+          and next-generation digital creativity.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="margin-top: 50px;">
+    <h2>Services</h2>
     <ul>
-      <li>Web Development</li>
-      <li>Graphic Design</li>
-      <li>Branding</li>
-      <li>Systems Architecture</li>
+      <li>Professional Web Development</li>
+      <li>Custom System Architecture</li>
+      <li>Graphic & Brand Design</li>
+      <li>Business Automation</li>
+      <li>UI/UX and Motion Design</li>
     </ul>
+  </section>
 
-    <h2 id="portfolio">Portfolio</h2>
-    <p>Check out our latest works – professional system designs, UI/UX, and real world IT solutions.</p>
+  <!-- CONTACT -->
+  <section id="contact" style="margin-top: 50px;">
+    <h2>Contact</h2>
+    <p>Email: <strong>contact@fodisys.com</strong></p>
+    <p>WhatsApp: <strong>+254 7XX XXX XXX</strong></p>
+  </section>
 
-    <h2 id="contact">Contact</h2>
-    <p>Email: <strong>contact@fodisysystems.com</strong><br>
-       WhatsApp: <strong>+254 7XX XXX XXX</strong>
-    </p>
-  </div>
+</div>
 
 </body>
 </html>
