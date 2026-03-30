@@ -235,7 +235,7 @@
                 </p>
             </div>
 
-            <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+            <button class="readmore-btn" onclick="toggleReadMore()">Read More</button>
         </div>
 
         <!-- FEATURE BOXES -->
