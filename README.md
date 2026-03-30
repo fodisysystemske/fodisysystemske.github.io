@@ -1,4 +1,4 @@
-<style>
+[12:12, 3/30/2026] mwangiabel: <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -26,6 +26,35 @@
         letter-spacing: 1px;
     }
 
+    .menu a …
+[12:16, 3/30/2026] mwangiabel: <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('https://wallpapers.com/images/hd/blue-connections-linkedin-cover-717dweuzdc11zpwu.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #d6ffd6;
+    }
+
+    .sidebar {
+        width: 260px;
+        height: 100vh;
+        background: rgba(40, 0, 70, 0.92);
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 25px 20px;
+        box-shadow: 3px 0 12px rgba(0,0,0,0.6);
+    }
+
+    .sidebar h2 {
+        color: #9b59ff;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
     .menu a {
         display: block;
         margin: 12px 0;
@@ -47,7 +76,7 @@
     .content {
         margin-left: 240px; 
         padding: 10px;
-        max-width: 1050px; /* WIDER CONTENT */
+        max-width: 1050px;
     }
 
     .hero {
@@ -69,6 +98,30 @@
         color: #d6ffd6;
         font-size: 19px;
         line-height: 1.6;
+        text-align: justify;
+    }
+
+    /* Read More System */
+    #moreContent {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    .read-more-btn {
+        margin-top: 15px;
+        padding: 10px 16px;
+        background: #7dff7d;
+        color: #0a0020;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .read-more-btn:hover {
+        background: #aaffaa;
     }
 
     .box {
@@ -88,6 +141,7 @@
     .box p {
         font-size: 17px;
         line-height: 1.6;
+        text-align: justify;
     }
 </style>
 
@@ -107,9 +161,25 @@
 
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
+
+        <!-- Paragraph 1 -->
         <p>
-            FODISY SYSTEMS stands as the sanctuary for founders, businesses, governments, and everyday innovators who are tired of unreliable systems, unpredictable deployments, and software that collapses when it matters most; it is the home of a rare, multi-stack programmer whose mastery turns modern digital chaos into clarity, order, and dependable excellence. In a world where apps fail silently, APIs break without warning, databases choke under pressure, authentication loops crash in peak hours, mobile responsiveness ruins user trust, and deployment pipelines fall apart just when a company is about to scale, FODISY steps in with precision, discipline, and an unmatched ability to diagnose and solve problems that frustrate even senior engineering teams. This is not a company built on hype—it is built on outcomes: systems that withstand real-world pressure, architectures designed to scale from ten users to global traffic, deployments that remain stable regardless of updates, and debugging that goes deeper than simply “fixing errors,” instead eliminating root causes and fortifying the entire ecosystem. Anyone who wants a system built correctly the first time—or a broken one rebuilt with intention—comes to FODISY because it blends modern engineering, DevOps discipline, database intelligence, and UX foresight into a single craft, all driven by one talented pro-programmer who writes code like an architect shapes cities: intentionally, sustainably, and with deep respect for the end user. FODISY is where businesses find reliability, where dreamers find structure, and where ambitious ideas finally become software that can survive the world—and win.
+            FODISY SYSTEMS stands as the sanctuary for founders, businesses, governments, and everyday innovators who are tired of unreliable systems, unpredictable deployments, and software that collapses when it matters most. It is the home of a rare, multi-stack programmer whose mastery transforms modern digital chaos into clarity, order, and dependable excellence. In a world where apps fail silently, APIs break without warning, databases choke under pressure, authentication loops crash during peak hours, and deployment pipelines fall apart just when a company is ready to scale, FODISY steps in with precision, discipline, and an unmatched ability to diagnose and solve problems that frustrate even senior engineering teams.
         </p>
+
+        <!-- Paragraph 2 -->
+        <p>
+            This is not a company built on hype—it is built on outcomes. Systems engineered to withstand real-world pressure, architectures designed to scale from ten users to global traffic, deployments that remain stable regardless of updates, and debugging that goes beyond fixing errors by eliminating root causes and fortifying entire ecosystems. FODISY is where engineering discipline meets DevOps intelligence, ensuring businesses never suffer from downtime, failed builds, corrupt caches, or mission-critical failures at the worst possible moments.
+        </p>
+
+        <!-- Read More Section -->
+        <div id="moreContent">
+            <p>
+                Anyone who wants a system built correctly the first time—or a broken one reconstructed with intention—comes to FODISY because it blends modern engineering, infrastructure mastery, database intelligence, and UX foresight into one unified craft. Driven by a talented pro-programmer who writes code the way an architect shapes cities—intentionally, sustainably, and with deep respect for the end user—FODISY becomes the place where businesses find reliability, where dreamers find structure, and where ambitious ideas finally become software that can survive the world—and win.
+            </p>
+        </div>
+
+        <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
 
     <div class="box">
@@ -149,3 +219,18 @@
     </div>
 
 </div>
+
+<script>
+function toggleReadMore() {
+    const more = document.getElementById("moreContent");
+    const btn = document.querySelector(".read-more-btn");
+
+    if (more.style.display === "block") {
+        more.style.display = "none";
+        btn.textContent = "Read More";
+    } else {
+        more.style.display = "block";
+        btn.textContent = "Read Less";
+    }
+}
+</script>
