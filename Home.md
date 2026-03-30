@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems." />
-<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management" />
 <title>FODISY SYSTEMS • Home Dashboard</title>
 <style>
   /* Reset and base styles */
@@ -16,7 +14,7 @@
     color: #d6ffd6;
   }
 
-  /* Sidebar styles */
+  /* Sidebar styling */
   .sidebar {
     width: 220px;
     min-height: 100vh;
@@ -63,10 +61,9 @@
     margin-left: 220px;
     padding: 20px;
     max-width: 1200px;
-    margin-right: auto;
   }
 
-  /* Hero section */
+  /* Hero section styles */
   .hero {
     background: rgba(15, 0, 30, 0.9);
     padding: 2rem;
@@ -84,10 +81,11 @@
   .hero p {
     font-size: 0.9rem;
     line-height: 1.5;
+    margin-bottom: 1rem;
     text-align: justify;
   }
 
-  /* Read More Button */
+  /* Read More button styles */
   #moreContent {
     display: none;
     overflow: hidden;
@@ -110,7 +108,7 @@
     background: #aaffaa;
   }
 
-  /* Info boxes */
+  /* Feature boxes styles */
   .box {
     background: rgba(25, 0, 45, 0.88);
     padding: 1.75rem;
@@ -130,7 +128,7 @@
     text-align: justify;
   }
 
-  /* Banner image */
+  /* Banner image styles */
   .banner-image {
     width: 100%;
     height: auto;
@@ -148,7 +146,7 @@
       padding: 1rem;
       box-shadow: none;
     }
-    /* Sidebar header */
+    /* Sidebar header font size */
     .sidebar h2 {
       font-size: 1.2rem;
     }
@@ -158,7 +156,7 @@
       padding: 0.75rem;
       margin: 0.4rem 0;
     }
-    /* Content adjusts to screen width */
+    /* Content full width, no left margin */
     .content {
       margin-left: 0;
       padding: 1rem;
@@ -174,7 +172,7 @@
     .hero p {
       font-size: 1rem;
     }
-    /* Boxes adjust */
+    /* Feature boxes */
     .box {
       width: 100%;
       padding: 1rem;
@@ -186,21 +184,16 @@
     .box p {
       font-size: 1rem;
     }
-    /* Banner image */
+    /* Banner Image on small screens */
     .banner-image {
       margin-top: 1.5rem;
-    }
-    /* Ensure images scale well */
-    img {
-      max-width: 100%;
-      height: auto;
     }
   }
 </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
+<!-- Sidebar -->
 <div class="sidebar">
   <h2>FODISY SYSTEMS</h2>
   <div class="menu">
@@ -218,10 +211,10 @@
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- Main Content -->
 <div class="content">
 
-  <!-- HERO SECTION -->
+  <!-- Hero Section -->
   <div class="hero">
     <h1>Welcome to FODISY SYSTEMS</h1>
     <p>
@@ -230,7 +223,9 @@
     <p>
       Our approach combines *multi-stack programming expertise, **modern DevOps practices, and **real-world troubleshooting experience* to deliver systems that not only perform but excel. Every pipeline, every integration, and every cloud deployment is crafted for *resilience, speed, and user satisfaction*. Businesses from the United States, Europe, and other high-value markets trust FODISY to solve problems that often take senior engineering teams weeks to resolve.
     </p>
-    <div id="moreContent">
+    <!-- Read More toggle -->
+    <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
+    <div id="moreContent" style="display:none;">
       <p>
         Beyond core development, FODISY specializes in *large-scale user management, **advanced security compliance, **enterprise shipping and logistics systems, and **performance optimization under high load. We focus on diagnosing subtle issues, fixing root causes, and architecting systems ready to scale globally. Every solution is **practical, documented, and designed to maximize uptime*, ensuring your business maintains credibility and efficiency.
       </p>
@@ -240,16 +235,13 @@
     </div>
   </div>
 
-  <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
-
-  <!-- FEATURE BOXES -->
+  <!-- Feature Boxes -->
   <div class="box">
     <h3>💠 Core Services</h3>
     <p>
       Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems. Each service is designed to solve *high-complexity problems* that require deep experience and modern engineering practices.
     </p>
   </div>
-
   <div class="box">
     <h3>⚙ Key Modules & Tools</h3>
     <p>
@@ -261,37 +253,33 @@
       ✔ Audit & Compliance Tracking
     </p>
   </div>
-
   <div class="box">
     <h3>🔒 Security & Reliability</h3>
     <p>
       Systems are protected with *encrypted endpoints, audit-first logging, strict role-based access, and **modern hashing standards. Infrastructure is optimized for **minimal latency, **high concurrency, and **GitHub-based deployment workflows*.
     </p>
   </div>
-
   <div class="box">
     <h3>📞 Consultation & Support</h3>
     <p>
       Engage FODISY for *direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand **speed, reliability, and global scalability*.
     </p>
   </div>
-
 </div>
 
+<!-- Script for toggle -->
 <script>
-  function toggleReadMore() {
-    const more = document.getElementById("moreContent");
-    const btn = document.querySelector(".read-more-btn");
-    if (!btn.dataset.expanded) {
-      more.style.display = "block";
-      btn.textContent = "Support This Work";
-      btn.dataset.expanded = "true";
-      return;
-    }
-    if (btn.dataset.expanded === "true") {
-      window.location.href = "https://payhip.com/YOUR-LINK-HERE";
-    }
+function toggleReadMore() {
+  const more = document.getElementById("moreContent");
+  const btn = document.querySelector(".read-more-btn");
+  if (more.style.display === "none" || more.style.display === "") {
+    more.style.display = "block";
+    btn.textContent = "Support This Work";
+  } else {
+    window.location.href = "https://payhip.com/YOUR-LINK-HERE";
   }
+}
 </script>
+
 </body>
 </html>
