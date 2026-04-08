@@ -1,4 +1,4 @@
-<meta charset="UTF-8">
+[18:17, 4/8/2026] mwangiabel: <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems.">
 <meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management">
@@ -12,19 +12,35 @@ body {
     color: #111; 
     overflow-x: hidden;
     position: relative;
-    transition: background 0.5s, color 0.5s;
+    transition: background 0.5s, co…
+[18:39, 4/8/2026] mwangiabel: <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems.">
+<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management">
+<title>FODISY SYSTEMS • Home Dashboard</title>
+
+<style>
+/* ---------------- BASE ---------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
     background: #fff;
+    transition: background 0.5s, color 0.5s;
 }
 body.dark {
-    background: #0a0f14; /* dark tech cyan */
-    color: #a3f0f0; /* subtle cyan text */
+    background: #0a1a1f; /* dark tech cyan background */
+    color: #a0f0f5; /* subtle cyan text */
 }
+canvas.bg-polygons { position: fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
 
 /* ---------------- SIDEBAR ---------------- */
 .sidebar {
     width: 240px;
     min-height: 100vh;
-    background: rgba(230, 255, 255, 0.9);
+    background: rgba(230,255,255,0.9);
     position: fixed;
     left: 0;
     top: 0;
@@ -32,20 +48,17 @@ body.dark {
     box-shadow: 3px 0 12px rgba(0,0,0,0.2);
     overflow-y: auto;
     z-index: 10;
-    transition: background 0.5s, color 0.5s;
+    transition: background 0.5s;
 }
-.sidebar.dark { background: #112127; color: #a3f0f0; }
+.sidebar.dark { background: rgba(5,25,30,0.95); }
 .sidebar h2 {
     color: #008080;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 24px;
 }
-.sidebar.dark h2 { color: #a3f0f0; }
 .sidebar img { display: none; border-radius: 50%; width: 80px; height: 80px; object-fit: cover; }
-@media screen and (max-width: 768px) {
-    .sidebar img { display: block; }
-}
+@media screen and (max-width:768px){ .sidebar img{display:block;} }
 
 /* ---------------- MENU ---------------- */
 .menu a {
@@ -55,29 +68,30 @@ body.dark {
     color: #008080;
     text-decoration: none;
     font-size: 12px;
-    background: rgba(200, 255, 255, 0.6);
+    background: rgba(200,255,255,0.6);
     border-left: 3px solid #00cccc;
-    transition: 0.3s;
     border-radius: 4px;
+    transition: 0.3s;
 }
-.menu a:hover { background: rgba(0, 204, 204, 0.3); transform: translateX(5px); }
-body.dark .menu a { color: #a3f0f0; background: #112127; border-left: 3px solid #00cccc; }
-body.dark .menu a:hover { background: #1a2b35; }
+.menu a:hover { background: rgba(0,255,255,0.3); transform: translateX(5px); }
+body.dark .menu a { color: #a0f0f5; background: rgba(5,25,30,0.85); border-left: 3px solid #33c8cc; }
+body.dark .menu a:hover { background: rgba(50,120,130,0.3); }
 
 /* ---------------- CONTENT ---------------- */
-.content { margin-left: 260px; padding: 20px 25px; max-width: calc(100% - 260px); position: relative; z-index: 5; }
-body.dark .content { color: #a3f0f0; }
+.content { margin-left: 260px; padding: 20px 25px; max-width: calc(100% - 260px); position: relative; z-index: 5; transition: color 0.5s; }
+body.dark .content { color: #a0f0f5; }
 
 /* ---------------- HERO ---------------- */
 .hero {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255,255,255,0.85);
     padding: 40px;
     border-radius: 16px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 30px rgba(0, 204, 204, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(0,200,200,0.2);
     position: relative;
+    transition: background 0.5s, box-shadow 0.5s;
 }
-body.dark .hero { background: #112127; box-shadow: 0 0 25px rgba(0, 255, 255, 0.2); }
+body.dark .hero { background: rgba(5,25,30,0.85); box-shadow: 0 0 25px rgba(50,120,130,0.5); }
 .hero h1 { font-size: 32px; }
 .hero p { font-size: 16px; line-height: 1.7; text-align: justify; }
 #moreContent { display: none; margin-top: 15px; }
@@ -93,45 +107,44 @@ body.dark .hero { background: #112127; box-shadow: 0 0 25px rgba(0, 255, 255, 0.
     transition: 0.3s;
 }
 .read-more-btn:hover { background: #008080; }
-body.dark .read-more-btn { background: #00cccc; color: #0a0f14; }
-body.dark .read-more-btn:hover { background: #008080; color: #a3f0f0; }
+body.dark .read-more-btn { background: #33c8cc; color: #0a1a1f; }
+body.dark .read-more-btn:hover { background: #008080; color: #a0f0f5; }
 
 /* ---------------- FEATURE BOXES ---------------- */
 .box {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255,255,255,0.9);
     padding: 28px;
     border-radius: 14px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 18px rgba(0, 200, 200, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 0 0 18px rgba(0,200,200,0.2);
+    transition: background 0.5s, box-shadow 0.5s;
 }
-body.dark .box { background: #112127; box-shadow: 0 0 20px rgba(0,255,255,0.1); }
+body.dark .box { background: rgba(5,25,30,0.85); box-shadow: 0 0 20px rgba(50,120,130,0.4); }
 .box h3 { color: #008080; margin-top: 0; font-size: 24px; }
-body.dark .box h3 { color: #a3f0f0; }
+body.dark .box h3 { color: #33c8cc; }
 .box p { font-size: 16px; line-height: 1.7; }
 
 /* ---------------- SUBMENU BUTTONS ---------------- */
-.topic-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 25px; }
+.topic-buttons { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:15px; }
 .topic-button {
-    background: #00cccc;
-    color: #0a0f14;
+    background: rgba(0,204,204,0.7);
+    color: #fff;
     padding: 4px 8px;
     border-radius: 10px;
     cursor: pointer;
-    position: relative;
     font-size: 11px;
     min-width: 60px;
     transition: 0.3s;
 }
-.topic-button:hover { transform: scale(1.05); box-shadow: 0 0 12px rgba(0, 255, 255, 0.3); }
-body.dark .topic-button { background: #00cccc; color: #112127; }
+.topic-button:hover { transform: scale(1.05); box-shadow:0 0 12px rgba(0,255,255,0.3); }
+body.dark .topic-button { background: rgba(50,120,130,0.5); color: #a0f0f5; }
 
 /* ---------------- FLOATING BUTTONS ---------------- */
 #themeToggleBtn {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #00cccc;
-    color: #0a0f14;
+    top: 20px; right:20px;
+    background: rgba(0,255,255,0.7);
+    color: #000;
     padding: 12px;
     border-radius: 50%;
     cursor: pointer;
@@ -139,91 +152,91 @@ body.dark .topic-button { background: #00cccc; color: #112127; }
     font-weight: bold;
     transition: 0.3s;
 }
-#themeToggleBtn:hover { background: #008080; }
-body.dark #themeToggleBtn { background: #00cccc; color: #112127; }
-body.dark #themeToggleBtn:hover { background: #008080; }
+#themeToggleBtn:hover { background: rgba(0,255,255,1); }
+body.dark #themeToggleBtn { background: rgba(50,120,130,0.5); color: #a0f0f5; }
+body.dark #themeToggleBtn:hover { background: #33c8cc; }
 
 /* ---------------- MODAL ---------------- */
 .modal-preview {
-    display: none;
+    display:none;
     position: fixed;
-    top: 20px;
-    right: -100%;
-    transform: translateX(0);
-    background: #112127;
-    color: #a3f0f0;
-    padding: 20px;
-    border-radius: 12px;
-    width: 350px;
-    max-height: 80%;
-    overflow-y: auto;
-    z-index: 50;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    top:20px;
+    right:-100%;
+    background: rgba(5,25,30,0.95);
+    color:#a0f0f5;
+    padding:20px;
+    border-radius:12px;
+    width:350px;
+    max-height:80%;
+    overflow-y:auto;
+    z-index:50;
+    box-shadow:0 0 25px rgba(50,120,130,0.4);
     transition: all 0.5s ease;
 }
-.modal-preview.show { right: 20px; }
-.modal-preview h4 { margin-top: 0; font-size: 16px; }
-.modal-preview p { font-size: 14px; line-height: 1.4; }
+.modal-preview.show { right:20px; }
+.modal-preview h4{ margin-top:0; font-size:16px; }
+.modal-preview p{ font-size:14px; line-height:1.4; }
 .modal-preview button {
-    margin-top: 10px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background: #00cccc;
-    color: #112127;
-    font-weight: bold;
+    margin-top:10px;
+    padding:10px 16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    background:#33c8cc;
+    color:#0a1a1f;
+    font-weight:bold;
 }
-.modal-preview button:hover { background: #008080; }
+.modal-preview button:hover{ background:#008080; }
 
-/* ---------------- MODAL CLOSE BUTTON ---------------- */
-#modalCloseBtn {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #a3f0f0;
-    cursor: pointer;
-    z-index: 100;
-    transition: color 0.3s;
+/* ---------------- MODAL CLOSE ---------------- */
+#modalCloseBtn{
+    position:absolute;
+    top:10px;
+    right:12px;
+    font-size:22px;
+    font-weight:bold;
+    color:#a0f0f5;
+    cursor:pointer;
 }
-#modalCloseBtn:hover { color: #00ffff; }
+#modalCloseBtn:hover{ color:#33c8cc; }
 
 /* ---------------- RESPONSIVE ---------------- */
-@media screen and (max-width: 768px) {
-    .sidebar { width: 160px; padding: 20px 10px; }
-    .sidebar h2 { font-size: 18px; }
-    .menu a { font-size: 11px; padding: 4px 8px; margin: 4px 0; }
-    .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
-    .hero { padding: 25px 15px; }
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 14px; line-height: 1.5; }
-    .box { padding: 20px 15px; }
-    .box h3 { font-size: 20px; }
-    .box p { font-size: 14px; line-height: 1.4; }
-    .read-more-btn { padding: 10px 16px; font-size: 12px; }
-    .topic-button { padding: 3px 6px; font-size: 10px; min-width: 50px; }
-    .modal-preview { width: 90%; right: 5%; max-height: 70%; top: 10px; }
+@media screen and (max-width:768px){
+    .sidebar{width:160px; padding:20px 10px;}
+    .sidebar h2{font-size:18px;}
+    .menu a{font-size:11px; padding:4px 8px; margin:4px 0;}
+    .content{margin-left:160px; padding:10px; max-width:calc(100% - 160px);}
+    .hero{padding:25px 15px;}
+    .hero h1{font-size:24px;}
+    .hero p{font-size:14px; line-height:1.5;}
+    .box{padding:20px 15px;}
+    .box h3{font-size:20px;}
+    .box p{font-size:14px; line-height:1.4;}
+    .read-more-btn{padding:10px 16px; font-size:12px;}
+    .topic-button{padding:3px 6px; font-size:10px; min-width:50px;}
+    .modal-preview{width:90%; right:5%; max-height:70%; top:10px;}
+    .sidebar img{display:block;}
 }
-.modalCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
+/* ---------------- BUBBLES CANVAS ---------------- */
+.modalCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
 </style>
 
-<canvas id="bgCanvas"></canvas>
+<canvas class="bg-polygons" id="bgCanvas"></canvas>
 
 <div class="sidebar" id="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
-        <a href="../home/index.html">Home / Dashboard</a>
-        <a href="../enterprise-deployment/index.html">Enterprise Deployment</a>
-        <a href="../api-automation/index.html">API Integration & Automation</a>
-        <a href="../security-compliance/index.html">Security & Compliance</a>
-        <a href="../performance-seo/index.html">Performance & SEO Systems</a>
-        <a href="../saas-systems/index.html">Ready-Made Business Systems</a>
-        <a href="../templates-market/index.html">Templates & Market Tools</a>
-        <a href="../troubleshooting/index.html">Troubleshoot Library & Instant Fix Kit</a>
-        <a href="../cybersecurity/index.html">Cybersecurity Compliance & Risk Tools</a>
-        <a href="../connect/index.html">Connect & Collaborate</a>
+        <a href="#">Home / Dashboard</a>
+        <a href="#">Enterprise Deployment</a>
+        <a href="#">API Integration & Automation</a>
+        <a href="#">Security & Compliance</a>
+        <a href="#">Performance & SEO Systems</a>
+        <a href="#">Ready-Made Business Systems</a>
+        <a href="#">Templates & Market Tools</a>
+        <a href="#">Troubleshoot Library & Instant Fix Kit</a>
+        <a href="#">Cybersecurity Compliance & Risk Tools</a>
+        <a href="#">Connect & Collaborate</a>
     </div>
     <img src="profile.jpg" alt="Profile Picture">
 </div>
@@ -253,7 +266,7 @@ body.dark #themeToggleBtn:hover { background: #008080; }
 
 <div class="modal-preview" id="topicModal">
     <span id="modalCloseBtn">&times;</span>
-    <canvas class="modalCanvas" id="modalCanvas"></canvas>
+    <canvas class="modalCanvas"></canvas>
     <h4 id="modalTitle"></h4>
     <p id="modalContent"></p>
     <button id="modalReadMore">Read More</button>
@@ -278,66 +291,53 @@ themeBtn.addEventListener("click", ()=>{
     document.querySelector(".sidebar").classList.toggle("dark");
 });
 
-/* ---------------- POLYGON BACKGROUND ---------------- */
-const canvas = document.getElementById('bgCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-const particles = [];
-for(let i=0;i<80;i++){
-    particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size:Math.random()*3+1});
+/* ---------------- POLYGONS BACKGROUND ---------------- */
+const canvasPoly = document.getElementById("bgCanvas");
+const ctxPoly = canvasPoly.getContext("2d");
+canvasPoly.width = window.innerWidth; canvasPoly.height = window.innerHeight;
+let polyParticles = [];
+for(let i=0;i<60;i++){
+    polyParticles.push({x:Math.random()*canvasPoly.width, y:Math.random()*canvasPoly.height, vx:(Math.random()-0.5)*0.2, vy:(Math.random()-0.5)*0.2, size:Math.random()*2+1});
 }
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    for(let i=0;i<particles.length;i++){
-        for(let j=i+1;j<particles.length;j++){
-            const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y, dist=Math.sqrt(dx*dx+dy*dy);
-            if(dist<120){
-                ctx.beginPath();
-                ctx.strokeStyle = document.body.classList.contains('dark') ? 'rgba(163,240,240,'+(1-dist/120)*0.4+')':'rgba(0,204,204,'+(1-dist/120)*0.4+')';
-                ctx.moveTo(particles[i].x,particles[i].y);
-                ctx.lineTo(particles[j].x,particles[j].y);
-                ctx.stroke(); ctx.closePath();
-            }
-        }
+function drawPolygons(){
+    ctxPoly.clearRect(0,0,canvasPoly.width,canvasPoly.height);
+    for(let i=0;i<polyParticles.length;i++){
+        let p = polyParticles[i];
+        ctxPoly.beginPath();
+        ctxPoly.fillStyle = 'rgba(0,204,204,0.05)';
+        ctxPoly.arc(p.x,p.y,p.size,0,Math.PI*2);
+        ctxPoly.fill();
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0 || p.x>canvasPoly.width) p.vx*=-1;
+        if(p.y<0 || p.y>canvasPoly.height) p.vy*=-1;
     }
-    for(let i=0;i<particles.length;i++){
-        let p=particles[i]; ctx.beginPath();
-        ctx.fillStyle = document.body.classList.contains('dark')?'rgba(163,240,240,0.3)':'rgba(0,204,204,0.3)';
-        ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
-        p.x+=p.vx; p.y+=p.vy;
-        if(p.x<0||p.x>canvas.width)p.vx*=-1;
-        if(p.y<0||p.y>canvas.height)p.vy*=-1;
-    }
-    requestAnimationFrame(draw);
+    requestAnimationFrame(drawPolygons);
 }
-draw();
-window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
+drawPolygons();
+window.addEventListener('resize',()=>{ canvasPoly.width=window.innerWidth; canvasPoly.height=window.innerHeight; });
 
-/* ---------------- BUBBLES MODAL BACKGROUND ---------------- */
-function bubblesModal(canvasEl){
-    const modalCanvas = canvasEl;
-    const ctx = modalCanvas.getContext("2d");
-    modalCanvas.width = modalCanvas.offsetWidth; 
-    modalCanvas.height = modalCanvas.offsetHeight;
-    const bubbles = [];
-    for(let i=0;i<25;i++){
-        bubbles.push({x:Math.random()*modalCanvas.width, y:Math.random()*modalCanvas.height, r:Math.random()*12+5, vx:(Math.random()-0.5)*0.2, vy:(Math.random()-0.5)*0.2});
+/* ---------------- BUBBLES MODAL ---------------- */
+function bubbles(canvasEl){
+    const c = canvasEl;
+    const ctx = c.getContext("2d");
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    const bubblesArr=[];
+    for(let i=0;i<30;i++){
+        bubblesArr.push({x:Math.random()*c.width, y:Math.random()*c.height, r:Math.random()*4+1, vy:Math.random()*0.3+0.1});
     }
-    function drawBubbles(){
-        ctx.clearRect(0,0,modalCanvas.width,modalCanvas.height);
-        for(let i=0;i<bubbles.length;i++){
-            const b=bubbles[i];
+    function animateBubbles(){
+        ctx.clearRect(0,0,c.width,c.height);
+        for(let b of bubblesArr){
             ctx.beginPath();
+            ctx.fillStyle='rgba(200,255,255,0.05)';
             ctx.arc(b.x,b.y,b.r,0,Math.PI*2);
-            ctx.fillStyle='rgba(163,240,240,0.05)';
             ctx.fill();
-            b.x+=b.vx; b.y+=b.vy;
-            if(b.x<0||b.x>modalCanvas.width)b.vx*=-1;
-            if(b.y<0||b.y>modalCanvas.height)b.vy*=-1;
+            b.y -= b.vy;
+            if(b.y<0) b.y=c.height;
         }
-        requestAnimationFrame(drawBubbles);
+        requestAnimationFrame(animateBubbles);
     }
-    drawBubbles();
+    animateBubbles();
 }
 
 /* ---------------- TOPIC BUTTON MODAL ---------------- */
@@ -349,13 +349,12 @@ const modalReadMore = document.getElementById("modalReadMore");
 const modalCloseBtn = document.getElementById("modalCloseBtn");
 
 function openModal(btn){
-    modal.style.display = "block";
+    modal.style.display="block";
     modal.classList.add("show");
     modalTitle.textContent = btn.textContent;
     modalContent.textContent = btn.getAttribute("data-content");
-    bubblesModal(document.getElementById("modalCanvas"));
+    bubbles(document.querySelector(".modalCanvas"));
 }
-
 topicButtons.forEach(btn=>{
     btn.addEventListener("click", ()=>{
         if(modal.style.display==="block" && modalTitle.textContent===btn.textContent){
@@ -366,9 +365,7 @@ topicButtons.forEach(btn=>{
         modalReadMore.onclick = ()=>{ alert("Redirect to full page for "+btn.textContent); }
     });
 });
-
 modalCloseBtn.addEventListener("click", ()=>{
-    modal.style.display = "none"; 
-    modal.classList.remove("show");
+    modal.style.display="none"; modal.classList.remove("show");
 });
 </script>
