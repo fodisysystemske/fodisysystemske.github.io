@@ -9,10 +9,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #333333; /* Dark gray font */
+    color: #333; /* Dark gray text */
     overflow-x: hidden;
     position: relative;
-    background: #f4f8fb;
 }
 
 /* CANVAS FULLSCREEN */
@@ -29,7 +28,7 @@ body {
 .sidebar {
     width: 240px;
     min-height: 100vh;
-    background: rgba(230, 250, 250, 0.9);
+    background: rgba(200, 255, 255, 0.05); /* soft light theme */
     position: fixed;
     left: 0;
     top: 0;
@@ -39,35 +38,33 @@ body {
     z-index: 10;
 }
 .sidebar h2 {
-    color: #00c9c9;
+    color: #007f7f; /* futuristic teal */
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     font-size: 24px;
     letter-spacing: 1px;
 }
 .menu a {
     display: block;
     margin: 10px 0;
-    padding: 10px;
-    color: #333333;
+    padding: 12px;
+    color: #333;
     text-decoration: none;
     font-size: 17px;
-    background: rgba(0, 200, 200, 0.2);
-    border-left: 4px solid #00c9c9;
+    background: rgba(0, 255, 255, 0.1);
+    border-left: 4px solid #00cccc;
     transition: 0.3s;
     border-radius: 4px;
 }
 .menu a:hover {
-    background: rgba(0, 200, 200, 0.35);
+    background: rgba(0, 255, 255, 0.2);
     transform: translateX(5px);
 }
-/* PROFILE PICTURE BELOW MENU ITEMS */
 .sidebar .profile {
-    display: block;
-    width: 80%;
-    margin: 25px auto 0;
+    width: 100%;
+    margin-top: 20px;
     border-radius: 50%;
-    border: 2px solid #00c9c9;
+    display: block;
 }
 
 /* CONTENT */
@@ -77,99 +74,84 @@ body {
     max-width: calc(100% - 260px);
     position: relative;
     z-index: 5;
-}
-
-/* TOPIC BUTTONS ABOVE HERO */
-.topic-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-    gap: 8px;
-}
-.topic-button {
-    background: rgba(0, 200, 200, 0.2);
-    color: #333333;
-    border: 2px solid #00c9c9;
-    padding: 6px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 13px;
-    transition: transform 0.3s, background 0.3s;
-}
-.topic-button:hover {
-    transform: translateY(-2px);
-    background: rgba(0, 200, 200, 0.35);
-}
-
-/* MODAL PREVIEW */
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 280px;
-    max-width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.97);
-    border: 2px solid #00c9c9;
-    border-radius: 12px;
-    padding: 15px;
-    z-index: 100;
-    display: none;
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
-}
-.modal h4 {
-    margin-top: 0;
-    color: #00c9c9;
-}
-.modal p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333333;
-}
-.modal .modal-btn {
-    margin-top: 10px;
-    background: #00c9c9;
-    color: #0a0020;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
+    background: rgba(255,255,255,0.05); /* slightly transparent to see polygons */
 }
 
 /* HERO */
 .hero {
-    background: rgba(255,255,255,0.25);
-    padding: 35px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
     border-radius: 16px;
     margin-bottom: 30px;
-    box-shadow: 0 0 25px rgba(0,200,200,0.4);
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
 }
 .hero h1 {
-    color: #00c9c9;
-    font-size: 30px;
+    color: #006666;
+    font-size: 32px;
     margin: 0 0 20px;
+    text-shadow: 0 0 6px #00cccc;
 }
 .hero p {
     font-size: 16px;
     line-height: 1.7;
+    text-align: justify;
+    color: #333;
 }
 
-/* HERO READ MORE */
-#moreContent {
-    display: none;
-    overflow: hidden;
-    margin-top: 15px;
+/* TOPIC BUTTONS */
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
 }
+.topic-button {
+    padding: 8px 12px;
+    background: rgba(0, 255, 255, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+.topic-button:hover {
+    background: rgba(0, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 20px;
+    z-index: 50;
+    box-shadow: 0 0 25px rgba(0,255,255,0.5);
+}
+.modal h4 { margin-top: 0; }
+.modal p { color: #333; line-height: 1.6; }
+.modal .close-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: #00cccc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* READ MORE BUTTON */
 .read-more-btn {
     margin-top: 20px;
     padding: 12px 20px;
-    background: #00c9c9;
-    color: #0a0020;
+    background: #00cccc;
+    color: #fff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -177,36 +159,25 @@ body {
     transition: 0.3s;
 }
 .read-more-btn:hover {
-    background: #33ffff;
+    background: #00eeee;
 }
 
 /* FEATURE BOXES */
 .box {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.05);
     padding: 28px;
     border-radius: 14px;
     margin-bottom: 25px;
-    box-shadow: 0 0 18px rgba(0,200,200,0.3);
+    box-shadow: 0 0 18px rgba(0,255,255,0.2);
 }
-.box h3 {
-    color: #00c9c9;
-    margin-top: 0;
-    font-size: 24px;
-}
-.box p {
-    font-size: 16px;
-    line-height: 1.7;
-    text-align: justify;
-}
+.box h3 { color: #006666; margin-top: 0; font-size: 24px; }
+.box p { font-size: 16px; line-height: 1.7; color: #333; }
 
 /* RESPONSIVE MOBILE */
 @media screen and (max-width: 768px) {
-    .sidebar {
-        width: 160px;
-        padding: 20px 10px;
-    }
+    .sidebar { width: 160px; padding: 20px 10px; }
     .sidebar h2 { font-size: 18px; }
-    .menu a { font-size: 12px; padding: 8px 10px; margin: 6px 0; }
+    .menu a { font-size: 12px; padding: 8px 10px; }
     .sidebar .profile { width: 70%; }
     .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
     .hero { padding: 25px 15px; }
@@ -217,29 +188,39 @@ body {
     .box p { font-size: 14px; line-height: 1.4; }
     .read-more-btn { padding: 10px 16px; font-size: 12px; }
     .topic-button { font-size: 11px; padding: 5px 8px; }
-    .modal { width: 90%; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+    /* MOBILE MODAL ADJUSTMENTS */
+    .modal {
+        width: 80%;
+        height: 70vh;
+        top: 10%;
+        right: 5px;
+        left: auto;
+        transform: none;
+        border-radius: 12px;
+    }
 }
 </style>
 
-<!-- CANVAS -->
+<!-- CANVAS FOR ANIMATION -->
 <canvas id="bgCanvas"></canvas>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
-        <a href="/home/">Home / Dashboard</a>
-        <a href="/enterprise-deployment/">Enterprise Deployment</a>
-        <a href="/api-automation/">API Integration & Automation</a>
-        <a href="/security-compliance/">Security & Compliance</a>
-        <a href="/performance-scalability/">Performance & SEO Systems</a>
-        <a href="/saas-systems/">Ready-made Business Systems</a>
-        <a href="/templates-market/">Templates & Market Tools</a>
-        <a href="/troubleshooting/">Troubleshoot Library & Instant Fix Kit</a>
-        <a href="/cybersecurity/">Cybersecurity Compliance & Risk Tools</a>
-        <a href="/connect/">Connect With Me</a>
+        <a href="../home/">Home / Dashboard</a>
+        <a href="../enterprise-deployment/">Enterprise Deployment</a>
+        <a href="../api-integration/">API Integration & Automation</a>
+        <a href="../security-compliance/">Security & Compliance</a>
+        <a href="../performance-seo/">Performance & SEO Systems</a>
+        <a href="../saas-systems/">Ready-Made SaaS Systems</a>
+        <a href="../templates-market/">Templates & Market Tools</a>
+        <a href="../troubleshooting/">Troubleshoot Library & Instant Fix</a>
+        <a href="../cybersecurity/">Cybersecurity & Risk Tools</a>
+        <a href="../connect/">Connect with Me</a>
     </div>
-    <img class="profile" src="images/profile.jpg" alt="Profile Picture">
+    <img class="profile" src="profile.jpg" alt="Profile Picture">
 </div>
 
 <!-- CONTENT -->
@@ -247,48 +228,72 @@ body {
 
     <!-- TOPIC BUTTONS -->
     <div class="topic-buttons">
-        <div class="topic-button" onclick="toggleModal('aiBots')">AI Bots</div>
-        <div class="topic-button" onclick="toggleModal('businessAuto')">Business Automations</div>
-        <div class="topic-button" onclick="toggleModal('leadGen')">Lead Gen Engines</div>
-        <div class="topic-button" onclick="toggleModal('whatsAppBots')">WhatsApp/Telegram Bots</div>
-        <div class="topic-button" onclick="toggleModal('emailAuto')">Email Automation</div>
-        <div class="topic-button" onclick="toggleModal('aiWriting')">AI Writing Engines</div>
-    </div>
-
-    <!-- MODAL -->
-    <div id="modal" class="modal">
-        <h4 id="modalTitle"></h4>
-        <p id="modalContent"></p>
-        <button class="modal-btn" onclick="readMoreTopic()">Read More</button>
+        <div class="topic-button" onclick="toggleModal('topic1')">AI Bots</div>
+        <div class="topic-button" onclick="toggleModal('topic2')">Business Automation</div>
+        <div class="topic-button" onclick="toggleModal('topic3')">Lead Generation</div>
+        <div class="topic-button" onclick="toggleModal('topic4')">WhatsApp/Telegram Bots</div>
+        <div class="topic-button" onclick="toggleModal('topic5')">Email Automation</div>
+        <div class="topic-button" onclick="toggleModal('topic6')">AI Writing Engines</div>
     </div>
 
     <!-- HERO -->
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
         <p>
-            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems...
+            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments.
         </p>
         <div id="moreContent">
-            <p>Beyond core development, FODISY specializes in large-scale user management, advanced security compliance...</p>
-            <p>For readers seeking full detailed walkthroughs, support this work to access complete guides via Payhip...</p>
+            <p>
+                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load.
+            </p>
+            <p>
+                For readers seeking full detailed walkthroughs, support this work to access complete guides — available for purchase on Payhip.
+            </p>
         </div>
         <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
 
     <!-- FEATURE BOXES -->
-    <div class="box"><h3>💠 Core Services</h3><p>Enterprise deployment, API automation, performance tuning, cloud architecture...</p></div>
-    <div class="box"><h3>⚙ Key Modules & Tools</h3><p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes Orchestration<br>✔ API Gateway & Integration Layer</p></div>
-    <div class="box"><h3>🔒 Security & Reliability</h3><p>Systems protected with encrypted endpoints, audit-first logging...</p></div>
-    <div class="box"><h3>📞 Consultation & Support</h3><p>Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting...</p></div>
+    <div class="box">
+        <h3>💠 Core Services</h3>
+        <p>Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems.</p>
+    </div>
+    <div class="box">
+        <h3>⚙ Key Modules & Tools</h3>
+        <p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes<br>✔ API Gateway & Integration Layer<br>✔ Secure Authentication & RBAC<br>✔ Real-time Data Streaming<br>✔ Audit & Compliance Tracking</p>
+    </div>
+    <div class="box">
+        <h3>🔒 Security & Reliability</h3>
+        <p>Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards.</p>
+    </div>
+    <div class="box">
+        <h3>📞 Consultation & Support</h3>
+        <p>Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients.</p>
+    </div>
 
 </div>
 
+<!-- MODALS -->
+<div id="topic1" class="modal">
+    <h4>AI Bots Preview</h4>
+    <p>Learn how AI bots automate repetitive tasks, chatbots, and enterprise solutions...</p>
+    <button class="close-btn" onclick="toggleModal('topic1')">Close</button>
+    <button class="read-more-btn" onclick="window.location.href='../ai-bots/'">Read More</button>
+</div>
+<div id="topic2" class="modal">
+    <h4>Business Automation Preview</h4>
+    <p>Tools and pipelines for automating business workflows efficiently...</p>
+    <button class="close-btn" onclick="toggleModal('topic2')">Close</button>
+    <button class="read-more-btn" onclick="window.location.href='../business-automation/'">Read More</button>
+</div>
+<!-- Repeat similar modals for topic3 to topic6 -->
+
 <script>
-/* READ MORE HERO */
+/* READ MORE BUTTON BELOW HERO */
 function toggleReadMore() {
     const more = document.getElementById("moreContent");
     const btn = document.querySelector(".read-more-btn");
-    if(!more.style.display || more.style.display === "none"){
+    if(more.style.display === "none" || !more.style.display){
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
@@ -296,30 +301,16 @@ function toggleReadMore() {
     }
 }
 
-/* TOPIC MODAL */
-const topicData = {
-    aiBots: {title: "AI Bots", content: "Preview of AI Bots topic...", url: "/home/ai-bots/"},
-    businessAuto: {title: "Business Automations", content: "Preview of Business Automations...", url: "/home/business-automations/"},
-    leadGen: {title: "Lead Gen Engines", content: "Preview of Lead Gen Engines...", url: "/home/lead-gen/"},
-    whatsAppBots: {title: "WhatsApp/Telegram Bots", content: "Preview of WhatsApp/Telegram Bots...", url: "/home/whatsapp-bots/"},
-    emailAuto: {title: "Email Automation", content: "Preview of Email Automation...", url: "/home/email-automation/"},
-    aiWriting: {title: "AI Writing Engines", content: "Preview of AI Writing Engines...", url: "/home/ai-writing-engines/"}
-};
-let currentTopic = "";
-function toggleModal(topic){
-    const modal = document.getElementById("modal");
-    if(currentTopic === topic){
+/* TOPIC MODALS */
+function toggleModal(id) {
+    const modal = document.getElementById(id);
+    if(modal.style.display === "block"){
         modal.style.display = "none";
-        currentTopic = "";
     } else {
-        currentTopic = topic;
-        document.getElementById("modalTitle").innerText = topicData[topic].title;
-        document.getElementById("modalContent").innerText = topicData[topic].content;
+        // hide all other modals
+        document.querySelectorAll('.modal').forEach(m => m.style.display='none');
         modal.style.display = "block";
     }
-}
-function readMoreTopic(){
-    if(currentTopic) window.location.href = topicData[currentTopic].url;
 }
 
 /* PARTICLE ANIMATION */
@@ -327,39 +318,45 @@ const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
 const particles = [];
 const numParticles = 80;
+
 for(let i=0;i<numParticles;i++){
-    particles.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size: Math.random()*3+1});
+    particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: (Math.random()-0.5)*1.2, vy: (Math.random()-0.5)*1.2, size: Math.random()*3+1 });
 }
+
 function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     for(let i=0;i<particles.length;i++){
         for(let j=i+1;j<particles.length;j++){
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx*dx + dy*dy);
+            const dx = particles[i].x-particles[j].x;
+            const dy = particles[i].y-particles[j].y;
+            const dist = Math.sqrt(dx*dx+dy*dy);
             if(dist<120){
                 ctx.beginPath();
-                ctx.strokeStyle = 'rgba(0,200,200,'+(1-dist/120)+')';
+                ctx.strokeStyle = 'rgba(0,255,255,'+(1-dist/120)+')';
                 ctx.moveTo(particles[i].x,particles[i].y);
                 ctx.lineTo(particles[j].x,particles[j].y);
                 ctx.stroke();
             }
         }
     }
-    for(let i=0;i<particles.length;i++){
-        let p = particles[i];
+    particles.forEach(p=>{
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(0,200,200,0.8)';
+        ctx.fillStyle='rgba(0,255,255,0.8)';
         ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
         ctx.fill();
         p.x+=p.vx; p.y+=p.vy;
         if(p.x<0||p.x>canvas.width)p.vx*=-1;
         if(p.y<0||p.y>canvas.height)p.vy*=-1;
-    }
+    });
     requestAnimationFrame(draw);
 }
 draw();
-window.addEventListener('resize',()=>{canvas.width = window.innerWidth; canvas.height = window.innerHeight;});
+
+window.addEventListener('resize',()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 </script>
