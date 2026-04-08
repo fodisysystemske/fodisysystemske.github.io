@@ -5,16 +5,22 @@
 <title>FODISY SYSTEMS • Home Dashboard</title>
 
 <style>
-/* BASE */
+/* ---------- BASE ---------- */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #333; /* Dark gray text */
+    color: #333; /* dark gray font */
     overflow-x: hidden;
     position: relative;
+    transition: background 0.5s, color 0.5s;
 }
 
-/* CANVAS FULLSCREEN */
+[data-theme="dark"] {
+    background: #0a0020;
+    color: #d6ffd6;
+}
+
+/* ---------- CANVAS FULLSCREEN (POLYGONS) ---------- */
 #bgCanvas {
     position: fixed;
     top: 0;
@@ -24,134 +30,122 @@ body {
     z-index: 0;
 }
 
-/* SIDEBAR */
+/* ---------- SIDEBAR ---------- */
 .sidebar {
     width: 240px;
     min-height: 100vh;
-    background: rgba(200, 255, 255, 0.05); /* soft light theme */
+    background: rgba(240, 240, 240, 0.95);
     position: fixed;
     left: 0;
     top: 0;
     padding: 25px 20px;
-    box-shadow: 3px 0 12px rgba(0,0,0,0.2);
+    box-shadow: 3px 0 12px rgba(0,0,0,0.3);
     overflow-y: auto;
     z-index: 10;
+    transition: background 0.5s;
 }
+
+[data-theme="dark"] .sidebar {
+    background: rgba(20, 0, 40, 0.95);
+}
+
 .sidebar h2 {
-    color: #007f7f; /* futuristic teal */
+    color: #007777;
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
     letter-spacing: 1px;
 }
+
 .menu a {
     display: block;
     margin: 10px 0;
-    padding: 12px;
+    padding: 10px;
     color: #333;
     text-decoration: none;
-    font-size: 17px;
-    background: rgba(0, 255, 255, 0.1);
-    border-left: 4px solid #00cccc;
+    font-size: 16px;
+    background: rgba(200, 200, 200, 0.7);
+    border-left: 4px solid #00aaaa;
     transition: 0.3s;
     border-radius: 4px;
 }
-.menu a:hover {
-    background: rgba(0, 255, 255, 0.2);
-    transform: translateX(5px);
-}
-.sidebar .profile {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 50%;
-    display: block;
+
+[data-theme="dark"] .menu a {
+    color: #d6ffd6;
+    background: rgba(70, 0, 120, 0.6);
+    border-left-color: #7dff7d;
 }
 
-/* CONTENT */
+.menu a:hover {
+    transform: translateX(5px);
+}
+
+/* Profile picture below menu */
+.sidebar img {
+    display: block;
+    margin: 20px auto 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ---------- THEME TOGGLE ---------- */
+#themeToggle {
+    cursor: pointer;
+    display: block;
+    font-size: 22px;
+    margin: 15px auto;
+    text-align: center;
+    user-select: none;
+}
+
+/* ---------- CONTENT ---------- */
 .content {
     margin-left: 260px;
     padding: 20px 25px;
     max-width: calc(100% - 260px);
     position: relative;
     z-index: 5;
-    background: rgba(255,255,255,0.05); /* slightly transparent to see polygons */
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    transition: background 0.5s;
 }
 
-/* HERO */
+[data-theme="dark"] .content {
+    background: rgba(10,0,30,0.7);
+}
+
+/* ---------- HERO ---------- */
 .hero {
-    background: rgba(255, 255, 255, 0.08);
     padding: 40px;
     border-radius: 16px;
     margin-bottom: 30px;
-    box-shadow: 0 0 30px rgba(0,255,255,0.2);
 }
+
 .hero h1 {
-    color: #006666;
-    font-size: 32px;
     margin: 0 0 20px;
-    text-shadow: 0 0 6px #00cccc;
+    font-size: 32px;
 }
+
 .hero p {
     font-size: 16px;
     line-height: 1.7;
     text-align: justify;
-    color: #333;
 }
 
-/* TOPIC BUTTONS */
-.topic-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-.topic-button {
-    padding: 8px 12px;
-    background: rgba(0, 255, 255, 0.15);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 14px;
-}
-.topic-button:hover {
-    background: rgba(0, 255, 255, 0.3);
-    transform: translateY(-3px);
-}
-
-/* MODAL */
-.modal {
+/* ---------- READ MORE ---------- */
+#moreContent {
     display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    max-height: 70vh;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.95);
-    border-radius: 12px;
-    padding: 20px;
-    z-index: 50;
-    box-shadow: 0 0 25px rgba(0,255,255,0.5);
-}
-.modal h4 { margin-top: 0; }
-.modal p { color: #333; line-height: 1.6; }
-.modal .close-btn {
+    overflow: hidden;
     margin-top: 15px;
-    padding: 8px 16px;
-    background: #00cccc;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
-
-/* READ MORE BUTTON */
 .read-more-btn {
     margin-top: 20px;
     padding: 12px 20px;
-    background: #00cccc;
-    color: #fff;
+    background: #00aaaa;
+    color: #0a0020;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -159,53 +153,125 @@ body {
     transition: 0.3s;
 }
 .read-more-btn:hover {
-    background: #00eeee;
+    background: #33cccc;
 }
 
-/* FEATURE BOXES */
+/* ---------- FEATURE BOXES ---------- */
 .box {
-    background: rgba(255,255,255,0.05);
     padding: 28px;
     border-radius: 14px;
     margin-bottom: 25px;
-    box-shadow: 0 0 18px rgba(0,255,255,0.2);
+    box-shadow: 0 0 18px rgba(0, 170, 170, 0.3);
+    background: rgba(255,255,255,0.6);
 }
-.box h3 { color: #006666; margin-top: 0; font-size: 24px; }
-.box p { font-size: 16px; line-height: 1.7; color: #333; }
 
-/* RESPONSIVE MOBILE */
+[data-theme="dark"] .box {
+    background: rgba(20,0,40,0.6);
+}
+
+/* ---------- SUBMENU BUTTONS ---------- */
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.topic-buttons button {
+    flex: 1 1 120px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #00aaaa;
+    color: #0a0020;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+.topic-buttons button:hover {
+    transform: translateY(-4px);
+    background: #33cccc;
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: 90%;
+    height: 400px;
+    background: url('book-texture.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 50;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* MATRIX EFFECT OVER MODAL */
+.modal::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,255,0,0.15),
+        rgba(0,255,0,0.15) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation: matrixFlow 1s linear infinite;
+}
+@keyframes matrixFlow { 0% {background-position-y:0;} 100% {background-position-y:4px;} }
+
+/* ---------- RESPONSIVE ---------- */
 @media screen and (max-width: 768px) {
-    .sidebar { width: 160px; padding: 20px 10px; }
-    .sidebar h2 { font-size: 18px; }
-    .menu a { font-size: 12px; padding: 8px 10px; }
-    .sidebar .profile { width: 70%; }
-    .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
-    .hero { padding: 25px 15px; }
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 14px; line-height: 1.5; }
-    .box { padding: 20px 15px; }
-    .box h3 { font-size: 20px; }
-    .box p { font-size: 14px; line-height: 1.4; }
-    .read-more-btn { padding: 10px 16px; font-size: 12px; }
-    .topic-button { font-size: 11px; padding: 5px 8px; }
-
-    /* MOBILE MODAL ADJUSTMENTS */
-    .modal {
-        width: 80%;
-        height: 70vh;
-        top: 10%;
-        right: 5px;
-        left: auto;
-        transform: none;
-        border-radius: 12px;
+    .sidebar {
+        width: 160px;
+        padding: 20px 10px;
     }
+    .sidebar h2 { font-size: 18px; }
+    .menu a { font-size: 10px; padding: 8px 10px; }
+    .sidebar img { width: 60px; height: 60px; }
+    .content {
+        margin-left: 160px;
+        padding: 10px;
+        width: calc(100% - 160px);
+    }
+    .topic-buttons { 
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .topic-buttons button { 
+        flex: 1 1 45%; /* two rows layout on mobile */
+        font-size: 12px;
+    }
+    .modal {
+        width: 90%;
+        height: 70%;
+        left: auto;
+        right: 0;
+        transform: none;
+        top: 60px;
+    }
+}
+
+/* ---------- THEME DARK COLORS ---------- */
+[data-theme="dark"] .topic-buttons button {
+    background: #7dff7d;
+    color: #0a0020;
 }
 </style>
 
-<!-- CANVAS FOR ANIMATION -->
+<!-- ---------- CANVAS ---------- -->
 <canvas id="bgCanvas"></canvas>
 
-<!-- SIDEBAR -->
+<!-- ---------- SIDEBAR ---------- -->
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
@@ -213,28 +279,34 @@ body {
         <a href="../enterprise-deployment/">Enterprise Deployment</a>
         <a href="../api-integration/">API Integration & Automation</a>
         <a href="../security-compliance/">Security & Compliance</a>
-        <a href="../performance-seo/">Performance & SEO Systems</a>
-        <a href="../saas-systems/">Ready-Made SaaS Systems</a>
+        <a href="../performance-seo/">Performance & Scalability</a>
+        <a href="../cloud-infrastructure/">Cloud & Infrastructure</a>
+        <a href="../troubleshooting/">Troubleshooting & Debugging</a>
+        <a href="../user-management/">Large-Scale User Management</a>
+        <a href="../saas-systems/">Ready-made SaaS Templates</a>
         <a href="../templates-market/">Templates & Market Tools</a>
-        <a href="../troubleshooting/">Troubleshoot Library & Instant Fix</a>
-        <a href="../cybersecurity/">Cybersecurity & Risk Tools</a>
+        <a href="../cybersecurity/">Cybersecurity Tools</a>
         <a href="../connect/">Connect with Me</a>
     </div>
-    <img class="profile" src="profile.jpg" alt="Profile Picture">
+
+    <div id="themeToggle" onclick="toggleTheme()">🌞</div>
+    <img src="profile.jpg" alt="Profile Picture">
 </div>
 
-<!-- CONTENT -->
+<!-- ---------- CONTENT ---------- -->
 <div class="content">
-
     <!-- TOPIC BUTTONS -->
     <div class="topic-buttons">
-        <div class="topic-button" onclick="toggleModal('topic1')">AI Bots</div>
-        <div class="topic-button" onclick="toggleModal('topic2')">Business Automation</div>
-        <div class="topic-button" onclick="toggleModal('topic3')">Lead Generation</div>
-        <div class="topic-button" onclick="toggleModal('topic4')">WhatsApp/Telegram Bots</div>
-        <div class="topic-button" onclick="toggleModal('topic5')">Email Automation</div>
-        <div class="topic-button" onclick="toggleModal('topic6')">AI Writing Engines</div>
+        <button onclick="toggleModal('AI Bots')">AI Bots</button>
+        <button onclick="toggleModal('Business Automations')">Business Automations</button>
+        <button onclick="toggleModal('Lead Gen Engines')">Lead Gen Engines</button>
+        <button onclick="toggleModal('WhatsApp/Telegram Bots')">WhatsApp/Telegram Bots</button>
+        <button onclick="toggleModal('Email Automation')">Email Automation</button>
+        <button onclick="toggleModal('AI Writing & Content')">AI Writing & Content</button>
     </div>
+
+    <!-- MODAL -->
+    <div id="topicModal" class="modal"></div>
 
     <!-- HERO -->
     <div class="hero">
@@ -242,12 +314,15 @@ body {
         <p>
             FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments.
         </p>
+        <p>
+            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience to deliver systems that not only perform but excel. Every pipeline, integration, and cloud deployment is crafted for resilience, speed, and user satisfaction.
+        </p>
         <div id="moreContent">
             <p>
                 Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load.
             </p>
             <p>
-                For readers seeking full detailed walkthroughs, support this work to access complete guides — available for purchase on Payhip.
+                For readers seeking full detailed walkthroughs, support this work to access complete guides. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies — available for purchase on Payhip.
             </p>
         </div>
         <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
@@ -256,44 +331,44 @@ body {
     <!-- FEATURE BOXES -->
     <div class="box">
         <h3>💠 Core Services</h3>
-        <p>Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems.</p>
+        <p>
+            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems. Each service is designed to solve high-complexity problems.
+        </p>
     </div>
+
     <div class="box">
         <h3>⚙ Key Modules & Tools</h3>
-        <p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes<br>✔ API Gateway & Integration Layer<br>✔ Secure Authentication & RBAC<br>✔ Real-time Data Streaming<br>✔ Audit & Compliance Tracking</p>
+        <p>
+            ✔ CI/CD Pipelines<br>
+            ✔ Docker & Kubernetes Orchestration<br>
+            ✔ API Gateway & Integration Layer<br>
+            ✔ Secure Authentication & RBAC<br>
+            ✔ Real-time Data Streaming<br>
+            ✔ Audit & Compliance Tracking
+        </p>
     </div>
+
     <div class="box">
         <h3>🔒 Security & Reliability</h3>
-        <p>Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards.</p>
+        <p>
+            Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards. Infrastructure is optimized for minimal latency and high concurrency.
+        </p>
     </div>
+
     <div class="box">
         <h3>📞 Consultation & Support</h3>
-        <p>Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients.</p>
+        <p>
+            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand speed, reliability, and global scalability.
+        </p>
     </div>
-
 </div>
-
-<!-- MODALS -->
-<div id="topic1" class="modal">
-    <h4>AI Bots Preview</h4>
-    <p>Learn how AI bots automate repetitive tasks, chatbots, and enterprise solutions...</p>
-    <button class="close-btn" onclick="toggleModal('topic1')">Close</button>
-    <button class="read-more-btn" onclick="window.location.href='../ai-bots/'">Read More</button>
-</div>
-<div id="topic2" class="modal">
-    <h4>Business Automation Preview</h4>
-    <p>Tools and pipelines for automating business workflows efficiently...</p>
-    <button class="close-btn" onclick="toggleModal('topic2')">Close</button>
-    <button class="read-more-btn" onclick="window.location.href='../business-automation/'">Read More</button>
-</div>
-<!-- Repeat similar modals for topic3 to topic6 -->
 
 <script>
-/* READ MORE BUTTON BELOW HERO */
+/* ---------- READ MORE BUTTON ---------- */
 function toggleReadMore() {
     const more = document.getElementById("moreContent");
     const btn = document.querySelector(".read-more-btn");
-    if(more.style.display === "none" || !more.style.display){
+    if (more.style.display === "none" || !more.style.display) {
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
@@ -301,60 +376,79 @@ function toggleReadMore() {
     }
 }
 
-/* TOPIC MODALS */
-function toggleModal(id) {
-    const modal = document.getElementById(id);
-    if(modal.style.display === "block"){
-        modal.style.display = "none";
+/* ---------- THEME TOGGLE ---------- */
+function toggleTheme() {
+    const body = document.body;
+    if(body.getAttribute("data-theme") === "dark") {
+        body.removeAttribute("data-theme");
+        document.getElementById("themeToggle").textContent = "🌞";
     } else {
-        // hide all other modals
-        document.querySelectorAll('.modal').forEach(m => m.style.display='none');
-        modal.style.display = "block";
+        body.setAttribute("data-theme","dark");
+        document.getElementById("themeToggle").textContent = "🌙";
     }
 }
 
-/* PARTICLE ANIMATION */
+/* ---------- TOPIC MODAL ---------- */
+let currentTopic = null;
+function toggleModal(topic) {
+    const modal = document.getElementById("topicModal");
+    if(currentTopic === topic) {
+        modal.style.display = "none";
+        currentTopic = null;
+    } else {
+        modal.style.display = "block";
+        modal.innerHTML = <h2>${topic}</h2><p>Preview content for ${topic}. <a href="#">Read More</a></p>;
+        currentTopic = topic;
+    }
+}
+
+/* ---------- POLYGON BACKGROUND ---------- */
 const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 const particles = [];
 const numParticles = 80;
-
 for(let i=0;i<numParticles;i++){
-    particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: (Math.random()-0.5)*1.2, vy: (Math.random()-0.5)*1.2, size: Math.random()*3+1 });
+    particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*1.2,
+        vy: (Math.random()-0.5)*1.2,
+        size: Math.random()*3+1
+    });
 }
-
 function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     for(let i=0;i<particles.length;i++){
         for(let j=i+1;j<particles.length;j++){
-            const dx = particles[i].x-particles[j].x;
-            const dy = particles[i].y-particles[j].y;
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx*dx+dy*dy);
             if(dist<120){
                 ctx.beginPath();
-                ctx.strokeStyle = 'rgba(0,255,255,'+(1-dist/120)+')';
+                ctx.strokeStyle = 'rgba(0,170,170,'+(1-dist/120)+')';
                 ctx.moveTo(particles[i].x,particles[i].y);
                 ctx.lineTo(particles[j].x,particles[j].y);
                 ctx.stroke();
+                ctx.closePath();
             }
         }
     }
-    particles.forEach(p=>{
+    for(let i=0;i<particles.length;i++){
+        let p = particles[i];
         ctx.beginPath();
-        ctx.fillStyle='rgba(0,255,255,0.8)';
+        ctx.fillStyle = 'rgba(0,170,170,0.8)';
         ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
         ctx.fill();
-        p.x+=p.vx; p.y+=p.vy;
+        p.x+=p.vx;
+        p.y+=p.vy;
         if(p.x<0||p.x>canvas.width)p.vx*=-1;
         if(p.y<0||p.y>canvas.height)p.vy*=-1;
-    });
+    }
     requestAnimationFrame(draw);
 }
 draw();
-
 window.addEventListener('resize',()=>{
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
