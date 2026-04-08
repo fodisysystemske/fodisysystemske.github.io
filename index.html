@@ -33,14 +33,8 @@ body.dark {
   z-index: 10;
   transition: background 0.5s;
 }
-body.dark .sidebar {
-  background: rgba(11,17,23,0.95);
-}
-.sidebar h2 {
-  color: #008080;
-  text-align: center;
-  margin-bottom: 20px;
-}
+body.dark .sidebar { background: rgba(11,17,23,0.95); }
+.sidebar h2 { color: #008080; text-align: center; margin-bottom: 20px; }
 .sidebar img { display: none; border-radius: 50%; width: 80px; height: 80px; object-fit: cover; }
 @media screen and (max-width:768px) { .sidebar img { display:block; margin:0 auto 15px; } }
 
@@ -200,14 +194,15 @@ body.dark #themeToggleBtn:hover { background: #80e0e0; }
 }
 
 /* ------------- CANVAS ------------- */
-.polygon-canvas, .bubble-canvas {
+#bgCanvas, #modalBubbleCanvas {
   position: fixed; top:0; left:0; width:100%; height:100%; z-index:0;
   pointer-events:none;
 }
+#modalBubbleCanvas { z-index: 51; }
 </style>
 
-<canvas id="polygonCanvas" class="polygon-canvas"></canvas>
-<canvas id="bubbleCanvas" class="bubble-canvas"></canvas>
+<canvas id="bgCanvas"></canvas>
+<canvas id="modalBubbleCanvas"></canvas>
 
 <div class="sidebar" id="sidebar">
   <h2>FODISY SYSTEMS</h2>
@@ -270,56 +265,58 @@ const themeBtn = document.getElementById("themeToggleBtn");
 themeBtn.addEventListener("click", ()=>{ document.body.classList.toggle("dark"); });
 
 // ---------------- POLYGON BACKGROUND ----------------
-const polygonCanvas = document.getElementById("polygonCanvas");
-const pctx = polygonCanvas.getContext("2d");
-polygonCanvas.width = window.innerWidth;
-polygonCanvas.height = window.innerHeight;
-
-const polys = [];
-for(let i=0;i<60;i++){
-  polys.push({ x:Math.random()*polygonCanvas.width, y:Math.random()*polygonCanvas.height, vx:(Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3, size:Math.random()*3+1 });
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+const particles = [];
+for(let i=0;i<80;i++){
+    particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size:Math.random()*3+1});
 }
-
 function drawPolygons(){
-  pctx.clearRect(0,0,polygonCanvas.width,polygonCanvas.height);
-  for(let b of polys){
-    pctx.fillStyle=document.body.classList.contains("dark")?'rgba(128,224,224,0.05)':'rgba(0,204,204,0.05)';
-    pctx.beginPath();
-    pctx.arc(b.x,b.y,b.size,0,Math.PI*2); pctx.fill();
-    b.x+=b.vx; b.y+=b.vy;
-    if(b.x<0||b.x>polygonCanvas.width) b.vx*=-1;
-    if(b.y<0||b.y>polygonCanvas.height) b.vy*=-1;
-  }
-  requestAnimationFrame(drawPolygons);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+            const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y, dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<120){
+                ctx.beginPath();
+                ctx.strokeStyle = document.body.classList.contains('dark') ? 'rgba(163,240,240,'+(1-dist/120)+')':'rgba(0,204,204,'+(1-dist/120)+')';
+                ctx.moveTo(particles[i].x,particles[i].y);
+                ctx.lineTo(particles[j].x,particles[j].y);
+                ctx.stroke(); ctx.closePath();
+            }
+        }
+    }
+    for(let i=0;i<particles.length;i++){
+        let p=particles[i]; ctx.beginPath();
+        ctx.fillStyle = document.body.classList.contains('dark')?'rgba(163,240,240,0.8)':'rgba(0,204,204,0.8)';
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>canvas.width)p.vx*=-1;
+        if(p.y<0||p.y>canvas.height)p.vy*=-1;
+    }
+    requestAnimationFrame(drawPolygons);
 }
 drawPolygons();
-window.addEventListener("resize",()=>{ polygonCanvas.width=window.innerWidth; polygonCanvas.height=window.innerHeight; });
+window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
 
-// ---------------- BUBBLE ANIMATION IN MODAL ----------------
-const bubbleCanvas = document.getElementById("bubbleCanvas");
-const bctx = bubbleCanvas.getContext("2d");
-bubbleCanvas.width = window.innerWidth;
-bubbleCanvas.height = window.innerHeight;
-
+// ---------------- MODAL BUBBLES ----------------
+const modalBubbleCanvas = document.getElementById('modalBubbleCanvas');
+const mbCtx = modalBubbleCanvas.getContext('2d');
+modalBubbleCanvas.width = window.innerWidth; modalBubbleCanvas.height = window.innerHeight;
 const bubbles = [];
-for(let i=0;i<40;i++){
-  bubbles.push({x:Math.random()*bubbleCanvas.width,y:Math.random()*bubbleCanvas.height,radius:Math.random()*6+2,vy:Math.random()*0.3+0.1});
-}
-
+for(let i=0;i<40;i++){ bubbles.push({x:Math.random()*modalBubbleCanvas.width, y:Math.random()*modalBubbleCanvas.height, radius:Math.random()*6+2, vy:Math.random()*0.3+0.1}); }
 function drawBubbles(){
-  bctx.clearRect(0,0,bubbleCanvas.width,bubbleCanvas.height);
-  for(let b of bubbles){
-    bctx.fillStyle='rgba(128,224,224,0.05)';
-    bctx.beginPath();
-    bctx.arc(b.x,b.y,b.radius,0,Math.PI*2);
-    bctx.fill();
-    b.y -= b.vy;
-    if(b.y<0) b.y=bubbleCanvas.height;
-  }
-  requestAnimationFrame(drawBubbles);
+    mbCtx.clearRect(0,0,modalBubbleCanvas.width,modalBubbleCanvas.height);
+    for(let b of bubbles){
+        mbCtx.fillStyle='rgba(128,224,224,0.05)';
+        mbCtx.beginPath();
+        mbCtx.arc(b.x,b.y,b.radius,0,Math.PI*2); mbCtx.fill();
+        b.y -= b.vy; if(b.y<0) b.y=modalBubbleCanvas.height;
+    }
+    requestAnimationFrame(drawBubbles);
 }
 drawBubbles();
-window.addEventListener("resize",()=>{ bubbleCanvas.width=window.innerWidth; bubbleCanvas.height=window.innerHeight; });
+window.addEventListener('resize',()=>{ modalBubbleCanvas.width=window.innerWidth; modalBubbleCanvas.height=window.innerHeight; });
 
 // ---------------- TOPIC MODAL ----------------
 const topicButtons=document.querySelectorAll(".topic-button");
