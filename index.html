@@ -14,100 +14,214 @@ body {
     position: relative;
     transition: background 0.5s, color 0.5s;
 }
-canvas { display: block; position: fixed; top:0; left:0; z-index:0; }
+
+canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
 
 /* ---------------- SIDEBAR ---------------- */
 .sidebar {
-    width: 240px; min-height: 100vh;
-    background: rgba(230,255,255,0.9);
-    position: fixed; left:0; top:0;
-    padding:25px 20px;
+    width: 240px;
+    min-height: 100vh;
+    background: rgba(230, 255, 255, 0.9);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 25px 20px;
     box-shadow: 3px 0 12px rgba(0,0,0,0.2);
-    overflow-y: auto; z-index:10;
+    overflow-y: auto;
+    z-index: 10;
 }
-.sidebar h2 { color:#008080; text-align:center; margin-bottom:30px; font-size:24px; }
-.sidebar img { display:block; margin:20px auto 0; border-radius:50%; width:80px; height:80px; object-fit:cover; }
+.sidebar h2 {
+    color: #008080;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+.sidebar img {
+    display: block;
+    margin: 20px auto 0 auto;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
 
 /* ---------------- MENU ---------------- */
 .menu a {
-    display:block; margin:6px 0; padding:6px 10px;
-    color:#008080; text-decoration:none; font-size:13px;
-    background:rgba(200,255,255,0.6); border-left:3px solid #00cccc;
-    transition:0.3s; border-radius:4px;
+    display: block;
+    margin: 6px 0;
+    padding: 6px 10px;
+    color: #008080;
+    text-decoration: none;
+    font-size: 13px;
+    background: rgba(200, 255, 255, 0.6);
+    border-left: 3px solid #00cccc;
+    transition: 0.3s;
+    border-radius: 4px;
 }
-.menu a:hover { background:rgba(0,255,255,0.3); transform:translateX(5px); }
+.menu a:hover {
+    background: rgba(0, 255, 255, 0.3);
+    transform: translateX(5px);
+}
 
 /* ---------------- CONTENT ---------------- */
-.content { margin-left:260px; padding:20px 25px; max-width:calc(100% - 260px); position:relative; z-index:5; }
+.content {
+    margin-left: 260px;
+    padding: 20px 25px;
+    max-width: calc(100% - 260px);
+    position: relative;
+    z-index: 5;
+}
 
 /* ---------------- HERO ---------------- */
-.hero { background: rgba(255,255,255,0.85); padding:40px; border-radius:16px; margin-bottom:30px; box-shadow:0 0 30px rgba(0,255,255,0.3); position:relative; }
-.hero h1 { font-size:32px; }
-.hero p { font-size:16px; line-height:1.7; text-align:justify; }
-#moreContent { display:none; margin-top:15px; }
-.read-more-btn {
-    margin-top:20px; padding:12px 20px; background:#00cccc;
-    color:#fff; border:none; border-radius:6px; cursor:pointer;
-    font-weight:bold; transition:0.3s;
+.hero {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    position: relative;
 }
-.read-more-btn:hover { background:#008080; }
+.hero h1 {
+    font-size: 32px;
+}
+.hero p {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
+}
+#moreContent { display: none; margin-top: 15px; }
+.read-more-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #00cccc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.read-more-btn:hover { background: #008080; }
 
 /* ---------------- FEATURE BOXES ---------------- */
-.box { background:rgba(255,255,255,0.9); padding:28px; border-radius:14px; margin-bottom:25px; box-shadow:0 0 18px rgba(0,200,200,0.3); }
-.box h3 { color:#008080; margin-top:0; font-size:24px; }
-.box p { font-size:16px; line-height:1.7; }
+.box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 18px rgba(0, 200, 200, 0.3);
+}
+.box h3 {
+    color: #008080;
+    margin-top: 0;
+    font-size: 24px;
+}
+.box p { font-size: 16px; line-height: 1.7; }
 
 /* ---------------- SUBMENU BUTTONS ---------------- */
-.topic-buttons { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:25px; }
-.topic-button {
-    background: rgba(0,204,204,0.7); color:#fff; padding:6px 10px;
-    border-radius:12px; cursor:pointer; font-size:12px; min-width:60px;
-    transition:0.3s;
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
 }
-.topic-button:hover { transform:scale(1.05); box-shadow:0 0 12px rgba(0,255,255,0.5); }
+.topic-button {
+    background: rgba(0, 204, 204, 0.7);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    font-size: 12px;
+    min-width: 70px;
+    transition: 0.3s;
+}
+.topic-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+}
 
 /* ---------------- FLOATING BUTTONS ---------------- */
 #themeToggleBtn {
-    position:fixed; top:20px; right:20px;
-    background:rgba(0,255,255,0.7); color:#000; padding:12px;
-    border-radius:50%; cursor:pointer; z-index:30; font-weight:bold; transition:0.3s;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 255, 255, 0.7);
+    color: #000;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 30;
+    font-weight: bold;
+    transition: 0.3s;
 }
-#themeToggleBtn:hover { background:rgba(0,255,255,1); }
+#themeToggleBtn:hover { background: rgba(0, 255, 255, 1); }
 
 /* ---------------- MODAL ---------------- */
 .modal-preview {
-    display:none; position:fixed; top:20px; right:-100%;
-    background: rgba(0,0,0,0.85); color:#0f0; padding:20px;
-    border-radius:12px; width:350px; max-height:80%; overflow-y:auto;
-    z-index:50; box-shadow:0 0 25px rgba(0,255,255,0.4); transition: all 0.5s ease;
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: -100%;
+    transform: translateX(0);
+    background: rgba(0,0,0,0.85);
+    color: #0f0;
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px;
+    max-height: 80%;
+    overflow-y: auto;
+    z-index: 50;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    transition: all 0.5s ease;
 }
-.modal-preview.show { right:20px; }
-.modal-preview h4 { margin-top:0; font-size:16px; }
-.modal-preview p { font-size:14px; line-height:1.4; }
-.modal-preview button, .modal-preview .close-btn {
-    margin-top:10px; padding:10px 16px; border:none; border-radius:6px; cursor:pointer;
-    background:#00cccc; color:#fff; font-weight:bold;
+.modal-preview.show { right: 20px; }
+.modal-preview h4 { margin-top: 0; font-size: 16px; }
+.modal-preview p { font-size: 14px; line-height: 1.4; }
+.modal-preview button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #00cccc;
+    color: #fff;
+    font-weight: bold;
 }
-.modal-preview button:hover, .modal-preview .close-btn:hover { background:#008080; }
-.modal-preview .close-btn { background:red; margin-left:10px; float:right; }
+.modal-preview button:hover { background: #008080; }
 
 /* ---------------- RESPONSIVE ---------------- */
-@media screen and (max-width:768px){
-    .sidebar{width:160px; padding:20px 10px;}
-    .sidebar h2{font-size:18px;}
-    .menu a{font-size:11px; padding:4px 8px; margin:4px 0;}
-    .sidebar img{width:60px; height:60px;}
-    .content{margin-left:160px; padding:10px; max-width:calc(100%-160px);}
-    .hero{padding:25px 15px;} .hero h1{font-size:24px;} .hero p{font-size:14px; line-height:1.5;}
-    .box{padding:20px 15px;} .box h3{font-size:20px;} .box p{font-size:14px; line-height:1.4;}
-    .read-more-btn{padding:10px 16px; font-size:12px;}
-    .topic-button{padding:4px 8px; font-size:11px; min-width:50px;}
-    .modal-preview{width:90%; right:5%; max-height:70%; top:10px;}
+@media screen and (max-width: 768px) {
+    .sidebar { width: 160px; padding: 20px 10px; }
+    .sidebar h2 { font-size: 18px; }
+    .menu a { font-size: 11px; padding: 4px 8px; margin: 4px 0; }
+    .sidebar img { width: 60px; height: 60px; }
+    .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
+    .hero { padding: 25px 15px; }
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 14px; line-height: 1.5; }
+    .box { padding: 20px 15px; }
+    .box h3 { font-size: 20px; }
+    .box p { font-size: 14px; line-height: 1.4; }
+    .read-more-btn { padding: 10px 16px; font-size: 12px; }
+    .topic-button { padding: 4px 8px; font-size: 11px; min-width: 60px; }
+    .modal-preview { width: 90%; right: 5%; max-height: 70%; top: 10px; }
 }
 
-/* ---------------- MATRIX RAIN FOR MODAL ---------------- */
-.modalCanvas{
-    position:absolute; top:0; left:0; width:100%; height:100%; z-index:0;
+/* ---------------- MATRIX BACKGROUND MODAL ---------------- */
+.modalCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 </style>
 
@@ -116,16 +230,16 @@ canvas { display: block; position: fixed; top:0; left:0; z-index:0; }
 <div class="sidebar">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
-        <a href="#">Home / Dashboard</a>
-        <a href="#">Enterprise Deployment</a>
-        <a href="#">API Integration & Automation</a>
-        <a href="#">Security & Compliance</a>
-        <a href="#">Performance & SEO Systems</a>
-        <a href="#">Ready-Made Business Systems</a>
-        <a href="#">Templates & Market Tools</a>
-        <a href="#">Troubleshoot Library & Instant Fix Kit</a>
-        <a href="#">Cybersecurity Compliance & Risk Tools</a>
-        <a href="#">Connect & Collaborate</a>
+        <a href="../home/index.html">Home / Dashboard</a>
+        <a href="../enterprise-deployment/index.html">Enterprise Deployment</a>
+        <a href="../api-automation/index.html">API Integration & Automation</a>
+        <a href="../security-compliance/index.html">Security & Compliance</a>
+        <a href="../performance-seo/index.html">Performance & SEO Systems</a>
+        <a href="../saas-systems/index.html">Ready-Made Business Systems</a>
+        <a href="../templates-market/index.html">Templates & Market Tools</a>
+        <a href="../troubleshooting/index.html">Troubleshoot Library & Instant Fix Kit</a>
+        <a href="../cybersecurity/index.html">Cybersecurity Compliance & Risk Tools</a>
+        <a href="../connect/index.html">Connect & Collaborate</a>
     </div>
     <img src="profile.jpg" alt="Profile Picture">
 </div>
@@ -142,97 +256,162 @@ canvas { display: block; position: fixed; top:0; left:0; z-index:0; }
 
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
-        <p>FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators...</p>
-        <div id="moreContent"><p>Extended content goes here...</p></div>
+        <p>
+            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators...
+        </p>
+        <div id="moreContent">
+            <p>Extended content goes here...</p>
+        </div>
         <button class="read-more-btn">Read More</button>
     </div>
 
-    <div class="box"><h3>💠 Core Services</h3><p>Enterprise deployment, API automation...</p></div>
-    <div class="box"><h3>⚙ Key Modules & Tools</h3><p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes Orchestration...</p></div>
+    <div class="box">
+        <h3>💠 Core Services</h3>
+        <p>Enterprise deployment, API automation...</p>
+    </div>
+
+    <div class="box">
+        <h3>⚙ Key Modules & Tools</h3>
+        <p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes Orchestration...</p>
+    </div>
 </div>
 
 <button id="themeToggleBtn">🌗</button>
 
 <div class="modal-preview" id="topicModal">
     <canvas class="modalCanvas"></canvas>
-    <button class="close-btn">✖</button>
     <h4 id="modalTitle"></h4>
     <p id="modalContent"></p>
     <button id="modalReadMore">Read More</button>
 </div>
 
 <script>
-/* HERO READ MORE */
-document.querySelector(".read-more-btn").addEventListener("click", function(){
+/* ---------------- HERO READ MORE ---------------- */
+document.querySelector(".read-more-btn").addEventListener("click", function() {
     const more = document.getElementById("moreContent");
-    if(more.style.display==="none"||!more.style.display){
-        more.style.display="block"; this.textContent="Support This Work";
-    } else { window.location.href="https://payhip.com/YOUR-LINK-HERE"; }
-});
-
-/* THEME TOGGLE */
-const themeBtn=document.getElementById("themeToggleBtn");
-let darkMode=false;
-themeBtn.addEventListener("click", ()=>{
-    darkMode=!darkMode;
-    if(darkMode){ document.body.style.background="#000"; document.body.style.color="#0f0"; }
-    else{ document.body.style.background="#fff"; document.body.style.color="#333"; }
-});
-
-/* POLYGON BACKGROUND */
-const canvas=document.getElementById('bgCanvas');
-const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth; canvas.height=window.innerHeight;
-const particles=[]; for(let i=0;i<80;i++){particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size:Math.random()*3+1});}
-function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x; const dy=particles[i].y-particles[j].y; const dist=Math.sqrt(dx*dx+dy*dy); if(dist<120){ctx.beginPath(); ctx.strokeStyle=darkMode?'rgba(255,255,255,'+(1-dist/120)+')':'rgba(0,204,204,'+(1-dist/120)+')'; ctx.moveTo(particles[i].x,particles[i].y); ctx.lineTo(particles[j].x,particles[j].y); ctx.stroke(); ctx.closePath(); } } let p=particles[i]; ctx.beginPath(); ctx.fillStyle=darkMode?'rgba(255,255,255,0.8)':'rgba(0,204,204,0.8)'; ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill(); p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>canvas.width)p.vx*=-1; if(p.y<0||p.y>canvas.height)p.vy*=-1; } requestAnimationFrame(draw);}
-draw(); window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-
-/* MATRIX RAIN FOR MODAL WITH FASTER MOBILE FADE */
-let matrixAnim;
-function initMatrixRain(){
-    const modalCanvas=document.querySelector(".modalCanvas");
-    const mctx=modalCanvas.getContext("2d");
-    modalCanvas.width=modalCanvas.offsetWidth;
-    modalCanvas.height=modalCanvas.offsetHeight;
-    const cols=Math.floor(modalCanvas.width/14)+1;
-    const drops=Array(cols).fill(1);
-    cancelAnimationFrame(matrixAnim); // Stop previous rain
-    function rain(){
-        mctx.fillStyle=window.innerWidth<=768?'rgba(0,0,0,0.2)':'rgba(0,0,0,0.1)';
-        mctx.fillRect(0,0,modalCanvas.width,modalCanvas.height);
-        mctx.fillStyle="#0f0";
-        mctx.font="14px monospace";
-        for(let i=0;i<drops.length;i++){
-            const text=String.fromCharCode(33+Math.random()*94);
-            mctx.fillText(text,i*14,drops[i]*14);
-            if(drops[i]*14>modalCanvas.height && Math.random()>0.975){ drops[i]=0; }
-            drops[i]+=window.innerWidth<=768?2:1; // faster on mobile
-        }
-        matrixAnim=requestAnimationFrame(rain);
+    if(more.style.display === "none" || !more.style.display){
+        more.style.display = "block";
+        this.textContent = "Support This Work";
+    } else {
+        window.location.href = "https://payhip.com/YOUR-LINK-HERE";
     }
-    rain();
+});
+
+/* ---------------- THEME TOGGLE ---------------- */
+const themeBtn = document.getElementById("themeToggleBtn");
+let darkMode = false;
+themeBtn.addEventListener("click", ()=>{
+    darkMode = !darkMode;
+    if(darkMode){
+        document.body.style.background = "#000";
+        document.body.style.color = "#0f0";
+    } else {
+        document.body.style.background = "#fff";
+        document.body.style.color = "#333";
+    }
+});
+
+/* ---------------- POLYGON BACKGROUND ---------------- */
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+const particles = [];
+const numParticles = 80;
+for(let i=0;i<numParticles;i++){
+    particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*1.2,
+        vy: (Math.random()-0.5)*1.2,
+        size: Math.random()*3+1
+    });
+}
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+            const dx=particles[i].x-particles[j].x;
+            const dy=particles[i].y-particles[j].y;
+            const dist=Math.sqrt(dx*dx+dy*dy);
+            if(dist<120){
+                ctx.beginPath();
+                ctx.strokeStyle = darkMode ? 'rgba(255,255,255,'+(1-dist/120)+')':'rgba(0,204,204,'+(1-dist/120)+')';
+                ctx.moveTo(particles[i].x,particles[i].y);
+                ctx.lineTo(particles[j].x,particles[j].y);
+                ctx.stroke(); ctx.closePath();
+            }
+        }
+    }
+    for(let i=0;i<particles.length;i++){
+        let p=particles[i];
+        ctx.beginPath();
+        ctx.fillStyle = darkMode?'rgba(255,255,255,0.8)':'rgba(0,204,204,0.8)';
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+        ctx.fill();
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>canvas.width)p.vx*=-1;
+        if(p.y<0||p.y>canvas.height)p.vy*=-1;
+    }
+    requestAnimationFrame(draw);
+}
+draw();
+window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
+
+/* ---------------- MODAL MATRIX BACKGROUND ---------------- */
+function initPolygons(canvasId, color){
+    const modalCanvas = document.querySelector(".modalCanvas");
+    const mctx = modalCanvas.getContext("2d");
+    modalCanvas.width = modalCanvas.offsetWidth;
+    modalCanvas.height = modalCanvas.offsetHeight;
+    const mParticles = [];
+    for(let i=0;i<50;i++){
+        mParticles.push({
+            x: Math.random()*modalCanvas.width,
+            y: Math.random()*modalCanvas.height,
+            vx: (Math.random()-0.5)*0.8,
+            vy: (Math.random()-0.5)*0.8,
+            size: Math.random()*2+0.5
+        });
+    }
+    function mDraw(){
+        mctx.clearRect(0,0,modalCanvas.width,modalCanvas.height);
+        for(let i=0;i<mParticles.length;i++){
+            let p=mParticles[i];
+            mctx.beginPath();
+            mctx.fillStyle=color;
+            mctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+            mctx.fill();
+            p.x+=p.vx; p.y+=p.vy;
+            if(p.x<0||p.x>modalCanvas.width)p.vx*=-1;
+            if(p.y<0||p.y>modalCanvas.height)p.vy*=-1;
+        }
+        requestAnimationFrame(mDraw);
+    }
+    mDraw();
 }
 
-/* TOPIC BUTTON MODAL WITH TOGGLE & CLOSE */
-const topicButtons=document.querySelectorAll(".topic-button");
-const modal=document.getElementById("topicModal");
-const modalTitle=document.getElementById("modalTitle");
-const modalContent=document.getElementById("modalContent");
-const modalReadMore=document.getElementById("modalReadMore");
-const modalClose=document.querySelector(".modal-preview .close-btn");
+/* ---------------- TOPIC BUTTON MODAL ---------------- */
+const topicButtons = document.querySelectorAll(".topic-button");
+const modal = document.getElementById("topicModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalContent = document.getElementById("modalContent");
+const modalReadMore = document.getElementById("modalReadMore");
 
 topicButtons.forEach(btn=>{
     btn.addEventListener("click", ()=>{
         if(modal.style.display==="block" && modalTitle.textContent===btn.textContent){
-            modal.style.display="none"; modal.classList.remove("show"); return;
+            modal.style.display="none";
+            modal.classList.remove("show");
+            return;
         }
-        modal.style.display="block"; modal.classList.add("show");
-        modalTitle.textContent=btn.textContent; modalContent.textContent=btn.getAttribute("data-content");
-        initMatrixRain();
-        modalReadMore.onclick=()=>{ alert("Redirect to full page for "+btn.textContent); }
+        modal.style.display="block";
+        modal.classList.add("show");
+        modalTitle.textContent = btn.textContent;
+        modalContent.textContent = btn.getAttribute("data-content");
+        initPolygons("modalCanvas","rgba(0,255,0,0.5)");
+        modalReadMore.onclick = ()=>{
+            alert("Redirect to full page for "+btn.textContent);
+        }
     });
-});
-modalClose.addEventListener("click", ()=>{
-    modal.style.display="none"; modal.classList.remove("show");
 });
 </script>
