@@ -9,10 +9,9 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #0a0020;
+    color: #d6ffd6;
     overflow-x: hidden;
     position: relative;
-    background: #e0f7fa;
 }
 
 /* CANVAS FULLSCREEN */
@@ -29,7 +28,7 @@ body {
 .sidebar {
     width: 240px;
     min-height: 100vh;
-    background: rgba(240, 248, 255, 0.95);
+    background: rgba(230, 250, 250, 0.9);
     position: fixed;
     left: 0;
     top: 0;
@@ -37,36 +36,37 @@ body {
     box-shadow: 3px 0 12px rgba(0,0,0,0.2);
     overflow-y: auto;
     z-index: 10;
-    text-align: center;
-}
-.sidebar img.profile {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid #00bcd4;
 }
 .sidebar h2 {
-    color: #00796b;
-    margin-bottom: 30px;
-    font-size: 22px;
+    color: #00c9c9;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
     letter-spacing: 1px;
 }
 .menu a {
     display: block;
     margin: 10px 0;
-    padding: 12px;
-    color: #00796b;
+    padding: 10px;
+    color: #0a0020;
     text-decoration: none;
-    font-size: 16px;
-    background: rgba(0, 188, 212, 0.1);
-    border-left: 4px solid #00bcd4;
+    font-size: 17px;
+    background: rgba(0, 200, 200, 0.2);
+    border-left: 4px solid #00c9c9;
     transition: 0.3s;
     border-radius: 4px;
 }
 .menu a:hover {
-    background: rgba(0, 188, 212, 0.3);
+    background: rgba(0, 200, 200, 0.35);
     transform: translateX(5px);
+}
+/* PROFILE PICTURE BELOW MENU ITEMS */
+.sidebar .profile {
+    display: block;
+    width: 80%;
+    margin: 25px auto 0;
+    border-radius: 50%;
+    border: 2px solid #00c9c9;
 }
 
 /* CONTENT */
@@ -78,86 +78,86 @@ body {
     z-index: 5;
 }
 
-/* TOPIC BUTTONS */
+/* TOPIC BUTTONS ABOVE HERO */
 .topic-buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-bottom: 25px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    gap: 10px;
 }
 .topic-button {
-    background: #00bcd4;
-    color: #fff;
-    padding: 10px 14px;
+    background: rgba(0, 200, 200, 0.2);
+    color: #0a0020;
+    border: 2px solid #00c9c9;
+    padding: 10px 15px;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
     position: relative;
     overflow: hidden;
 }
 .topic-button:hover {
-    background: #26c6da;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    background: rgba(0, 200, 200, 0.35);
 }
 
 /* MODAL PREVIEW */
 .modal {
-    display: none;
     position: fixed;
-    top: 50px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 250px;
     max-height: 80vh;
     overflow-y: auto;
-    background: #fff9f4;
+    background: rgba(255,255,255,0.95);
+    border: 2px solid #00c9c9;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     padding: 15px;
-    z-index: 20;
+    z-index: 50;
+    display: none;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
 }
 .modal h4 {
     margin-top: 0;
-    color: #00796b;
-    font-size: 16px;
+    color: #00c9c9;
 }
 .modal p {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
 }
-.modal button {
+.modal .modal-btn {
     margin-top: 10px;
-    padding: 8px 12px;
-    background: #00bcd4;
+    background: #00c9c9;
+    color: #0a0020;
     border: none;
+    padding: 8px 12px;
     border-radius: 6px;
-    color: #fff;
+    font-weight: bold;
     cursor: pointer;
 }
-.modal button:hover { background: #26c6da; }
 
 /* HERO */
 .hero {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 35px;
+    background: rgba(255,255,255,0.25);
+    padding: 40px;
     border-radius: 16px;
     margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+    box-shadow: 0 0 25px rgba(0,200,200,0.4);
 }
 .hero h1 {
-    color: #00796b;
+    color: #00c9c9;
     font-size: 32px;
-    margin: 0 0 15px;
+    margin: 0 0 20px;
 }
 .hero p {
     font-size: 16px;
     line-height: 1.7;
-    text-align: justify;
 }
 
-/* READ MORE */
+/* HERO READ MORE */
 #moreContent {
     display: none;
     overflow: hidden;
@@ -166,8 +166,8 @@ body {
 .read-more-btn {
     margin-top: 20px;
     padding: 12px 20px;
-    background: #00bcd4;
-    color: #fff;
+    background: #00c9c9;
+    color: #0a0020;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -175,25 +175,26 @@ body {
     transition: 0.3s;
 }
 .read-more-btn:hover {
-    background: #26c6da;
+    background: #33ffff;
 }
 
 /* FEATURE BOXES */
 .box {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 25px;
+    background: rgba(255,255,255,0.25);
+    padding: 28px;
     border-radius: 14px;
     margin-bottom: 25px;
-    box-shadow: 0 0 15px rgba(0,188,212,0.3);
+    box-shadow: 0 0 18px rgba(0,200,200,0.3);
 }
 .box h3 {
-    color: #00796b;
+    color: #00c9c9;
     margin-top: 0;
-    font-size: 22px;
+    font-size: 24px;
 }
 .box p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: justify;
 }
 
 /* RESPONSIVE MOBILE */
@@ -203,25 +204,33 @@ body {
         padding: 20px 10px;
     }
     .sidebar h2 { font-size: 18px; }
-    .menu a { font-size: 12px; padding: 8px 10px; margin: 6px 0; }
-    .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
-    .hero { padding: 20px 15px; }
+    .menu a {
+        font-size: 12px;
+        padding: 8px 10px;
+        margin: 6px 0;
+    }
+    .sidebar .profile { width: 70%; }
+    .content {
+        margin-left: 160px;
+        padding: 10px;
+        max-width: calc(100% - 160px);
+    }
+    .hero { padding: 25px 15px; }
     .hero h1 { font-size: 24px; }
-    .hero p { font-size: 12px; line-height: 1.4; }
-    .topic-button { font-size: 12px; padding: 8px 10px; }
-    .box h3 { font-size: 18px; }
-    .box p { font-size: 12px; }
+    .hero p { font-size: 14px; line-height: 1.5; }
+    .box { padding: 20px 15px; }
+    .box h3 { font-size: 20px; }
+    .box p { font-size: 14px; line-height: 1.4; }
     .read-more-btn { padding: 10px 16px; font-size: 12px; }
+    .topic-button { font-size: 12px; padding: 8px 12px; }
 }
-
-/* SMALL ANIMATED PARTICLES */
 </style>
 
+<!-- CANVAS -->
 <canvas id="bgCanvas"></canvas>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-    <img class="profile" src="images/profile.jpg" alt="Profile Picture">
     <h2>FODISY SYSTEMS</h2>
     <div class="menu">
         <a href="/home/">Home / Dashboard</a>
@@ -235,44 +244,44 @@ body {
         <a href="/cybersecurity/">Cybersecurity Compliance & Risk Tools</a>
         <a href="/connect/">Connect With Me</a>
     </div>
+    <img class="profile" src="images/profile.jpg" alt="Profile Picture">
 </div>
 
 <!-- CONTENT -->
 <div class="content">
 
-    <!-- TOPIC BUTTONS ABOVE HERO -->
+    <!-- TOPIC BUTTONS -->
     <div class="topic-buttons">
-        <div class="topic-button" onclick="openModal('AI Bots', 'Preview content for AI Bots...')">AI Bots</div>
-        <div class="topic-button" onclick="openModal('Business Automations', 'Preview content for Business Automations...')">Business Automations</div>
-        <div class="topic-button" onclick="openModal('Lead Gen Engines', 'Preview content for Lead Gen Engines...')">Lead Gen Engines</div>
-        <div class="topic-button" onclick="openModal('WhatsApp/Telegram Bots', 'Preview content for WhatsApp/Telegram Bots...')">WhatsApp/Telegram Bots</div>
-        <div class="topic-button" onclick="openModal('Email Automation', 'Preview content for Email Automation...')">Email Automation</div>
-        <div class="topic-button" onclick="openModal('AI Writing & Content', 'Preview content for AI Writing & Content...')">AI Writing & Content</div>
+        <div class="topic-button" onclick="openModal('aiBots')">AI Bots</div>
+        <div class="topic-button" onclick="openModal('businessAuto')">Business Automations</div>
+        <div class="topic-button" onclick="openModal('leadGen')">Lead Gen Engines</div>
+        <div class="topic-button" onclick="openModal('whatsAppBots')">WhatsApp/Telegram Bots</div>
+        <div class="topic-button" onclick="openModal('emailAuto')">Email Automation</div>
+        <div class="topic-button" onclick="openModal('aiWriting')">AI Writing Engines</div>
     </div>
 
     <!-- MODAL -->
-    <div class="modal" id="topicModal">
+    <div id="modal" class="modal">
         <h4 id="modalTitle"></h4>
         <p id="modalContent"></p>
-        <button onclick="closeModal()">Close</button>
-        <button onclick="readMoreModal()">Read More</button>
+        <button class="modal-btn" onclick="readMoreTopic()">Read More</button>
     </div>
 
     <!-- HERO -->
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
         <p>
-            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems. From high-scale deployments, secure API integrations, to cloud architecture and enterprise-grade automation, FODISY provides solutions for complex, mission-critical software environments. Whether your system struggles under peak traffic, fails silently under integration stress, or suffers security vulnerabilities, we transform chaos into predictable, reliable, and scalable outcomes.
+            FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems...
         </p>
         <p>
-            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience to deliver systems that not only perform but excel. Every pipeline, integration, and cloud deployment is crafted for resilience, speed, and user satisfaction. Businesses from the United States, Europe, and other high-value markets trust FODISY to solve problems that often take senior engineering teams weeks to resolve.
+            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience...
         </p>
         <div id="moreContent">
             <p>
-                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance, enterprise shipping and logistics systems, and performance optimization under high load. We focus on diagnosing subtle issues, fixing root causes, and architecting systems ready to scale globally. Every solution is practical, documented, and designed to maximize uptime, ensuring your business maintains credibility and efficiency.
+                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance...
             </p>
             <p>
-                For readers seeking full detailed walkthroughs, support this work to access complete guides. Each document offers step-by-step instructions, configuration examples, and troubleshooting strategies for complex environments — available for purchase on Payhip and other platforms.
+                For readers seeking full detailed walkthroughs, support this work to access complete guides via Payhip...
             </p>
         </div>
         <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
@@ -282,10 +291,9 @@ body {
     <div class="box">
         <h3>💠 Core Services</h3>
         <p>
-            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance, large-scale user management, and shipping/logistics systems. Each service is designed to solve high-complexity problems that require deep experience and modern engineering practices.
+            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance...
         </p>
     </div>
-
     <div class="box">
         <h3>⚙ Key Modules & Tools</h3>
         <p>
@@ -297,29 +305,26 @@ body {
             ✔ Audit & Compliance Tracking
         </p>
     </div>
-
     <div class="box">
         <h3>🔒 Security & Reliability</h3>
         <p>
-            Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards. Infrastructure is optimized for minimal latency, high concurrency, and GitHub-based deployment workflows.
+            Systems are protected with encrypted endpoints, audit-first logging, strict role-based access...
         </p>
     </div>
-
     <div class="box">
         <h3>📞 Consultation & Support</h3>
         <p>
-            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand speed, reliability, and global scalability.
+            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting...
         </p>
     </div>
-
 </div>
 
 <script>
-/* READ MORE BUTTON */
+/* READ MORE HERO */
 function toggleReadMore() {
     const more = document.getElementById("moreContent");
     const btn = document.querySelector(".read-more-btn");
-    if (more.style.display === "none" || !more.style.display) {
+    if(more.style.display === "none" || !more.style.display){
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
@@ -327,19 +332,29 @@ function toggleReadMore() {
     }
 }
 
-/* TOPIC MODAL FUNCTIONS */
-function openModal(title, content){
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalContent').innerText = content;
-    document.getElementById('topicModal').style.display = 'block';
+/* TOPIC MODAL */
+const topicData = {
+    aiBots: {title: "AI Bots", content: "Preview of AI Bots topic...", url: "/home/ai-bots/"},
+    businessAuto: {title: "Business Automations", content: "Preview of Business Automations...", url: "/home/business-automations/"},
+    leadGen: {title: "Lead Gen Engines", content: "Preview of Lead Gen Engines...", url: "/home/lead-gen/"},
+    whatsAppBots: {title: "WhatsApp/Telegram Bots", content: "Preview of WhatsApp/Telegram Bots...", url: "/home/whatsapp-bots/"},
+    emailAuto: {title: "Email Automation", content: "Preview of Email Automation...", url: "/home/email-automation/"},
+    aiWriting: {title: "AI Writing Engines", content: "Preview of AI Writing Engines...", url: "/home/ai-writing-engines/"}
+};
+let currentTopic = "";
+function openModal(topic){
+    currentTopic = topic;
+    const modal = document.getElementById("modal");
+    document.getElementById("modalTitle").innerText = topicData[topic].title;
+    document.getElementById("modalContent").innerText = topicData[topic].content;
+    modal.style.display = "block";
 }
-function closeModal(){
-    document.getElementById('topicModal').style.display = 'none';
+function readMoreTopic(){
+    if(currentTopic) window.location.href = topicData[currentTopic].url;
 }
-function readMoreModal(){
-    // Redirect to topic page
-    const topic = document.getElementById('modalTitle').innerText.toLowerCase().replace(/ /g,'-');
-    window.location.href = /home/${topic}/;
+window.onclick = function(e){
+    const modal = document.getElementById("modal");
+    if(e.target === modal) modal.style.display = "none";
 }
 
 /* PARTICLE ANIMATION */
@@ -363,7 +378,6 @@ for(let i=0;i<numParticles;i++){
 
 function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    // draw lines
     for(let i=0;i<particles.length;i++){
         for(let j=i+1;j<particles.length;j++){
             const dx = particles[i].x - particles[j].x;
@@ -371,7 +385,7 @@ function draw(){
             const dist = Math.sqrt(dx*dx+dy*dy);
             if(dist<120){
                 ctx.beginPath();
-                ctx.strokeStyle = 'rgba(0,188,212,'+(1-dist/120)+')';
+                ctx.strokeStyle = 'rgba(0,200,200,'+(1-dist/120)+')';
                 ctx.moveTo(particles[i].x,particles[i].y);
                 ctx.lineTo(particles[j].x,particles[j].y);
                 ctx.stroke();
@@ -379,11 +393,10 @@ function draw(){
             }
         }
     }
-    // draw particles
     for(let i=0;i<particles.length;i++){
         let p = particles[i];
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(0,188,212,0.8)';
+        ctx.fillStyle = 'rgba(0,200,200,0.8)';
         ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
         ctx.fill();
         p.x+=p.vx;
@@ -394,7 +407,6 @@ function draw(){
     requestAnimationFrame(draw);
 }
 draw();
-
 window.addEventListener('resize',()=>{
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
