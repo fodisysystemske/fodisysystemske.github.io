@@ -63,8 +63,7 @@ body.dark .menu a:hover { background: rgba(128,224,224,0.2); }
 .content { 
   margin-left: 260px; 
   padding: 20px 25px; 
-  width: calc(100% - 260px); /* widened content */
-  max-width: calc(100% - 260px);
+  max-width: calc(100% - 260px); 
   position: relative; 
   z-index: 5; 
 }
@@ -184,12 +183,19 @@ body.dark #themeToggleBtn:hover { background: #80e0e0; }
 }
 #modalCloseBtn:hover { color:#00ffff; }
 
-/* ------------- RESPONSIVE ------------- */
+/* ------------- RESPONSIVE - MOBILE WIDE CONTENT FIX ------------- */
 @media screen and (max-width:768px){
   .sidebar{width:160px;padding:20px 10px;}
   .sidebar h2{font-size:18px;}
   .menu a{font-size:11px;padding:4px 8px;margin:4px 0;}
-  .content{margin-left:160px;padding:10px;width:calc(100%-160px);} /* widened content */
+  
+  /* Mobile WIDE CONTENT */
+  .content{
+    margin-left:0;   /* remove left margin for mobile */
+    padding:15px 10px;
+    width:100%;      /* full width */
+  }
+
   .hero{padding:25px 15px;}
   .hero h1{font-size:24px;}
   .hero p{font-size:14px;line-height:1.5;}
