@@ -9,9 +9,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #d6ffd6;
+    color: #333333; /* Dark gray font */
     overflow-x: hidden;
     position: relative;
+    background: #f4f8fb;
 }
 
 /* CANVAS FULLSCREEN */
@@ -48,7 +49,7 @@ body {
     display: block;
     margin: 10px 0;
     padding: 10px;
-    color: #0a0020;
+    color: #333333;
     text-decoration: none;
     font-size: 17px;
     background: rgba(0, 200, 200, 0.2);
@@ -84,22 +85,21 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-bottom: 20px;
-    gap: 10px;
+    gap: 8px;
 }
 .topic-button {
     background: rgba(0, 200, 200, 0.2);
-    color: #0a0020;
+    color: #333333;
     border: 2px solid #00c9c9;
-    padding: 10px 15px;
-    border-radius: 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 13px;
     transition: transform 0.3s, background 0.3s;
-    position: relative;
-    overflow: hidden;
 }
 .topic-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     background: rgba(0, 200, 200, 0.35);
 }
 
@@ -109,14 +109,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
+    width: 280px;
+    max-width: 90%;
     max-height: 80vh;
     overflow-y: auto;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.97);
     border: 2px solid #00c9c9;
     border-radius: 12px;
     padding: 15px;
-    z-index: 50;
+    z-index: 100;
     display: none;
     box-shadow: 0 0 25px rgba(0,0,0,0.4);
 }
@@ -127,6 +128,7 @@ body {
 .modal p {
     font-size: 14px;
     line-height: 1.5;
+    color: #333333;
 }
 .modal .modal-btn {
     margin-top: 10px;
@@ -142,14 +144,14 @@ body {
 /* HERO */
 .hero {
     background: rgba(255,255,255,0.25);
-    padding: 40px;
+    padding: 35px;
     border-radius: 16px;
     margin-bottom: 30px;
     box-shadow: 0 0 25px rgba(0,200,200,0.4);
 }
 .hero h1 {
     color: #00c9c9;
-    font-size: 32px;
+    font-size: 30px;
     margin: 0 0 20px;
 }
 .hero p {
@@ -204,17 +206,9 @@ body {
         padding: 20px 10px;
     }
     .sidebar h2 { font-size: 18px; }
-    .menu a {
-        font-size: 12px;
-        padding: 8px 10px;
-        margin: 6px 0;
-    }
+    .menu a { font-size: 12px; padding: 8px 10px; margin: 6px 0; }
     .sidebar .profile { width: 70%; }
-    .content {
-        margin-left: 160px;
-        padding: 10px;
-        max-width: calc(100% - 160px);
-    }
+    .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
     .hero { padding: 25px 15px; }
     .hero h1 { font-size: 24px; }
     .hero p { font-size: 14px; line-height: 1.5; }
@@ -222,7 +216,8 @@ body {
     .box h3 { font-size: 20px; }
     .box p { font-size: 14px; line-height: 1.4; }
     .read-more-btn { padding: 10px 16px; font-size: 12px; }
-    .topic-button { font-size: 12px; padding: 8px 12px; }
+    .topic-button { font-size: 11px; padding: 5px 8px; }
+    .modal { width: 90%; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 }
 </style>
 
@@ -252,12 +247,12 @@ body {
 
     <!-- TOPIC BUTTONS -->
     <div class="topic-buttons">
-        <div class="topic-button" onclick="openModal('aiBots')">AI Bots</div>
-        <div class="topic-button" onclick="openModal('businessAuto')">Business Automations</div>
-        <div class="topic-button" onclick="openModal('leadGen')">Lead Gen Engines</div>
-        <div class="topic-button" onclick="openModal('whatsAppBots')">WhatsApp/Telegram Bots</div>
-        <div class="topic-button" onclick="openModal('emailAuto')">Email Automation</div>
-        <div class="topic-button" onclick="openModal('aiWriting')">AI Writing Engines</div>
+        <div class="topic-button" onclick="toggleModal('aiBots')">AI Bots</div>
+        <div class="topic-button" onclick="toggleModal('businessAuto')">Business Automations</div>
+        <div class="topic-button" onclick="toggleModal('leadGen')">Lead Gen Engines</div>
+        <div class="topic-button" onclick="toggleModal('whatsAppBots')">WhatsApp/Telegram Bots</div>
+        <div class="topic-button" onclick="toggleModal('emailAuto')">Email Automation</div>
+        <div class="topic-button" onclick="toggleModal('aiWriting')">AI Writing Engines</div>
     </div>
 
     <!-- MODAL -->
@@ -273,50 +268,19 @@ body {
         <p>
             FODISY SYSTEMS is the trusted hub for entrepreneurs, enterprises, and innovators seeking mastery over modern software systems...
         </p>
-        <p>
-            Our approach combines multi-stack programming expertise, modern DevOps practices, and real-world troubleshooting experience...
-        </p>
         <div id="moreContent">
-            <p>
-                Beyond core development, FODISY specializes in large-scale user management, advanced security compliance...
-            </p>
-            <p>
-                For readers seeking full detailed walkthroughs, support this work to access complete guides via Payhip...
-            </p>
+            <p>Beyond core development, FODISY specializes in large-scale user management, advanced security compliance...</p>
+            <p>For readers seeking full detailed walkthroughs, support this work to access complete guides via Payhip...</p>
         </div>
         <button class="read-more-btn" onclick="toggleReadMore()">Read More</button>
     </div>
 
     <!-- FEATURE BOXES -->
-    <div class="box">
-        <h3>💠 Core Services</h3>
-        <p>
-            Enterprise deployment, API automation, performance tuning, cloud architecture, security compliance...
-        </p>
-    </div>
-    <div class="box">
-        <h3>⚙ Key Modules & Tools</h3>
-        <p>
-            ✔ CI/CD Pipelines<br>
-            ✔ Docker & Kubernetes Orchestration<br>
-            ✔ API Gateway & Integration Layer<br>
-            ✔ Secure Authentication & RBAC<br>
-            ✔ Real-time Data Streaming<br>
-            ✔ Audit & Compliance Tracking
-        </p>
-    </div>
-    <div class="box">
-        <h3>🔒 Security & Reliability</h3>
-        <p>
-            Systems are protected with encrypted endpoints, audit-first logging, strict role-based access...
-        </p>
-    </div>
-    <div class="box">
-        <h3>📞 Consultation & Support</h3>
-        <p>
-            Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting...
-        </p>
-    </div>
+    <div class="box"><h3>💠 Core Services</h3><p>Enterprise deployment, API automation, performance tuning, cloud architecture...</p></div>
+    <div class="box"><h3>⚙ Key Modules & Tools</h3><p>✔ CI/CD Pipelines<br>✔ Docker & Kubernetes Orchestration<br>✔ API Gateway & Integration Layer</p></div>
+    <div class="box"><h3>🔒 Security & Reliability</h3><p>Systems protected with encrypted endpoints, audit-first logging...</p></div>
+    <div class="box"><h3>📞 Consultation & Support</h3><p>Engage FODISY for direct troubleshooting, deployment assistance, or optimization consulting...</p></div>
+
 </div>
 
 <script>
@@ -324,7 +288,7 @@ body {
 function toggleReadMore() {
     const more = document.getElementById("moreContent");
     const btn = document.querySelector(".read-more-btn");
-    if(more.style.display === "none" || !more.style.display){
+    if(!more.style.display || more.style.display === "none"){
         more.style.display = "block";
         btn.textContent = "Support This Work";
     } else {
@@ -342,19 +306,20 @@ const topicData = {
     aiWriting: {title: "AI Writing Engines", content: "Preview of AI Writing Engines...", url: "/home/ai-writing-engines/"}
 };
 let currentTopic = "";
-function openModal(topic){
-    currentTopic = topic;
+function toggleModal(topic){
     const modal = document.getElementById("modal");
-    document.getElementById("modalTitle").innerText = topicData[topic].title;
-    document.getElementById("modalContent").innerText = topicData[topic].content;
-    modal.style.display = "block";
+    if(currentTopic === topic){
+        modal.style.display = "none";
+        currentTopic = "";
+    } else {
+        currentTopic = topic;
+        document.getElementById("modalTitle").innerText = topicData[topic].title;
+        document.getElementById("modalContent").innerText = topicData[topic].content;
+        modal.style.display = "block";
+    }
 }
 function readMoreTopic(){
     if(currentTopic) window.location.href = topicData[currentTopic].url;
-}
-window.onclick = function(e){
-    const modal = document.getElementById("modal");
-    if(e.target === modal) modal.style.display = "none";
 }
 
 /* PARTICLE ANIMATION */
@@ -362,34 +327,24 @@ const canvas = document.getElementById('bgCanvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 const particles = [];
 const numParticles = 80;
-
 for(let i=0;i<numParticles;i++){
-    particles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        vx: (Math.random()-0.5)*1.2,
-        vy: (Math.random()-0.5)*1.2,
-        size: Math.random()*3+1
-    });
+    particles.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size: Math.random()*3+1});
 }
-
 function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     for(let i=0;i<particles.length;i++){
         for(let j=i+1;j<particles.length;j++){
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx*dx+dy*dy);
+            const dist = Math.sqrt(dx*dx + dy*dy);
             if(dist<120){
                 ctx.beginPath();
                 ctx.strokeStyle = 'rgba(0,200,200,'+(1-dist/120)+')';
                 ctx.moveTo(particles[i].x,particles[i].y);
                 ctx.lineTo(particles[j].x,particles[j].y);
                 ctx.stroke();
-                ctx.closePath();
             }
         }
     }
@@ -399,16 +354,12 @@ function draw(){
         ctx.fillStyle = 'rgba(0,200,200,0.8)';
         ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
         ctx.fill();
-        p.x+=p.vx;
-        p.y+=p.vy;
+        p.x+=p.vx; p.y+=p.vy;
         if(p.x<0||p.x>canvas.width)p.vx*=-1;
         if(p.y<0||p.y>canvas.height)p.vy*=-1;
     }
     requestAnimationFrame(draw);
 }
 draw();
-window.addEventListener('resize',()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
+window.addEventListener('resize',()=>{canvas.width = window.innerWidth; canvas.height = window.innerHeight;});
 </script>
