@@ -1,21 +1,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FODISY SYSTEMS offers expert solutions for enterprise deployment, API integration, security, scaling high-traffic applications, cloud infrastructure, and troubleshooting complex systems.">
-<meta name="keywords" content="Enterprise software, Deployment, API integration, System security, Cloud architecture, Scalability, Debugging, Logistics systems, Large-scale user management">
-<title>FODISY SYSTEMS • Home Dashboard</title>
+<title>FODISY SYSTEMS • Home Dashboard | AI, Automation, SaaS & Enterprise Tools</title>
+<meta name="description" content="FODISY SYSTEMS provides futuristic software solutions: AI automation, SaaS templates, performance optimization, security tools, and enterprise-scale deployments. Explore demo-ready systems and business templates.">
+<meta name="keywords" content="AI automation, SaaS templates, enterprise deployment, cloud infrastructure, cybersecurity tools, performance optimization, large-scale user management, troubleshooting, automation scripts, ready-made business systems">
+<meta property="og:title" content="FODISY SYSTEMS • Home Dashboard">
+<meta property="og:description" content="Explore futuristic software solutions: AI & automation engines, SaaS templates, cybersecurity compliance, and performance optimization systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://YOURDOMAIN.github.io/home/">
+<meta property="og:image" content="https://YOURDOMAIN.github.io/home/og-image.png">
 
 <style>
-/* BASE */
+/* BASE & LIGHT UI */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #d6ffd6;
+    color: #0a0a0a;
     overflow-x: hidden;
-    background: #080011;
     position: relative;
+    background: #e6f7f7; /* light soft background */
 }
 
-/* CANVAS FULLSCREEN */
+/* CANVAS FULLSCREEN ANIMATION */
 #bgCanvas {
     position: fixed;
     top: 0;
@@ -23,63 +28,43 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background: #080011;
 }
 
 /* SIDEBAR */
 .sidebar {
     width: 240px;
     min-height: 100vh;
-    background: rgba(40, 0, 70, 0.92);
+    background: rgba(0, 30, 40, 0.9);
     position: fixed;
     left: 0;
     top: 0;
     padding: 25px 20px;
-    box-shadow: 3px 0 12px rgba(0,0,0,0.6);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 3px 0 12px rgba(0,0,0,0.3);
+    overflow-y: auto;
     z-index: 10;
 }
-.sidebar-logo {
-    flex-shrink: 0;
+.sidebar h2 {
+    color: #00e6e6;
     text-align: center;
-    margin-bottom: 20px;
-}
-.sidebar-logo img {
-    max-width: 140px;
-    width: 80%;
-    height: auto;
-}
-/* Scrollable menu for desktop */
-.menu {
-    flex: 1;
-    overflow-y: auto;
-    padding-right: 5px; /* prevents hidden scrollbar overlap */
+    margin-bottom: 40px;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 .menu a {
     display: block;
     margin: 12px 0;
     padding: 12px;
-    color: #d6ffd6;
+    color: #e6f7f7;
     text-decoration: none;
     font-size: 17px;
-    background: rgba(70, 0, 120, 0.6);
-    border-left: 4px solid #7dff7d;
+    background: rgba(0, 90, 120, 0.6);
+    border-left: 4px solid #00e6e6;
     transition: 0.3s;
     border-radius: 4px;
 }
 .menu a:hover {
-    background: rgba(120, 0, 200, 0.8);
+    background: rgba(0, 180, 200, 0.8);
     transform: translateX(5px);
-}
-
-/* MOBILE IMAGE (optional) */
-.sidebar-image {
-    width: 100%;
-    display: none;
-    margin-top: 15px;
-    border-radius: 12px;
-    border: 2px solid #7dff7d;
 }
 
 /* CONTENT */
@@ -93,17 +78,17 @@ body {
 
 /* HERO */
 .hero {
-    background: rgba(15, 0, 30, 0.9);
+    background: rgba(245, 255, 255, 0.95);
     padding: 40px;
     border-radius: 16px;
     margin-bottom: 30px;
-    box-shadow: 0 0 30px rgba(120, 0, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 230, 230, 0.5);
 }
 .hero h1 {
-    color: #7dff7d;
+    color: #00e6e6;
     font-size: 32px;
     margin: 0 0 20px;
-    text-shadow: 0 0 10px #00ff88;
+    text-shadow: 0 0 8px #00b3b3;
 }
 .hero p {
     font-size: 16px;
@@ -111,36 +96,89 @@ body {
     text-align: justify;
 }
 
-/* FEATURE BOXES */
-.box {
-    background: rgba(25, 0, 45, 0.88);
-    padding: 28px;
-    border-radius: 14px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 18px rgba(100, 0, 200, 0.5);
+/* TOPIC BUTTONS */
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
 }
-.box h3 {
-    color: #9b59ff;
-    margin-top: 0;
-    font-size: 24px;
-}
-.box p {
+.topic-buttons button {
+    background: linear-gradient(135deg, #00e6e6, #00b3b3);
+    color: #fff;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
     font-size: 16px;
-    line-height: 1.7;
-    text-align: justify;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.topic-buttons button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,230,230,0.5);
 }
 
-/* READ MORE */
-#moreContent {
+/* MODAL PREVIEW */
+.modal-overlay {
     display: none;
-    overflow: hidden;
-    margin-top: 15px;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,10,10,0.7);
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
 }
+.modal {
+    background: #f0f8f8;
+    width: 350px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,230,230,0.4);
+    position: relative;
+}
+.modal h3 {
+    color: #00b3b3;
+    margin-top: 0;
+}
+.modal p {
+    color: #0a0a0a;
+    line-height: 1.5;
+}
+.modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #00b3b3;
+}
+
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 768px) {
+    .sidebar { width: 160px; padding: 20px 10px; }
+    .sidebar h2 { font-size: 18px; }
+    .menu a { font-size: 12px; padding: 8px 10px; margin: 6px 0; }
+    .content { margin-left: 160px; padding: 10px; max-width: calc(100% - 160px); }
+    .hero { padding: 25px 15px; }
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 14px; line-height: 1.4; }
+    .topic-buttons button { flex: 1 1 100%; font-size: 14px; padding: 12px; }
+    .modal { width: 90%; max-height: 70vh; padding: 15px; }
+}
+
+/* READ MORE BUTTON */
 .read-more-btn {
     margin-top: 20px;
     padding: 12px 20px;
-    background: #7dff7d;
-    color: #0a0020;
+    background: #00e6e6;
+    color: #0a0a0a;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -148,36 +186,9 @@ body {
     transition: 0.3s;
 }
 .read-more-btn:hover {
-    background: #aaffaa;
+    background: #00b3b3;
 }
 
-/* MOBILE RESPONSIVE */
-@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 160px;
-        padding: 20px 10px;
-    }
-    .sidebar-logo img { max-width: 100px; }
-    .menu a {
-        font-size: 10px;
-        padding: 8px 10px;
-        margin: 6px 0;
-    }
-    .sidebar-image { display: block; }
-    .content {
-        margin-left: 160px;
-        padding: 10px;
-        max-width: calc(100% - 160px);
-        width: 130%;
-    }
-    .hero { padding: 25px 15px; }
-    .hero h1 { font-size: 24px; }
-    .hero p { font-size: 10px; line-height: 1.5; }
-    .box { padding: 20px 15px; }
-    .box h3 { font-size: 20px; }
-    .box p { font-size: 10px; line-height: 1.4; }
-    .read-more-btn { padding: 10px 16px; font-size: 12px; }
-}
 </style>
 
 <!-- CANVAS -->
@@ -185,257 +196,108 @@ body {
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-    <div class="sidebar-logo">
-        <img src="https://i.imgur.com/DKLJ7YH.png" alt="FODISY Logo">
-    </div>
+    <h2>FODISY SYSTEMS</h2>
     <div class="menu">
-        <a href="index.html">Home / Dashboard</a>
-        <a href="enterprise-deployment.html">Enterprise Deployment</a>
-        <a href="api-integration.html">API Integration & Automation</a>
-        <a href="security-compliance.html">Security & Compliance</a>
-        <a href="performance-scalability.html">Performance & Scalability</a>
-        <a href="troubleshooting.html">Troubleshooting & Debugging</a>
-        <a href="user-management.html">Large-Scale User Management</a>
-        <a href="connect-with-me.html">Connect with Me</a>
+        <a href="../home/index.html">Home / Dashboard</a>
+        <a href="../ai-automation/index.html">AI & Automation Engines</a>
+        <a href="../performance-seo/index.html">Performance & SEO Systems</a>
+        <a href="../saas-systems/index.html">Ready-Made Business Systems</a>
+        <a href="../templates-market/index.html">Templates & Market Tools</a>
+        <a href="../troubleshooting/index.html">Troubleshoot Library & Instant Fix</a>
+        <a href="../cybersecurity/index.html">Cybersecurity Compliance & Risk Tools</a>
+        <a href="../connect/index.html">Contact & Consultation</a>
     </div>
-    <img src="https://i.imgur.com/9JFfdun.jpeg" class="sidebar-image" alt="Mobile Image">
 </div>
 
 <!-- CONTENT -->
 <div class="content">
     <div class="hero">
         <h1>Welcome to FODISY SYSTEMS</h1>
-        <p>
-FODISY SYSTEMS — or the full meaning which means FOCUSED OPERATIONS & DIGITAL INTELLIGENCE SYSTEMS was developed by one DevOps Engineer who spent years solving the problems most people don’t even know how to describe.
-It exists for one purpose: To turn messy, unpredictable systems into something you can manage, understand, and trust.<br>
-Most developers know how to build.<br>
-Very few know how to stabilize, fix, or scale.<br>
-<p>You get clarity that you can actually use. The Problem Almost Everyone Faces (but few admit)
-Today there is unlimited information — yet real solutions are scarce. Many people build systems using AI, tutorials, or quick snippets.<br>
-<p><strong>The result?<p></strong><br>
-A system that works… but only until it doesn’t.<br>
-People end up with apps and automations they cannot fully explain or fix well if they broke:</p>
+        <p>Explore futuristic software solutions for entrepreneurs, enterprises, and innovators. Click any topic below to preview demos or learn more about our ready-made systems and automation engines.</p>
 
-<p><strong>The Problem No One Talks About.</strong><br>
-Today, information is everywhere. Solutions are not.
-We live in a world where even seasoned experienced developers barely write code anymore, and “vibe coders” ship systems that somehow work — untill all of a sudden they dont:<br><p>
-✔ Cannot explain the code if need be<br>
-✔ Cannot trace how the system behaves<br>
-✔ Cannot document anything or the system as poor documentation<br>
-✔ Cannot predict failure modes<br>
-✔ YOUR APPLICATION IS YET TO MAKE YOU MONEY YET YOU SPENT WEEKS OR MONTHS WRITING THE CODE<br></p>
-        
-<p>It’s like living in a beautifully painted home without understanding the foundation.
-You can survive — until the day everything collapses.</p>
-<p><strong>If you’re here, you’re probably dealing with something like this:</strong><br><p>
-✔	You need a system built from ground up using the most modern tech stack to handle and achieve what you want.<br>    
-✔	You’re not sure how the code behaves, if you have one<br> 
-✔	You can’t tell where a process fails<br> 
-✔	Logs show nothing even when something is wrong.<br> 
-✔	Logs that say nothing even though everything is on fire.<br>        
-✔   Small changes break everything unexpectedly.<br>  
-✔	AI wrote the code, but now you don’t understand it<br> 
-✔	Your automations fail silently.<br>
-✔	Your APIs behave unpredictably.<br>
-✔	Your deployments break only in production.<br>
-✔	Your infrastructure works… until traffic spikes.<br>
-✔	Something is wrong, but you can’t explain what.<br></p>
-<p>If that sounds familiar, you’re not inexperienced — you’re operating in complexity that normal documentation or lets just say AI will try to solve but cannot fully unless its coarsed using the manual below. If you’ve ever been stuck in this cycle — confused, overwhelmed, or losing time to problems you can’t quite name — you’re in the right place.
-FODISY is the engineering desk built for exactly this moment.</p>
-
-</p>
-        <p>
-           In today’s world, information is everywhere — but real solutions are rare, EVEN from AI, Sometimes solutions from AI are the worst and will derail you for weeks if not months. You will go down rabbit holes only God or I can assist coming out of. You can read 50 articles, watch 20 tutorials, ask AI for fixes… and still have a system that behaves like a wild animal.
-Modern engineering doesn’t fail because developers are weak — it fails because systems are now too interconnected, too distributed, and too unpredictable for copy-paste instructions.<br>
-<p><strong>FODISY</strong> gives you what the internet cannot:<br> If you already see anything you are trying to solve, or you need a system that is well thought of with documented code, connect with me  make a point and <strong>download this detailed manual,</strong> <br>I took time to see that it will certainly help solving or narrowing down any issue mentioned in this page. What You Actually Get Here Whether you’re just starting out or already leading production systems, FODISY gives you something the internet does not provide:<br><strong> clarity that works in real environments.</strong></p>
-
-</p>
-        <div id="moreContent">
-            <p>
-       One more thing Before you proceede with the download<br>
-In many occasions, I assist in building versatile robust eco-systems and documenting them in detail not because it’s fashionable
-but because it’s necessary for survival on a rainy day.
-WHETHER, you need an application built from ground up using experienced hands on Modern TECH STACK, Frontend and BackEnd.
-Whether you built your system with human engineers, Claude, Cursor, or any other AI — you deserve to fully understand what you own.
-We do the heavy lifting:<br></p><p>
-✔	Better the security of you App, close any loopholes you may have missed or your engineer/programmer missed<br>
-✔	Explaining your code<br>
-✔	Mapping your architecture<br>
-✔	Translating chaos into clarity<br>
-✔	Creating future-proof documentation<br> </p>
-<p>All for a small fee that saves you massive losses in the long run. No noise. No filler. Just the exact reasoning behind why your system behaves the way it does.</p>
-     <p>    
-✔	Proven patterns<br>
-✔	Battle-tested reasoning<br>
-✔	Repeatable processes<br>
-✔	Frameworks that work even under chaos<br>
-✔	Architecture that forgives human error<br>
-✔	Systems that scale without collapsing<br>
-✔	Automation that never breaks silently<br>
-</p><p>
-💡 What You Will Get From The download<br>
-Whether you're a beginner trying to learn building robust systems, you need automation or you may be a senior DevOps engineer responsible for uptime, FODISY gives you something you can't find anywhere else: in this well explained blueprint manual below </p>
-       </p> </div>
-        <button class="read-more-btn" onclick="toggleReadMore()">DOWNLOAD PDF</button>
+        <!-- Topic Buttons -->
+        <div class="topic-buttons">
+            <button data-title="AI Bots" data-text="Explore AI-powered bots for business automation and lead generation.">AI Bots</button>
+            <button data-title="Business Automation" data-text="Automate workflows, emails, and processes across your business seamlessly.">Business Automation</button>
+            <button data-title="Lead Gen Engines" data-text="Lead generation systems that capture and qualify potential clients automatically.">Lead Gen Engines</button>
+            <button data-title="WhatsApp & Telegram Bots" data-text="Instant messaging bots to streamline communication and engagement.">Messaging Bots</button>
+            <button data-title="Email Automation" data-text="Automate personalized email campaigns to reach and convert customers.">Email Automation</button>
+        </div>
     </div>
+</div>
 
-    <!-- FEATURE BOXES -->
-    <div class="box">
-        <h3>💠 I can guarantee you deeper understaning in the following fields</h3>
-        <p>
-            1. Engineering Clarity<br>
-No noise. No vague explanations.
-Just straight answers to difficult engineering problems.<br>
-2. Stability Frameworks<br>
-Field-tested principles that prevent 90% of real-world system failures.<br>
-3. Production-grade Automation
-How to build n8n / Node / DevOps automations that don’t collapse under load.<br>
-4. API Integration Mastery
-From authentication failures to rate limits to retry strategies — real solutions, not generic docs.<br>
-5. Human Reasoning Behind Systems<br>
-6. ALL PAYMENT ateways Inter<br>
-        </p>
-    </div>
-
-    <div class="box">
-        <h3>💠 Key Modules & Tools I work with everyday with ease </h3>
-        <p> 
-            ✔ CI/CD Pipelines<br>
-            ✔ Docker & Kubernetes Orchestration<br>
-            ✔ API Gateway & Integration Layer<br>
-            ✔ Secure Authentication & RBAC<br>
-            ✔ Real-time Data Streaming<br>
-            ✔ Audit & Compliance Tracking<br>
- <p>AI can generate code.
-But AI cannot build the underlying logic, redundancy, or operational discipline behind enterprise systems.
-FODISY teaches you the part that machines cannot replace.<br>
-🚀 <strong>Why This Page Matters to You!</strong><br>
-Every engineering career hits a point where copy-pasting solutions stops working or seem to work but after taking in a deep rabbit hole.
-Maybe you're already here.</p><p>
- ✔	You try deployments. They fail.<br>
- ✔	You try automations. They hang.<br>
- ✔	You fix something… and something else breaks.<br>
- ✔	You follow documentation… and still nothing behaves consistently.<br>
- ✔	You don’t need more tutorials.<br>
- ✔	You need a framework.<br>
- ✔	A proven blueprint that saves you from:<br>
- ✔	Repeating the same mistakes<br>
- ✔	Months of trial-and-error<br>
- ✔	Silent bugs that appear only under pressure<br>
- ✔	Deployments that behave differently from your local environment<br>
- ✔	Automations that misfire without logs<br>
- ✔	API calls that fail unpredictably<br>
- ✔	That framework is what this platform gives you.<br>
-</p>
-            
-        
-    </div>
-
-    <div class="box">
-        <h3>🔒 Security & Reliability</h3>
-        <p> Whether you use n8n, Node-RED, Airflow, Temporal.io, prefect, Huginn, stackStorm, windmill.dev, Appwrite Functions, Supabase Edge Functions, Budibase Automations, 
-        Directus Flows, Automated cloud OSS tolls, Node, Bash, GitHub Actions, Python scripts, or mixed stacks, the manual walks you through, <p>
-        <p>Systems are protected with encrypted endpoints, audit-first logging, strict role-based access, and modern hashing standards. Infrastructure is optimized for minimal latency, high concurrency, and GitHub-based deployment workflows.
-       <p>You’ll get a well written, practical deep dive into:</p><p>
- ✔	How real automation pipelines fail and why<br>
- ✔	How to design workflows that never collapse silently<br>
- ✔	How to structure API calls for guaranteed reliability<br>
- ✔	A mental model for debugging high-complexity systems<br>
- ✔	Why most developers unknowingly design failure-prone architectures<br>
- ✔	How to build systems that are impossible to “mysteriously break”<br>
- ✔  how to design workflows that never hang<br>
- ✔	how to isolate faulty steps<br>
- ✔	how to structure retry logic the right way<br>
- ✔	how to make your pipelines self-healing<br>
- ✔	The exact stability patterns senior engineers use behind the scenes<br>
- ✔	The anti-patterns you must avoid if you want world-class reliability<br>
- ✔	Checklists you can apply today to fix hidden flaws in your system<br></p>
-<p>This is not motivation.<br>
-This is not surface-level knowledge.<br>
-This is hard technical clarity — explained in a human voice, through writing.<br>
-understand and learn practical steps you can start using immediately—no cost, no signup, get the copy and scheme through it first, then read it well.
-</p>
-    </div>
-
-    <div class="box">
-        <h3>📞 Consultation & Support</h3>
-        <p>
-            Engage FODISY or simply connect with me for Advanced Application development, direct troubleshooting, deployment assistance, or optimization consulting. Premium services cater to high-value clients who demand speed, reliability, and global scalability.
-        </p>
+<!-- MODAL -->
+<div class="modal-overlay">
+    <div class="modal">
+        <span class="close-btn">&times;</span>
+        <h3 class="modal-title"></h3>
+        <p class="modal-text"></p>
+        <button class="read-more-btn">Read More</button>
     </div>
 </div>
 
 <script>
-/* READ MORE BUTTON */
-function toggleReadMore() {
-    const more = document.getElementById("moreContent");
-    const btn = document.querySelector(".read-more-btn");
-    if (more.style.display === "none" || !more.style.display) {
-        more.style.display = "block";
-        btn.textContent = "DOWNLOAD DETAILED PDF";
-    } else {
-        window.location.href = "https://payhip.com/YOUR-LINK-HERE";
-    }
-}
-
-/* PARTICLE ANIMATION */
-const canvas = document.getElementById("bgCanvas");
-const ctx = canvas.getContext("2d");
-
-let w, h;
-function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener("resize", resize);
-
+/* CANVAS PARTICLES */
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 const particles = [];
-for (let i = 0; i < 65; i++) {
-    particles.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.7,
-        vy: (Math.random() - 0.5) * 0.7
-    });
+for(let i=0;i<80;i++){
+    particles.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size: Math.random()*3+1});
 }
-
-function draw() {
-    ctx.clearRect(0, 0, w, h);
-
-    // Draw particles
-    particles.forEach(p => {
-        ctx.fillStyle = "#ffffff";
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-        ctx.fill();
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-    });
-
-    // Connecting lines
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            let dx = particles[i].x - particles[j].x;
-            let dy = particles[i].y - particles[j].y;
-            let dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < 140) {
-                ctx.strokeStyle = "rgba(255,255,255," + (1 - dist / 140) + ")";
-                ctx.lineWidth = 1;
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx*dx+dy*dy);
+            if(dist<120){
                 ctx.beginPath();
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = 'rgba(0,230,230,'+(1-dist/120)+')';
+                ctx.moveTo(particles[i].x,particles[i].y);
+                ctx.lineTo(particles[j].x,particles[j].y);
                 ctx.stroke();
             }
         }
     }
-
+    for(let i=0;i<particles.length;i++){
+        let p = particles[i];
+        ctx.beginPath();
+        ctx.fillStyle='rgba(0,230,230,0.8)';
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+        ctx.fill();
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>canvas.width)p.vx*=-1;
+        if(p.y<0||p.y>canvas.height)p.vy*=-1;
+    }
     requestAnimationFrame(draw);
 }
 draw();
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight});
+
+/* MODAL LOGIC */
+const modalOverlay = document.querySelector('.modal-overlay');
+const modal = document.querySelector('.modal');
+const modalTitle = modal.querySelector('.modal-title');
+const modalText = modal.querySelector('.modal-text');
+const readMoreBtn = modal.querySelector('.read-more-btn');
+
+document.querySelectorAll('.topic-buttons button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+        modalOverlay.style.display='flex';
+        modalTitle.textContent = btn.dataset.title;
+        modalText.textContent = btn.dataset.text;
+        readMoreBtn.onclick = ()=>{
+            const urlTitle = btn.dataset.title.toLowerCase().replace(/\s+/g,'-');
+            window.location.href = /ai-automation/${urlTitle}/index.html;
+        }
+    });
+});
+modalOverlay.addEventListener('click', e=>{
+    if(e.target===modalOverlay||e.target.classList.contains('close-btn')){
+        modalOverlay.style.display='none';
+    }
+});
 </script>
