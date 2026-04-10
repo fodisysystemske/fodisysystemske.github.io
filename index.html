@@ -212,6 +212,17 @@ body.dark #themeToggleBtn:hover { background: #80e0e0; }
 }
 #modalBubbleCanvas { z-index: 51; }
 </style>
+<style>
+.dropcap::first-letter {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #007BFF; /* Blue */
+  float: left;
+  line-height: 0.8;
+  padding-right: 8px;
+}
+</style>
+
 
 <canvas id="bgCanvas"></canvas>
 <canvas id="modalBubbleCanvas"></canvas>
@@ -245,7 +256,8 @@ body.dark #themeToggleBtn:hover { background: #80e0e0; }
 
   <div class="hero">
     <h1>Welcome to FODISY SYSTEMS</h1>
-    <p>FODISY SYSTEMS is the trusted hub for entrepreneurs and enterprises that need absolute control over modern software systems. From high-scale deployments and secure API integrations
+    <p class="dropcap">
+      FODISY SYSTEMS is the trusted hub for entrepreneurs and enterprises that need absolute control over modern software systems. From high-scale deployments and secure API integrations
       to cloud architecture and automation, FODISY turns unstable, overloaded, or insecure systems into fast, reliable, and scalable engines for growth.</p><p>
     Backed by the multi-stack expertise of its founder and years of real-world DevOps experience, FODISY solves problems that normally take senior engineering teams weeks to unravel. Companies across the U.S.,
         Europe, and other high-value markets rely on our precision engineering, rapid troubleshooting, and battle-tested deployment practices.</p>
