@@ -1,1 +1,399 @@
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FODISY SYSTEMS provides ready-made business systems designed for fast deployment and immediate monetization. Launch scalable digital platforms, automation systems, and revenue engines using proven frameworks and practical playbooks.">
+<meta name="keywords" content="ready-made business systems, digital business models, online income systems, automation business, SaaS templates, monetization systems, passive income systems, scalable platforms, FODISY SYSTEMS">
+<title>Ready-Made Business Systems</title>  <style>  
+/* ------------- BASE ------------- */  
+body {  
+  margin: 0;  
+  font-family: "Consolas", "Fira Code", "JetBrains Mono", monospace; 
+  color: #333;  
+  transition: background 0.5s, color 0.5s;  
+  background: #fff;  
+  overflow-x: hidden;  
+}  
+body.dark {  
+  background: #0b1117;  
+  color: #80e0e0;  
+}  
+  
+/* ------------- SIDEBAR ------------- */  
+.sidebar {  
+  width: 240px;  
+  min-height: 100vh;  
+  background: rgba(230,255,255,0.9);  
+  position: fixed;  
+  left: 0;  
+  top: 0;  
+  padding: 25px 20px;  
+  box-shadow: 3px 0 12px rgba(0,0,0,0.2);  
+  overflow-y: auto;  
+  z-index: 10;  
+  transition: background 0.5s;  
+}  
+body.dark .sidebar { background: rgba(11,17,23,0.95); }  
+.sidebar h2 { color: #008080; text-align: center; margin-bottom: 20px; }  
+.sidebar img { display: none; border-radius: 50%; width: 80px; height: 80px; object-fit: cover; }  
+@media screen and (max-width:768px) { .sidebar img { display:block; margin:0 auto 15px; } }  
+  
+/* ------------- MENU ------------- */  
+.menu a {  
+  display: block;  
+  margin: 6px 0;  
+  padding: 6px 10px;  
+  color: #008080;  
+  text-decoration: none;  
+  font-size: 12px;  
+  background: rgba(200,255,255,0.6);  
+  border-left: 3px solid #00cccc;  
+  transition: 0.3s;  
+  border-radius: 4px;  
+}  
+.menu a:hover { background: rgba(0,255,255,0.3); transform: translateX(5px); }  
+body.dark .menu a {   
+  color: #80e0e0;   
+  background: rgba(11,17,23,0.85);   
+  border-left: 3px solid #80e0e0;   
+}  
+body.dark .menu a:hover { background: rgba(128,224,224,0.2); }  
+  
+/* ------------- CONTENT ------------- */  
+.content {   
+  margin-left: 260px;   
+  padding: 20px 25px;   
+  width: calc(100% - 260px); /* widened content */  
+  max-width: calc(100% - 260px);  
+  position: relative;   
+  z-index: 5;   
+}  
+body.dark .content { color: #80e0e0; }  
+  
+/* ------------- HERO ------------- */  
+.hero {  
+  background: rgba(255,255,255,0.85);  
+  padding: 40px;  
+  border-radius: 16px;  
+  margin-bottom: 30px;  
+  box-shadow: 0 0 30px rgba(0,200,200,0.3);  
+}  
+body.dark .hero { background: rgba(11,17,23,0.85); box-shadow: 0 0 25px rgba(128,224,224,0.3); }  
+.hero h1 { font-size: 32px; }  
+.hero p { font-size: 16px; line-height: 1.7; text-align: justify; }  
+#moreContent { display: none; margin-top: 15px; }  
+.read-more-btn {  
+  margin-top: 20px;  
+  padding: 12px 20px;  
+  background: #00cccc;  
+  color: #fff;  
+  border: none;  
+  border-radius: 6px;  
+  cursor: pointer;  
+  font-weight: bold;  
+  transition: 0.3s;  
+}  
+.read-more-btn:hover { background: #008080; }  
+body.dark .read-more-btn { background: #80e0e0; color: #0b1117; }  
+body.dark .read-more-btn:hover { background: #008080; color: #80e0e0; }  
+  
+/* ------------- FEATURE BOXES ------------- */  
+.box {  
+  background: rgba(255,255,255,0.9);  
+  padding: 28px;  
+  border-radius: 14px;  
+  margin-bottom: 25px;  
+  box-shadow: 0 0 18px rgba(0,200,200,0.3);  
+}  
+body.dark .box { background: rgba(11,17,23,0.9); box-shadow: 0 0 20px rgba(128,224,224,0.3); }  
+.box h3 { color: #008080; margin-top:0; font-size:24px; }  
+body.dark .box h3 { color: #80e0e0; }  
+.box p { font-size: 16px; line-height: 1.7; }  
+
+.cta-box {
+  background: rgba(0, 204, 204, 0.12);
+  border: 1px solid rgba(0, 204, 204, 0.5);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,200,200,0.2);
+}
+
+.cta-box h3 {
+  font-size: 22px;
+  color: #008080;
+}
+
+.cta-box p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cta-box a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #00cccc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.cta-box a:hover {
+  background: #008080;
+}
+  
+/* ------------- SUBMENU BUTTONS ------------- */  
+.topic-buttons { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:25px; }  
+.topic-button {  
+  background: rgba(0,204,204,0.7);  
+  color:#fff;  
+  padding:4px 8px;  
+  border-radius:10px;  
+  cursor:pointer;  
+  font-size:11px;  
+  min-width:60px;  
+  transition:0.3s;  
+}  
+.topic-button:hover { transform:scale(1.05); box-shadow:0 0 12px rgba(0,255,255,0.5); }  
+body.dark .topic-button { background: rgba(128,224,224,0.4); color:#0b1117; }  
+  
+/* ------------- FLOATING THEME BUTTON ------------- */  
+#themeToggleBtn {  
+  position: fixed;  
+  top:20px;  
+  right:20px;  
+  background: rgba(0,255,255,0.7);  
+  color:#000;  
+  padding:12px;  
+  border-radius:50%;  
+  cursor:pointer;  
+  z-index:30;  
+  font-weight:bold;  
+  transition:0.3s;  
+}  
+#themeToggleBtn:hover { background: rgba(0,255,255,1); }  
+body.dark #themeToggleBtn { background: rgba(128,224,224,0.5); color: #0b1117; }  
+body.dark #themeToggleBtn:hover { background: #80e0e0; }  
+  
+/* ------------- MODAL ------------- */  
+.modal-preview {  
+  display: none;  
+  position: fixed;  
+  top: 20px;  
+  right: 5%;  
+  background: rgba(11,17,23,0.95);  
+  color: #80e0e0;  
+  padding: 20px;  
+  border-radius: 12px;  
+  width: 350px;  
+  max-height: 80%;  
+  overflow-y: auto;  
+  z-index: 50;  
+  box-shadow: 0 0 25px rgba(128,224,224,0.4);  
+}  
+.modal-preview h4 { margin-top:0; font-size:16px; }  
+.modal-preview p { font-size:14px; line-height:1.4; }  
+.modal-preview button {  
+  margin-top:10px;  
+  padding:10px 16px;  
+  border:none;  
+  border-radius:6px;  
+  cursor:pointer;  
+  background:#00cccc;  
+  color:#fff;  
+  font-weight:bold;  
+}  
+.modal-preview button:hover { background:#008080; }  
+#modalCloseBtn {  
+  position:absolute;  
+  top:10px;  
+  right:12px;  
+  font-size:22px;  
+  font-weight:bold;  
+  color:#80e0e0;  
+  cursor:pointer;  
+  z-index:100;  
+}  
+#modalCloseBtn:hover { color:#00ffff; }  
+  
+/* ------------- RESPONSIVE ------------- */  
+@media screen and (max-width:768px){  
+  .sidebar{width:160px;padding:20px 10px;}  
+  .sidebar h2{font-size:18px;}  
+  .menu a{font-size:11px;padding:4px 8px;margin:4px 0;}  
+  .content {  
+  margin-left: 160px;  
+  padding: 10px;  
+  width: calc(100% - 160px);   /* FIXED */  
+  max-width: calc(100% - 160px); /* ENSURES FULL WIDTH */  
+} /* widened content */  
+  .hero{padding:25px 15px;}  
+  .hero h1{font-size:24px;}  
+  .hero p{font-size:14px;line-height:1.5;}  
+  .box{padding:20px 15px;}  
+  .box h3{font-size:20px;}  
+  .box p{font-size:14px;line-height:1.4;}  
+  .read-more-btn{padding:10px 16px;font-size:12px;}  
+  .topic-button{padding:3px 6px;font-size:10px;min-width:50px;}  
+}  
+  
+/* ------------- CANVAS ------------- */  
+#bgCanvas, #modalBubbleCanvas {  
+  position: fixed; top:0; left:0; width:100%; height:100%; z-index:0;  
+  pointer-events:none;  
+}  
+#modalBubbleCanvas { z-index: 51; }  
+</style>  <style>  
+.dropcap::first-letter {  
+  font-size: 3.5em;  
+  font-weight: bold;  
+  color: #007BFF; /* Blue */  
+  float: left;  
+  line-height: 0.8;  
+  padding-right: 8px;  
+}  
+</style>  <canvas id="bgCanvas"></canvas>
+<canvas id="modalBubbleCanvas"></canvas>
+
+<div class="sidebar" id="sidebar">  
+  <h2>Ready-Made Business Systems</h2>  
+  <div class="menu">  
+     <a href="../home/index.html">Home / Dashboard</a>  
+        <a href="../ai-automation-solutions">Automation Solutions</a>  
+        <a href="../performance-seo-optimization">Performance & SEO Systems</a>  
+        <a href="../saas-business-systems">Ready-Made Business Systems</a>  
+        <a href="../templates-market/index.html">Templates & Market Tools</a>  
+        <a href="../troubleshooting/index.html">Troubleshoot Library & Instant Fix</a>  
+        <a href="../cybersecurity/index.html">Cybersecurity Compliance & Risk Tools</a>  
+        <a href="../connect/index.html">Connect with me</a>  
+  </div>  
+  <img src="profile.jpg" alt="Profile Picture">  
+</div>  <div class="content">  
+  <div class="topic-buttons">  
+    <div class="topic-button" data-content="AI Bots demo content">Speed</div> 
+    <div class="topic-button" data-content="Business Automation demo content">Caching</div>  
+    <div class="topic-button" data-content="Lead Generation Engines demo content">Indexing</div>  
+    <div class="topic-button" data-content="WhatsApp/Telegram Bots demo content">Ranking</div>  
+    <div class="topic-button" data-content="Email Automation demo content">Optimization</div>  
+    <div class="topic-button" data-content="No-code Automation Kits demo content">Scalability</div>  
+  </div>    <div class="hero">  
+    <h1>Ready-Made Business Systems</h1>  
+    <p class="dropcap">  
+      <strong>Building a business</strong>  from scratch takes time, trial, and costly mistakes. What most people need is not just an idea—but a working system that is already structured, tested, and ready to generate results from day one.</p><p>  
+    I and the team ensure we design ready-made business systems that eliminate guesswork. These are complete, deployable frameworks—from SaaS platforms and automation services to digital marketplaces and lead-generation engines—built to operate immediately with minimal setup.
+</p>  
+    <div id="moreContent"><p> The full Performance & SEO Manual reveals the exact systems, configurations, and optimization techniques used to transform slow, underperforming platforms into fast, high-ranking digital assets—giving you a complete roadmap to implement these results yourself.
+</p></div>  
+    <button class="read-more-btn">Read More</button>  
+  </div>    <div class="box"><h3>💠 Core Services</h3><p>  
+The full Business Systems Manual reveals exactly how these systems are structured, monetized, and scaled. 
+</p><p> 
+    It gives you a direct blueprint to launch fully functional digital businesses without starting from zero—using models that are already proven to work.
+</p></div>  
+  <div class="box"><h3>⚙ Key Modules & Tools</h3><p>Our systems include caching layers, content delivery networks (CDNs), load balancing, database indexing, SEO auditing tools, structured data frameworks, performance monitoring dashboards, and automated optimization pipelines designed for continuous improvement and scalability.
+</p></div> 
+  <div class="cta-box">
+  <h3>📩 Connect With Me</h3>
+  <p>
+    Get full access to exclusive playbooks, system manuals, deployment frameworks, and automation blueprints delivered directly to your inbox.
+  </p>
+  <a href="../connect/index.html">Connect Now</a>
+</div>
+  
+</div>  <button id="themeToggleBtn">🌗</button>
+
+<div class="modal-preview" id="topicModal">  
+  <span id="modalCloseBtn">&times;</span>  
+  <h4 id="modalTitle"></h4>  
+  <p id="modalContent"></p>  
+  <button id="modalReadMore">Read More</button>  
+</div>  <script>  
+// ---------------- READ MORE ----------------  
+document.querySelector(".read-more-btn").addEventListener("click", function(){  
+  const more = document.getElementById("moreContent");  
+  if(!more.style.display || more.style.display==="none"){  
+    more.style.display="block"; this.textContent="Download PDF Manual";  
+  } else { window.location.href="https://payhip.com/YOUR-LINK-HERE"; }  
+});  
+  
+// ---------------- THEME TOGGLE ----------------  
+const themeBtn = document.getElementById("themeToggleBtn");  
+themeBtn.addEventListener("click", ()=>{ document.body.classList.toggle("dark"); });  
+  
+// ---------------- POLYGON BACKGROUND ----------------  
+const canvas = document.getElementById('bgCanvas');  
+const ctx = canvas.getContext('2d');  
+canvas.width = window.innerWidth; canvas.height = window.innerHeight;  
+const particles = [];  
+for(let i=0;i<80;i++){  
+    particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*1.2, vy:(Math.random()-0.5)*1.2, size:Math.random()*3+1});  
+}  
+function drawPolygons(){  
+    ctx.clearRect(0,0,canvas.width,canvas.height);  
+    for(let i=0;i<particles.length;i++){  
+        for(let j=i+1;j<particles.length;j++){  
+            const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y, dist=Math.sqrt(dx*dx+dy*dy);  
+            if(dist<120){  
+                ctx.beginPath();  
+                ctx.strokeStyle = document.body.classList.contains('dark') ? 'rgba(163,240,240,'+(1-dist/120)+')':'rgba(0,204,204,'+(1-dist/120)+')';  
+                ctx.moveTo(particles[i].x,particles[i].y);  
+                ctx.lineTo(particles[j].x,particles[j].y);  
+                ctx.stroke(); ctx.closePath();  
+            }  
+        }  
+    }  
+    for(let i=0;i<particles.length;i++){  
+        let p=particles[i]; ctx.beginPath();  
+        ctx.fillStyle = document.body.classList.contains('dark')?'rgba(163,240,240,0.8)':'rgba(0,204,204,0.8)';  
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill();  
+        p.x+=p.vx; p.y+=p.vy;  
+        if(p.x<0||p.x>canvas.width)p.vx*=-1;  
+        if(p.y<0||p.y>canvas.height)p.vy*=-1;  
+    }  
+    requestAnimationFrame(drawPolygons);  
+}  
+drawPolygons();  
+window.addEventListener('resize',()=>{ canvas.width=window.innerWidth; canvas.height=window.innerHeight; });  
+  
+// ---------------- MODAL BUBBLES ----------------  
+const modalBubbleCanvas = document.getElementById('modalBubbleCanvas');  
+const mbCtx = modalBubbleCanvas.getContext('2d');  
+modalBubbleCanvas.width = window.innerWidth; modalBubbleCanvas.height = window.innerHeight;  
+const bubbles = [];  
+for(let i=0;i<40;i++){ bubbles.push({x:Math.random()*modalBubbleCanvas.width, y:Math.random()*modalBubbleCanvas.height, radius:Math.random()*6+2, vy:Math.random()*0.3+0.1}); }  
+function drawBubbles(){  
+    mbCtx.clearRect(0,0,modalBubbleCanvas.width,modalBubbleCanvas.height);  
+    for(let b of bubbles){  
+        mbCtx.fillStyle='rgba(128,224,224,0.05)';  
+        mbCtx.beginPath();  
+        mbCtx.arc(b.x,b.y,b.radius,0,Math.PI*2); mbCtx.fill();  
+        b.y -= b.vy; if(b.y<0) b.y=modalBubbleCanvas.height;  
+    }  
+    requestAnimationFrame(drawBubbles);  
+}  
+drawBubbles();  
+window.addEventListener('resize',()=>{ modalBubbleCanvas.width=window.innerWidth; modalBubbleCanvas.height=window.innerHeight; });  
+  
+// ---------------- TOPIC MODAL ----------------  
+const topicButtons=document.querySelectorAll(".topic-button");  
+const modal=document.getElementById("topicModal");  
+const modalTitle=document.getElementById("modalTitle");  
+const modalContent=document.getElementById("modalContent");  
+const modalReadMore=document.getElementById("modalReadMore");  
+const modalCloseBtn=document.getElementById("modalCloseBtn");  
+  
+function openModal(btn){  
+  modal.style.display="block";  
+  modalTitle.textContent=btn.textContent;  
+  modalContent.textContent=btn.getAttribute("data-content");  
+}  
+topicButtons.forEach(btn=>{  
+  btn.addEventListener("click", ()=>{  
+    if(modal.style.display==="block" && modalTitle.textContent===btn.textContent){  
+      modal.style.display="none"; return;  
+    }  
+    openModal(btn);  
+    modalReadMore.onclick=()=>{ alert("Redirect to full page for "+btn.textContent); }  
+  });  
+});  
+modalCloseBtn.addEventListener("click", ()=>{ modal.style.display="none"; });  
+</script>
