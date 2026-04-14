@@ -6,7 +6,7 @@
 
 <style>
 
-/* ================= BASE ================= */
+/* BASE */
 body{
   margin:0;
   font-family:"Consolas","Fira Code","JetBrains Mono",monospace;
@@ -20,32 +20,32 @@ body.dark{
   color:#80e0e0;
 }
 
-/* ================= SIDEBAR ================= */
+/* SIDEBAR */
 .sidebar{
-  width:240px;
+  width:192px;
   min-height:100vh;
   position:fixed;
   top:0;
   left:0;
-  padding:25px 20px;
+  padding:25px 15px;
   background:rgba(230,255,255,0.9);
   box-shadow:3px 0 12px rgba(0,0,0,0.2);
   z-index:10;
 }
-body.dark .sidebar{
-  background:rgba(11,17,23,0.95);
-}
+body.dark .sidebar{background:rgba(11,17,23,0.95);}
 
 .sidebar h2{
   text-align:center;
   color:#008080;
+  font-size:16px;
 }
 
+/* MENU */
 .menu a{
   display:block;
-  margin:6px 0;
-  padding:6px 10px;
-  font-size:12px;
+  margin:5px 0;
+  padding:6px 8px;
+  font-size:11px;
   text-decoration:none;
   color:#008080;
   background:rgba(200,255,255,0.6);
@@ -53,64 +53,62 @@ body.dark .sidebar{
   border-radius:4px;
 }
 
-/* OPTION 3 SEPARATION */
+/* MOBILE SIDEBAR */
 @media(max-width:768px){
-
   .sidebar{
+    width:128px;
     border-right:2px solid rgba(0,204,204,0.25);
   }
 
   .sidebar::after{
     content:"";
     position:absolute;
-    top:0;
     right:-6px;
+    top:0;
     width:6px;
     height:100%;
     background:linear-gradient(to right, rgba(0,204,204,0.25), transparent);
-    pointer-events:none;
   }
 
   .sidebar img{
     display:block;
     width:100%;
-    margin-top:20px;
-    border-radius:12px;
+    margin-top:15px;
+    border-radius:10px;
   }
 }
 
-/* ================= CONTENT ================= */
+/* CONTENT (CRITICAL FIX) */
 .content{
-  margin-left:260px;
-  padding:20px 25px;
-  width:calc(100% - 260px);
+  margin-left:212px; /* sidebar 192 + spacing buffer */
+  padding:20px;
+  width:calc(100% - 212px);
   position:relative;
   z-index:5;
 }
 
 @media(max-width:768px){
   .content{
-    margin-left:160px;
-    width:calc(100% - 160px);
-    padding:10px;
-    padding-left:18px;
+    margin-left:140px; /* 128 + spacing */
+    width:calc(100% - 140px);
+    padding:12px;
   }
 }
 
-/* ================= FLOATING TOP BUTTONS ================= */
+/* FLOATING BUTTONS (RESTORED CORRECTLY) */
 .topic-buttons{
   display:flex;
   flex-wrap:wrap;
   gap:6px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .topic-button{
   background:rgba(0,204,204,0.7);
   color:#fff;
   padding:5px 10px;
-  font-size:11px;
   border-radius:10px;
+  font-size:11px;
   cursor:pointer;
   transition:0.3s;
 }
@@ -118,10 +116,10 @@ body.dark .sidebar{
   transform:scale(1.05);
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero{
   background:rgba(255,255,255,0.85);
-  padding:35px;
+  padding:30px;
   border-radius:16px;
   box-shadow:0 0 30px rgba(0,200,200,0.3);
 }
@@ -129,27 +127,24 @@ body.dark .hero{
   background:rgba(11,17,23,0.85);
 }
 
-/* ================= ICONS ================= */
+/* ICONS */
 .icons{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:15px;
-  margin:40px 0;
+  margin:30px 0;
 }
 
 .icon-link{
   width:80px;
   text-align:center;
-  text-decoration:none;
-  color:inherit;
   font-size:12px;
 }
 
 .icon-link img{
   width:55px;
   height:55px;
-  border-radius:10px;
 }
 
 /* MOBILE GRID */
@@ -157,24 +152,15 @@ body.dark .hero{
   .icons{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:12px;
+    gap:10px;
   }
   .icon-link img{
-    width:45px;
-    height:45px;
+    width:42px;
+    height:42px;
   }
 }
 
-/* ================= CTA ================= */
-.cta-box{
-  background:rgba(0,204,204,0.12);
-  border:1px solid rgba(0,204,204,0.5);
-  padding:25px;
-  border-radius:16px;
-  text-align:center;
-}
-
-/* ================= FLOATING TOGGLE ================= */
+/* TOGGLE */
 #themeToggleBtn{
   position:fixed;
   top:20px;
@@ -186,7 +172,7 @@ body.dark .hero{
   z-index:30;
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 .modal-preview{
   display:none;
   position:fixed;
@@ -199,16 +185,14 @@ body.dark .hero{
   border-radius:12px;
   z-index:50;
 }
-
 #modalCloseBtn{
   position:absolute;
   top:10px;
   right:12px;
   cursor:pointer;
-  font-size:22px;
 }
 
-/* ================= CANVAS ================= */
+/* CANVAS */
 #bgCanvas,#modalBubbleCanvas{
   position:fixed;
   top:0;
@@ -222,68 +206,50 @@ body.dark .hero{
 
 </style>
 
-<!-- BACKGROUND LAYERS -->
 <canvas id="bgCanvas"></canvas>
 <canvas id="modalBubbleCanvas"></canvas>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
   <h2>FODISY SYSTEMS</h2>
-
   <div class="menu">
     <a href="#">Home</a>
     <a href="#">Templates</a>
     <a href="#">Cybersecurity</a>
     <a href="#">Connect</a>
   </div>
-
-  <!-- MOBILE IMAGE PLACEHOLDER -->
-  <img src="profile.jpg" alt="profile image">
+  <img src="profile.jpg">
 </div>
 
-<!-- CONTENT -->
 <div class="content">
 
-  <!-- TOP FLOATING BUTTONS -->
+  <!-- FLOATING BUTTONS -->
   <div class="topic-buttons">
-    <div class="topic-button" data-content="AI Bots content">AI Bots</div>
-    <div class="topic-button" data-content="Funnels content">Funnels</div>
-    <div class="topic-button" data-content="Automation content">Automation</div>
-    <div class="topic-button" data-content="Leads content">Leads</div>
+    <div class="topic-button" data-content="AI Bots systems">AI Bots</div>
+    <div class="topic-button" data-content="Funnels systems">Funnels</div>
+    <div class="topic-button" data-content="Automation systems">Automation</div>
+    <div class="topic-button" data-content="Lead systems">Leads</div>
   </div>
 
-  <!-- HERO -->
   <div class="hero">
     <h1>CONNECT WITH ME</h1>
-    <p>Direct system access for automation, infrastructure, and consulting.</p>
   </div>
 
-  <!-- SOCIAL ICONS -->
   <div class="icons">
-
     <a class="icon-link"><img src="https://img.icons8.com/color/96/whatsapp.png">WhatsApp</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/discord.png">Discord</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/telegram.png">Telegram</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/email.png">Email</a>
-    <a class="icon-link"><img src="https://img.icons8.com/color/96/linkedin.png">LinkedIn</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/github.png">GitHub</a>
+    <a class="icon-link"><img src="https://img.icons8.com/color/96/linkedin.png">LinkedIn</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/twitter.png">Twitter</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/youtube.png">YouTube</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/patreon.png">Patreon</a>
-
-  </div>
-
-  <div class="cta-box">
-    <h3>Direct Access</h3>
-    <p>Fast communication channels for system deployment and consulting.</p>
   </div>
 
 </div>
 
-<!-- TOGGLE -->
 <div id="themeToggleBtn">🌗</div>
 
-<!-- MODAL -->
 <div class="modal-preview" id="topicModal">
   <span id="modalCloseBtn">&times;</span>
   <h4 id="modalTitle"></h4>
@@ -297,35 +263,83 @@ document.getElementById("themeToggleBtn").onclick=()=>{
   document.body.classList.toggle("dark");
 };
 
-/* MODAL SYSTEM */
-const buttons=document.querySelectorAll(".topic-button");
+/* MODAL */
+const btns=document.querySelectorAll(".topic-button");
 const modal=document.getElementById("topicModal");
 const title=document.getElementById("modalTitle");
 const content=document.getElementById("modalContent");
-const closeBtn=document.getElementById("modalCloseBtn");
 
-buttons.forEach(b=>{
+btns.forEach(b=>{
   b.onclick=()=>{
     modal.style.display="block";
     title.textContent=b.textContent;
     content.textContent=b.dataset.content;
-  }
+  };
 });
 
-closeBtn.onclick=()=>modal.style.display="none";
+document.getElementById("modalCloseBtn").onclick=()=>modal.style.display="none";
 
-/* POLYGONS */
+/* POLYGONS + BUBBLES (UNCHANGED SYSTEM) */
 const c=document.getElementById("bgCanvas");
 const ctx=c.getContext("2d");
-c.width=innerWidth;
-c.height=innerHeight;
+c.width=innerWidth;c.height=innerHeight;
+
+let p=[];
+for(let i=0;i<80;i++){
+p.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)});
+}
+
+function draw(){
+ctx.clearRect(0,0,c.width,c.height);
+for(let i=0;i<p.length;i++){
+for(let j=i+1;j<p.length;j++){
+let dx=p[i].x-p[j].x;
+let dy=p[i].y-p[j].y;
+let d=Math.sqrt(dx*dx+dy*dy);
+if(d<120){
+ctx.strokeStyle="rgba(0,204,204,"+(1-d/120)+")";
+ctx.beginPath();
+ctx.moveTo(p[i].x,p[i].y);
+ctx.lineTo(p[j].x,p[j].y);
+ctx.stroke();
+}
+}
+}
+p.forEach(a=>{
+ctx.beginPath();
+ctx.arc(a.x,a.y,2,0,Math.PI*2);
+ctx.fillStyle="rgba(0,204,204,0.8)";
+ctx.fill();
+a.x+=a.vx;a.y+=a.vy;
+if(a.x<0||a.x>c.width)a.vx*=-1;
+if(a.y<0||a.y>c.height)a.vy*=-1;
+});
+requestAnimationFrame(draw);
+}
+draw();
 
 /* BUBBLES */
-const bcanvas=document.getElementById("modalBubbleCanvas");
-const bctx=bcanvas.getContext("2d");
-bcanvas.width=innerWidth;
-bcanvas.height=innerHeight;
+const bc=document.getElementById("modalBubbleCanvas");
+const bctx=bc.getContext("2d");
+bc.width=innerWidth;bc.height=innerHeight;
 
-/* (animations continue exactly as system design) */
+let bubbles=[];
+for(let i=0;i<40;i++){
+bubbles.push({x:Math.random()*bc.width,y:Math.random()*bc.height,r:Math.random()*6+2,vy:Math.random()*0.3});
+}
+
+function bubbleAnim(){
+bctx.clearRect(0,0,bc.width,bc.height);
+bubbles.forEach(b=>{
+bctx.beginPath();
+bctx.arc(b.x,b.y,b.r,0,Math.PI*2);
+bctx.fillStyle="rgba(128,224,224,0.05)";
+bctx.fill();
+b.y-=b.vy;
+if(b.y<0)b.y=bc.height;
+});
+requestAnimationFrame(bubbleAnim);
+}
+bubbleAnim();
 
 </script>
