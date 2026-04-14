@@ -40,7 +40,6 @@ body.dark .sidebar{background:rgba(11,17,23,0.95);}
   font-size:16px;
 }
 
-/* MENU */
 .menu a{
   display:block;
   margin:5px 0;
@@ -78,9 +77,9 @@ body.dark .sidebar{background:rgba(11,17,23,0.95);}
   }
 }
 
-/* CONTENT (CRITICAL FIX) */
+/* CONTENT */
 .content{
-  margin-left:212px; /* sidebar 192 + spacing buffer */
+  margin-left:212px;
   padding:20px;
   width:calc(100% - 212px);
   position:relative;
@@ -89,20 +88,19 @@ body.dark .sidebar{background:rgba(11,17,23,0.95);}
 
 @media(max-width:768px){
   .content{
-    margin-left:140px; /* 128 + spacing */
+    margin-left:140px;
     width:calc(100% - 140px);
     padding:12px;
   }
 }
 
-/* FLOATING BUTTONS (RESTORED CORRECTLY) */
+/* FLOATING BUTTONS */
 .topic-buttons{
   display:flex;
   flex-wrap:wrap;
   gap:6px;
   margin-bottom:20px;
 }
-
 .topic-button{
   background:rgba(0,204,204,0.7);
   color:#fff;
@@ -110,10 +108,6 @@ body.dark .sidebar{background:rgba(11,17,23,0.95);}
   border-radius:10px;
   font-size:11px;
   cursor:pointer;
-  transition:0.3s;
-}
-.topic-button:hover{
-  transform:scale(1.05);
 }
 
 /* HERO */
@@ -135,19 +129,16 @@ body.dark .hero{
   gap:15px;
   margin:30px 0;
 }
-
 .icon-link{
   width:80px;
   text-align:center;
   font-size:12px;
 }
-
 .icon-link img{
   width:55px;
   height:55px;
 }
 
-/* MOBILE GRID */
 @media(max-width:768px){
   .icons{
     display:grid;
@@ -158,6 +149,33 @@ body.dark .hero{
     width:42px;
     height:42px;
   }
+}
+
+/* CTA */
+.cta-box{
+  background:rgba(0,204,204,0.12);
+  border:1px solid rgba(0,204,204,0.5);
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 0 25px rgba(0,200,200,0.2);
+}
+
+.cta-box h3{
+  color:#008080;
+}
+
+.cta-box a{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 20px;
+  background:#00cccc;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+}
+.cta-box a:hover{
+  background:#008080;
 }
 
 /* TOGGLE */
@@ -222,12 +240,10 @@ body.dark .hero{
 
 <div class="content">
 
-  <!-- FLOATING BUTTONS -->
   <div class="topic-buttons">
     <div class="topic-button" data-content="AI Bots systems">AI Bots</div>
     <div class="topic-button" data-content="Funnels systems">Funnels</div>
     <div class="topic-button" data-content="Automation systems">Automation</div>
-    <div class="topic-button" data-content="Lead systems">Leads</div>
   </div>
 
   <div class="hero">
@@ -244,6 +260,13 @@ body.dark .hero{
     <a class="icon-link"><img src="https://img.icons8.com/color/96/twitter.png">Twitter</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/youtube.png">YouTube</a>
     <a class="icon-link"><img src="https://img.icons8.com/color/96/patreon.png">Patreon</a>
+  </div>
+
+  <!-- CTA RESTORED -->
+  <div class="cta-box">
+    <h3>📩 Direct Contact</h3>
+    <p>Get instant access to systems, automation frameworks, and consulting support.</p>
+    <a href="https://wa.me/your-number" target="_blank">Chat on WhatsApp</a>
   </div>
 
 </div>
@@ -279,7 +302,7 @@ btns.forEach(b=>{
 
 document.getElementById("modalCloseBtn").onclick=()=>modal.style.display="none";
 
-/* POLYGONS + BUBBLES (UNCHANGED SYSTEM) */
+/* POLYGONS */
 const c=document.getElementById("bgCanvas");
 const ctx=c.getContext("2d");
 c.width=innerWidth;c.height=innerHeight;
