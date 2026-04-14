@@ -191,24 +191,49 @@ body.dark .hero{
 }
 
 /* MODAL */
-.modal-preview{
-  display:none;
-  position:fixed;
-  top:20px;
-  right:5%;
-  width:320px;
-  background:rgba(11,17,23,0.95);
-  color:#80e0e0;
-  padding:20px;
-  border-radius:12px;
-  z-index:50;
-}
-#modalCloseBtn{
-  position:absolute;
-  top:10px;
-  right:12px;
-  cursor:pointer;
-}
+.modal-preview {  
+  display: none;  
+  position: fixed;  
+  top: 20px;  
+  right: 5%;  
+  background: rgba(11,17,23,0.95);  
+  color: #80e0e0;  
+  padding: 20px;  
+  border-radius: 12px;  
+  width: 350px;  
+  max-height: 80%;  
+  overflow-y: auto;  
+  z-index: 50;  
+  box-shadow: 0 0 25px rgba(128,224,224,0.4);  
+}  
+.modal-preview h4 { margin-top:0; font-size:16px; }  
+.modal-preview p { font-size:14px; line-height:1.4; }  
+.modal-preview button {  
+  margin-top:10px;  
+  padding:10px 16px;  
+  border:none;  
+  border-radius:6px;  
+  cursor:pointer;  
+  background:#00cccc;  
+  color:#fff;  
+  font-weight:bold;  
+}  
+.modal-preview button:hover { background:#008080; }  
+#modalCloseBtn {  
+  position:absolute;  
+  top:10px;  
+  right:12px;  
+  font-size:22px;  
+  font-weight:bold;  
+  color:#80e0e0;  
+  cursor:pointer;  
+  z-index:100;  
+}  
+#modalCloseBtn:hover { color:#00ffff; }  
+  
+  
+  
+  
 
 /* CANVAS */
 #bgCanvas,#modalBubbleCanvas{
