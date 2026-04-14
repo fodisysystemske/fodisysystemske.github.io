@@ -3,190 +3,186 @@
 <meta name="description" content="Connect directly with FODISY SYSTEMS for automation, infrastructure, cybersecurity, and system deployment.">
 <meta name="keywords" content="contact developer, automation expert, connect fodisy, system engineer contact">
 <title>CONNECT WITH ME</title>
+
 <style>
 
-/* BASE */
-body {
-  margin: 0;
-  font-family: "Consolas", "Fira Code", "JetBrains Mono", monospace;
-  color: #333;
-  background: #fff;
-  transition: 0.5s;
-  overflow-x: hidden;
+/* ============ BASE ============ */
+body{
+  margin:0;
+  font-family:"Consolas","Fira Code","JetBrains Mono",monospace;
+  background:#fff;
+  color:#333;
+  overflow-x:hidden;
+  transition:0.5s;
 }
-body.dark {
-  background: #0b1117;
-  color: #80e0e0;
-}
-
-/* SIDEBAR */
-.sidebar {
-  width: 240px;
-  min-height: 100vh;
-  background: rgba(230,255,255,0.9);
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 25px 20px;
-  box-shadow: 3px 0 12px rgba(0,0,0,0.2);
-  z-index: 10;
-}
-body.dark .sidebar { background: rgba(11,17,23,0.95); }
-
-.sidebar h2 { text-align: center; color: #008080; }
-
-.sidebar img {
-  display: none;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-@media(max-width:768px){
-  .sidebar img { display:block; margin:0 auto 10px; }
+body.dark{
+  background:#0b1117;
+  color:#80e0e0;
 }
 
-/* MENU */
-.menu a {
+/* ============ SIDEBAR ============ */
+.sidebar{
+  width:240px;
+  min-height:100vh;
+  position:fixed;
+  top:0;
+  left:0;
+  padding:25px 20px;
+  background:rgba(230,255,255,0.9);
+  box-shadow:3px 0 12px rgba(0,0,0,0.2);
+  z-index:10;
+}
+body.dark .sidebar{
+  background:rgba(11,17,23,0.95);
+}
+
+.sidebar h2{
+  text-align:center;
+  color:#008080;
+}
+
+.menu a{
   display:block;
   margin:6px 0;
   padding:6px 10px;
   font-size:12px;
+  text-decoration:none;
   color:#008080;
   background:rgba(200,255,255,0.6);
   border-left:3px solid #00cccc;
-  text-decoration:none;
   border-radius:4px;
-  transition:0.3s;
 }
-.menu a:hover { transform:translateX(5px); }
-body.dark .menu a {
+.menu a:hover{
+  transform:translateX(5px);
+}
+body.dark .menu a{
   color:#80e0e0;
   background:rgba(11,17,23,0.85);
   border-left:3px solid #80e0e0;
 }
 
-/* CONTENT */
-.content {
-  margin-left: 260px;
-  padding: 20px 25px;
-  width: calc(100% - 260px);
+/* ============ CONTENT ============ */
+.content{
+  margin-left:260px;
+  padding:20px 25px;
+  width:calc(100% - 260px);
+  position:relative;
+  z-index:5;
 }
 
-/* HERO */
-.hero {
-  background: rgba(255,255,255,0.85);
-  padding: 40px;
-  border-radius: 16px;
-  margin-bottom: 30px;
-  box-shadow: 0 0 30px rgba(0,200,200,0.3);
+/* ============ HERO ============ */
+.hero{
+  background:rgba(255,255,255,0.85);
+  padding:40px;
+  border-radius:16px;
+  box-shadow:0 0 30px rgba(0,200,200,0.3);
 }
-body.dark .hero { background: rgba(11,17,23,0.85); }
-
-/* ICONS GRID */
-.icons {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  margin: 40px 0;
+body.dark .hero{
+  background:rgba(11,17,23,0.85);
 }
 
-.icon-link {
-  text-align: center;
-  font-size: 12px;
-  text-decoration: none;
-  color: inherit;
-  transition: 0.3s;
-}
-.icon-link:hover { transform: scale(1.1); }
-
-.icon-link img {
-  width: 55px;
-  height: 55px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,200,200,0.4);
+/* ============ ICON GRID ============ */
+.icons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin:40px 0;
 }
 
-.live-badge {
-  display: inline-block;
-  margin-top: 4px;
-  font-size: 10px;
-  background: #00cccc;
-  color: #fff;
-  padding: 2px 5px;
-  border-radius: 4px;
+/* desktop default */
+.icon-link{
+  width:80px;
+  text-align:center;
+  text-decoration:none;
+  color:inherit;
+  font-size:12px;
+  transition:0.3s;
+}
+.icon-link img{
+  width:55px;
+  height:55px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,200,200,0.4);
+}
+.icon-link:hover{
+  transform:scale(1.1);
+}
+.live-badge{
+  font-size:10px;
+  background:#00cccc;
+  color:#fff;
+  padding:2px 5px;
+  border-radius:4px;
+  display:inline-block;
+  margin-top:4px;
 }
 
-/* CTA */
-.cta-box {
-  background: rgba(0,204,204,0.12);
+/* MOBILE 3x3 GRID */
+@media(max-width:768px){
+  .sidebar{
+    width:160px;
+  }
+
+  .content{
+    margin-left:160px;
+    width:calc(100% - 160px);
+    padding:10px;
+  }
+
+  .icons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+
+  .icon-link img{
+    width:45px;
+    height:45px;
+  }
+}
+
+/* ============ CTA ============ */
+.cta-box{
+  background:rgba(0,204,204,0.12);
   border:1px solid rgba(0,204,204,0.5);
   padding:30px;
   border-radius:16px;
   text-align:center;
 }
 
-/* FLOAT BUTTON EXACT */
-#themeToggleBtn {
-  position: fixed;
+/* ============ FLOATING TOGGLE (EXACT POSITION) ============ */
+#themeToggleBtn{
+  position:fixed;
   top:20px;
   right:20px;
-  background: rgba(0,255,255,0.7);
+  background:rgba(0,255,255,0.7);
   color:#000;
   padding:12px;
   border-radius:50%;
   cursor:pointer;
   z-index:30;
-  font-weight:bold;
-  transition:0.3s;
 }
-#themeToggleBtn:hover { background: rgba(0,255,255,1); }
-body.dark #themeToggleBtn {
-  background: rgba(128,224,224,0.5);
+body.dark #themeToggleBtn{
+  background:rgba(128,224,224,0.5);
   color:#0b1117;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-
-  .sidebar {
-    width:160px;
-    padding:20px 10px;
-  }
-
-  .content {
-    margin-left:160px;
-    width: calc(100% - 160px);
-    padding:10px;
-  }
-
-  .hero { padding:25px 15px; }
-
-  /* 🔥 FIXED GRID 3x3 */
-  .icons {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-
-  .icon-link img {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-/* CANVAS */
-#bgCanvas, #modalBubbleCanvas {
-  position: fixed;
+/* ============ CANVAS LAYERS ============ */
+#bgCanvas,#modalBubbleCanvas{
+  position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
   pointer-events:none;
 }
-#bgCanvas { z-index:0; }
-#modalBubbleCanvas { z-index:51; }
+#bgCanvas{z-index:0;}
+#modalBubbleCanvas{z-index:1;}
 
 </style>
 
+<!-- CANVAS BACKGROUND SYSTEM -->
 <canvas id="bgCanvas"></canvas>
 <canvas id="modalBubbleCanvas"></canvas>
 
@@ -198,39 +194,59 @@ body.dark #themeToggleBtn {
     <a href="../cybersecurity-tools-suite">Cybersecurity</a>
     <a href="../connect/index.html">Connect</a>
   </div>
-  <img src="profile.jpg">
 </div>
 
 <div class="content">
 
   <div class="hero">
     <h1>CONNECT WITH ME</h1>
-    <p>Select a direct communication channel for support, collaboration, or deployment requests.</p>
+    <p>Direct access for system deployment, automation, and technical consultation.</p>
   </div>
 
+  <!-- SOCIAL ICONS (PRESERVED) -->
   <div class="icons">
 
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/whatsapp.png">WhatsApp<div class="live-badge">Live</div></a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/discord.png">Discord<div class="live-badge">Live</div></a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/facebook-messenger.png">Messenger<div class="live-badge">Live</div></a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/telegram.png">Telegram<div class="live-badge">Live</div></a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/email.png">Email<div class="live-badge">Live</div></a>
+    <a class="icon-link" href="#">
+      <img src="https://img.icons8.com/color/96/whatsapp.png">
+      WhatsApp <div class="live-badge">Live</div>
+    </a>
 
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/linkedin.png">LinkedIn</a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/github.png">GitHub</a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/twitter.png">Twitter</a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/youtube.png">YouTube</a>
-    <a href="#" class="icon-link"><img src="https://img.icons8.com/color/96/patreon.png">Patreon</a>
+    <a class="icon-link" href="#">
+      <img src="https://img.icons8.com/color/96/discord.png">
+      Discord <div class="live-badge">Live</div>
+    </a>
+
+    <a class="icon-link" href="#">
+      <img src="https://img.icons8.com/color/96/facebook-messenger.png">
+      Messenger <div class="live-badge">Live</div>
+    </a>
+
+    <a class="icon-link" href="#">
+      <img src="https://img.icons8.com/color/96/telegram.png">
+      Telegram <div class="live-badge">Live</div>
+    </a>
+
+    <a class="icon-link" href="#">
+      <img src="https://img.icons8.com/color/96/email.png">
+      Email <div class="live-badge">Live</div>
+    </a>
+
+    <a class="icon-link" href="#"><img src="https://img.icons8.com/color/96/linkedin.png">LinkedIn</a>
+    <a class="icon-link" href="#"><img src="https://img.icons8.com/color/96/github.png">GitHub</a>
+    <a class="icon-link" href="#"><img src="https://img.icons8.com/color/96/twitter.png">Twitter</a>
+    <a class="icon-link" href="#"><img src="https://img.icons8.com/color/96/youtube.png">YouTube</a>
+    <a class="icon-link" href="#"><img src="https://img.icons8.com/color/96/patreon.png">Patreon</a>
 
   </div>
 
   <div class="cta-box">
-    <h3>📩 Direct System Access</h3>
-    <p>Engage for deployment, scaling, automation, or troubleshooting. Fastest response via live channels.</p>
+    <h3>Direct System Access</h3>
+    <p>Reach out for automation, infrastructure scaling, or deployment support. Fastest response via live channels.</p>
   </div>
 
 </div>
 
+<!-- FLOATING TOGGLE -->
 <div id="themeToggleBtn">🌗</div>
 
 <script>
@@ -240,84 +256,75 @@ document.getElementById("themeToggleBtn").onclick=()=>{
   document.body.classList.toggle("dark");
 };
 
-/* POLYGON + DARK AWARE */
-const canvas=document.getElementById('bgCanvas');
-const ctx=canvas.getContext('2d');
-canvas.width=innerWidth;
-canvas.height=innerHeight;
+/* POLYGON SYSTEM */
+const bg=document.getElementById("bgCanvas");
+const ctx=bg.getContext("2d");
+bg.width=innerWidth;
+bg.height=innerHeight;
 
-let particles=[];
+let p=[];
 for(let i=0;i<80;i++){
- particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)});
+  p.push({x:Math.random()*bg.width,y:Math.random()*bg.height,vx:(Math.random()-0.5),vy:(Math.random()-0.5)});
 }
 
-function animate(){
- ctx.clearRect(0,0,canvas.width,canvas.height);
+function draw(){
+ctx.clearRect(0,0,bg.width,bg.height);
 
- for(let i=0;i<particles.length;i++){
-  for(let j=i+1;j<particles.length;j++){
-   let dx=particles[i].x-particles[j].x;
-   let dy=particles[i].y-particles[j].y;
-   let dist=Math.sqrt(dx*dx+dy*dy);
+for(let i=0;i<p.length;i++){
+for(let j=i+1;j<p.length;j++){
+let dx=p[i].x-p[j].x;
+let dy=p[i].y-p[j].y;
+let d=Math.sqrt(dx*dx+dy*dy);
 
-   if(dist<120){
-     ctx.strokeStyle=document.body.classList.contains("dark")
-       ? "rgba(163,240,240,"+(1-dist/120)+")"
-       : "rgba(0,204,204,"+(1-dist/120)+")";
-
-     ctx.beginPath();
-     ctx.moveTo(particles[i].x,particles[i].y);
-     ctx.lineTo(particles[j].x,particles[j].y);
-     ctx.stroke();
-   }
-  }
- }
-
- particles.forEach(p=>{
-  ctx.beginPath();
-  ctx.arc(p.x,p.y,2,0,Math.PI*2);
-  ctx.fillStyle=document.body.classList.contains("dark")
-    ? "rgba(163,240,240,0.8)"
-    : "rgba(0,204,204,0.8)";
-  ctx.fill();
-
-  p.x+=p.vx;
-  p.y+=p.vy;
-
-  if(p.x<0||p.x>canvas.width)p.vx*=-1;
-  if(p.y<0||p.y>canvas.height)p.vy*=-1;
- });
-
- requestAnimationFrame(animate);
+if(d<120){
+ctx.strokeStyle=document.body.classList.contains("dark")?
+"rgba(163,240,240,"+(1-d/120)+")":
+"rgba(0,204,204,"+(1-d/120)+")";
+ctx.beginPath();
+ctx.moveTo(p[i].x,p[i].y);
+ctx.lineTo(p[j].x,p[j].y);
+ctx.stroke();
 }
-animate();
+}
+}
+
+p.forEach(o=>{
+ctx.beginPath();
+ctx.arc(o.x,o.y,2,0,Math.PI*2);
+ctx.fillStyle=document.body.classList.contains("dark")?"rgba(163,240,240,0.8)":"rgba(0,204,204,0.8)";
+ctx.fill();
+o.x+=o.vx;o.y+=o.vy;
+if(o.x<0||o.x>bg.width)o.vx*=-1;
+if(o.y<0||o.y>bg.height)o.vy*=-1;
+});
+
+requestAnimationFrame(draw);
+}
+draw();
 
 /* BUBBLES */
-const bCanvas=document.getElementById('modalBubbleCanvas');
-const bCtx=bCanvas.getContext('2d');
-bCanvas.width=innerWidth;
-bCanvas.height=innerHeight;
+const bb=document.getElementById("modalBubbleCanvas");
+const bc=bb.getContext("2d");
+bb.width=innerWidth;
+bb.height=innerHeight;
 
-let bubbles=[];
+let b=[];
 for(let i=0;i<40;i++){
- bubbles.push({x:Math.random()*bCanvas.width,y:Math.random()*bCanvas.height,r:Math.random()*6+2,vy:Math.random()*0.3+0.1});
+b.push({x:Math.random()*bb.width,y:Math.random()*bb.height,r:Math.random()*6+2,vy:Math.random()*0.3});
 }
 
-function bubbleAnim(){
- bCtx.clearRect(0,0,bCanvas.width,bCanvas.height);
-
- bubbles.forEach(b=>{
-  bCtx.fillStyle='rgba(128,224,224,0.05)';
-  bCtx.beginPath();
-  bCtx.arc(b.x,b.y,b.r,0,Math.PI*2);
-  bCtx.fill();
-
-  b.y -= b.vy;
-  if(b.y<0) b.y=bCanvas.height;
- });
-
- requestAnimationFrame(bubbleAnim);
+function bubble(){
+bc.clearRect(0,0,bb.width,bb.height);
+b.forEach(x=>{
+bc.beginPath();
+bc.arc(x.x,x.y,x.r,0,Math.PI*2);
+bc.fillStyle="rgba(128,224,224,0.05)";
+bc.fill();
+x.y-=x.vy;
+if(x.y<0)x.y=bb.height;
+});
+requestAnimationFrame(bubble);
 }
-bubbleAnim();
+bubble();
 
 </script>
