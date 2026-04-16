@@ -33,7 +33,29 @@ body.dark {
 }  
 body.dark .sidebar { background: rgba(11,17,23,0.95); }  
 .sidebar h2 { color: #008080; text-align: center; margin-bottom: 20px; }  
-.sidebar img { display: none; border-radius: 50%; width: 80px; height: 80px; object-fit: cover; }  
+/* LOGO (ALWAYS VISIBLE) */
+.sidebar-logo {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto 15px;
+}
+
+/* MOBILE IMAGE ONLY */
+.sidebar-picture {
+  display: none;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid rgba(0,255,255,0.6);
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+
+@media screen and (max-width:768px){
+  .sidebar-picture {
+    display: block;
+    margin-top: 15px;
+  }
+} 
 @media screen and (max-width:768px) { .sidebar img { display:block; margin:0 auto 15px; } } 
 
   /* ✅ LOGO (NEW) */
@@ -284,7 +306,7 @@ body.dark #themeToggleBtn:hover { background: #80e0e0; }
 
 <div class="sidebar" id="sidebar">
    <!-- ✅ LOGO -->
-  <img src="https://i.imgur.com/DKLJ7YH.png" class="logo">
+  <img src="https://i.imgur.com/DKLJ7YH.png" class="sidebar-logo" alt="Logo">
   <h2>TEMPLATES & MARKET TOOLS</h2>  
   <div class="menu">  
      <a href="../api-intergration-devtools">API Intergration & Devtools</a>
@@ -299,7 +321,7 @@ body.dark #themeToggleBtn:hover { background: #80e0e0; }
         <a href="../connect/index.html">Connect with me</a>  
   </div>  
    <!-- ✅ MOBILE IMAGE -->
-  <img src="https://i.imgur.com/9JFfdun.png" alt="Profile Picture">  
+  <img src="https://i.imgur.com/9JFfdun.png" class="sidebar-picture" alt="Sidebar Image">  
 </div>  <div class="content">  
   <div class="topic-buttons">  
     <div class="topic-button" data-content="AI Bots demo content">Templates</div> 
