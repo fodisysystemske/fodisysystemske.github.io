@@ -33,7 +33,50 @@ body.dark{
   z-index:10;
 }
 body.dark .sidebar{background:rgba(11,17,23,0.95);}
+/* LOGO (ALWAYS VISIBLE) */
+.sidebar-logo {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto 15px;
+}
 
+/* MOBILE IMAGE ONLY */
+.sidebar-picture {
+  display: none;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid rgba(0,255,255,0.6);
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+
+@media screen and (max-width:768px){
+  .sidebar-picture {
+    display: block;
+    margin-top: 15px;
+  }
+} 
+@media screen and (max-width:768px) { .sidebar img { display:block; margin:0 auto 15px; } } 
+
+  /* ✅ LOGO (NEW) */
+.sidebar .logo {
+  width: 100%;
+  max-height: 90px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+/* ✅ MOBILE IMAGE WITH GLOW */
+@media screen and (max-width:768px) { 
+  .sidebar-picture { 
+    display:block; 
+    margin:15px auto 0;
+    box-shadow: 0 0 20px rgba(0,255,255,0.6);
+  } 
+  body.dark .sidebar img {
+    box-shadow: 0 0 25px rgba(128,224,224,0.7);
+  }
+}  
+  
 .sidebar h2{
   text-align:center;
   color:#008080;
@@ -253,6 +296,8 @@ body.dark .hero{
 <canvas id="modalBubbleCanvas"></canvas>
 
 <div class="sidebar">
+   <!-- ✅ LOGO -->
+  <img src="https://i.imgur.com/DKLJ7YH.png" class="sidebar-logo" alt="Logo">
   <h2>FODISY SYSTEMS</h2>
    <div class="menu">  
     <a href="../api-intergration-devtools">API Intergration & Devtools</a>
@@ -265,7 +310,8 @@ body.dark .hero{
         <a href="../cybersecurity-tools-suite">Cybersecurity Compliance & Risk Tools</a>  
         <a href="../connect">Connect with me</a>  
   </div> 
-  <img src="profile.jpg">
+ <!-- ✅ MOBILE IMAGE -->
+  <img src="https://i.imgur.com/9JFfdun.png" class="sidebar-picture" alt="Sidebar Image">    
 </div>
 
 <div class="content">
